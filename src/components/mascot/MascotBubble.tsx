@@ -20,7 +20,7 @@ export function MascotBubble({
   size = 56,
   live = false,
   say,
-  autoSpeak = false,
+  autoSpeak = true,
   children,
 }: {
   mood?: BusuMood;

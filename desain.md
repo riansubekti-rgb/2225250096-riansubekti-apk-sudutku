@@ -194,6 +194,10 @@ Busu adalah busur derajat setengah lingkaran (180°) berwarna kuning dengan mata
 - **Busu diketuk** di Beranda → fakta/semangat acak dengan ekspresi berbeda.
 - **Tanya Busu**: Busu besar boleh berganti ekspresi di layar obrolan; jawaban ≤ 3 kalimat + langkah + gambar bila perlu (tetap satu ide per balon).
 
+**Revisi v0.3.3 (D21):**
+- Suara **otomatis** kembali (menggantikan "hanya saat diketuk" D19); perkenalan di Masuk diucapkan **sekali** pada sentuhan pertama.
+- `WanderingBusu`: Busu punya rumah; tiap 6–10 dtk berjalan ke 3 titik acak di layar (`busu-walk`, menghadap arah jalan) lalu pulang. Hanya di Masuk & Peta Belajar. Mati bila *reduce motion*.
+
 **Revisi v0.3.2 (D20):**
 - Suara remaja (pitch 1,3; rate 1,05).
 - Halaman Masuk: **Busu mondar-mandir** naik-turun di sisi kanan (`RoamingBusu`, jalan bergoyang `busu-walk`), berhenti saat berbicara; mati bila *reduce motion*. Tidak dipakai di halaman soal.

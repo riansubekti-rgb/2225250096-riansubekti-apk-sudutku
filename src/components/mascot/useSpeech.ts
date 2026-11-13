@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { canSpeak, speakSentences, splitSentences } from '../../platform/speech';
+import { canSpeak, speakSentences, splitSentences, userHasInteracted } from '../../platform/speech';
 import { logEvent } from '../../data/log';
 import { moodFromText } from './moodFromText';
 import { useVoice } from './voiceStore';
 import type { BusuMood } from './Busu';
 
 /**
- * Suara Busu untuk satu balon kata. Busu hanya berbicara saat DIKETUK (`toggle`),
- * atau bila `auto` diisi (dipakai Beranda tepat setelah siswa mengetuk Busu).
+ * Suara Busu untuk satu balon kata. `auto`: Busu langsung bicara sendiri saat teks muncul/berubah
+ * (setelah sentuhan pertama di halaman — aturan autoplay browser). `toggle`: ketuk untuk ulang/berhenti.
  * `mood` = ekspresi yang mengikuti kalimat yang sedang diucapkan (null bila diam).
  */
 export function useSpeech(opts: { text?: string; auto?: boolean; baseMood?: BusuMood } = {}) {
@@ -39,7 +39,14 @@ export function useSpeech(opts: { text?: string; auto?: boolean; baseMood?: Busu
 
   useEffect(() => {
     if (!opts.auto || !opts.text || !enabled || !canSpeak()) return;
-    play(opts.text);
+    const go = () => play(opts.text!);
+    if (!userHasInteracted()) {
+      // Aturan autoplay browser: tunggu sentuhan pertama, lalu langsung bicara.
+      window.addEventListener('pointerdown', go, { once: true });
+      return () => window.removeEventListener('pointerdown', go);
+    }
+    const t = window.setTimeout(go, 200);
+    return () => window.clearTimeout(t);
     // bicara hanya bila teksnya berubah (mis. setelah Busu diketuk)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [opts.text, opts.auto, enabled]);

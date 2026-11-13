@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.3.3] — 2026-11-14 — Busu bicara sendiri & jalan-jalan
+
+### Diubah
+- Busu **bicara otomatis** lagi: perkenalan di halaman Masuk langsung diucapkan (dengan subtitle berjalan) pada sentuhan pertama di mana pun; Peta Belajar, balon petunjuk, dan Tanya Busu langsung dibacakan.
+- Busu punya **rumah** (halaman Masuk & Peta Belajar) dan setiap beberapa detik **berjalan-jalan keliling layar** — atas, bawah, kiri, kanan, menghadap arah jalannya — lalu **kembali ke rumah**.
+
+### Diperbaiki
+- Busu sempat "melompat" dari pojok kiri atas saat mulai berjalan (elemen dipakai ulang oleh React).
+
 ## [0.3.2] — 2026-11-14 — Subtitle berjalan & Busu mondar-mandir
 
 ### Diubah

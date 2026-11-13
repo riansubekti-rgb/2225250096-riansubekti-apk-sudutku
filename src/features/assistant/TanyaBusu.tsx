@@ -16,8 +16,8 @@ type Msg = { from: 'user'; text: string } | { from: 'busu'; a: Answer };
 
 function BusuMsg({ a, onAsk }: { a: Answer; onAsk: (q: string) => void }) {
   const speakText = [a.text, ...(a.steps ?? []).map((s) => `${s.text}. ${s.note}.`)].join(' ');
-  // Ketuk Busu atau 🔊 untuk mendengar jawabannya; ekspresi mengikuti kalimat yang diucapkan.
-  const { speaking, toggle, available, mood } = useSpeech({ text: speakText, baseMood: a.mood as BusuMood });
+  // Busu langsung membacakan jawabannya; ketuk Busu/🔊 untuk mengulang. Ekspresi mengikuti kalimat.
+  const { speaking, toggle, available, mood } = useSpeech({ text: speakText, auto: true, baseMood: a.mood as BusuMood });
   return (
     <div className="flex items-start gap-2">
       <button

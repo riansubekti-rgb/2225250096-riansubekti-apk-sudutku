@@ -7,6 +7,7 @@ import { useSession } from '../data/session';
 import { UpdateBanner } from '../components/UpdateBanner';
 import { useBusuTap } from '../components/mascot/useBusuTap';
 import { useSpeech } from '../components/mascot/useSpeech';
+import { WanderingBusu } from '../components/mascot/WanderingBusu';
 import { useResearchTasks } from '../features/research/useResearchTasks';
 
 export function HomePage() {
@@ -16,8 +17,12 @@ export function HomePage() {
   const pretestPending = tasks.some((t) => t.key === 'pre');
   const tap = useBusuTap();
   const heroText = tap.line?.text ?? 'Yuk jelajahi dunia sudut bersamaku. Ketuk aku kalau mau dengar fakta seru!';
-  // Busu berbicara setiap kali diketuk (tidak otomatis saat halaman dibuka).
-  const voice = useSpeech({ text: tap.line ? heroText : undefined, auto: Boolean(tap.line), baseMood: tap.line?.mood ?? 'happy' });
+  // Busu langsung menyapa saat Peta Belajar dibuka, dan bicara lagi setiap kali diketuk.
+  const voice = useSpeech({
+    text: tap.line ? heroText : `Hai ${nickname ?? ''}! ${heroText}`,
+    auto: true,
+    baseMood: tap.line?.mood ?? 'happy',
+  });
   if (!ready) return null;
 
   return (
@@ -28,14 +33,16 @@ export function HomePage() {
         style={{ background: 'linear-gradient(135deg, var(--hero-from), var(--hero-to))', color: 'var(--on-hero)' }}
       >
         <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={tap.next}
-            aria-label="Ketuk Busu"
-            className="shrink-0 rounded-full bg-white/15 p-2 transition-transform active:scale-90"
-          >
-            <Busu mood={voice.mood ?? tap.line?.mood ?? 'happy'} size={84} talking={voice.speaking} />
-          </button>
+          {/* rumah Busu: sesekali ia keluar berjalan-jalan keliling layar lalu kembali ke sini */}
+          <div className="shrink-0 rounded-full bg-white/15 p-2">
+            <WanderingBusu
+              size={84}
+              mood={voice.mood ?? tap.line?.mood ?? 'happy'}
+              talking={voice.speaking}
+              onTap={tap.next}
+              label="Ketuk Busu"
+            />
+          </div>
           <div className="flex-1">
             <p className="text-xl font-bold leading-tight">Hai, {nickname}!</p>
             <p className="mt-1 text-[15px] leading-snug opacity-95" aria-live="polite">
