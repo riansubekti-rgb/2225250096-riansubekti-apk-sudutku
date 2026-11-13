@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 /**
  * Busu — maskot SudutKu: busur derajat setengah lingkaran (180°).
  * Aturan pemakaian (desain.md §9.2): besar & boleh bergerak hanya di Masuk/Beranda/layar penutup/Tanya Busu;
@@ -62,6 +64,9 @@ function Mouth({ mood, talking }: { mood: BusuMood; talking: boolean }) {
   }
 }
 
+/** jeda acak per Busu agar beberapa Busu di layar tidak bergerak serempak */
+let seq = 0;
+
 export function Busu({
   mood = 'happy',
   size = 72,
@@ -70,9 +75,15 @@ export function Busu({
 }: {
   mood?: BusuMood;
   size?: number;
+  /** (lama) diabaikan — Busu kini selalu bergerak sendiri sesekali */
   bob?: boolean;
   talking?: boolean;
 }) {
+  void bob;
+  const [delay] = useState(() => `${-((seq++ * 1.7) % 6).toFixed(1)}s`);
+  // Busu besar melompat & bergoyang sesekali; Busu kecil (di balon soal) hanya memiringkan badan
+  // agar tetap hidup tanpa terlalu mengganggu konsentrasi.
+  const idle = size > 60 ? 'busu-idle' : 'busu-idle-sm';
   const c = { x: 60, y: 84 };
   const ticks = [0, 30, 60, 90, 120, 150, 180].map((d) => {
     const r = (d * Math.PI) / 180;
@@ -87,8 +98,8 @@ export function Busu({
       height={(size * 100) / 120}
       role="img"
       aria-label="Busu, si busur derajat"
-      // Busu yang bersemangat: melompat-lompat saat berbicara, bergoyang saat diam.
-      className={talking ? 'busu-hop' : bob ? 'busu-bob' : undefined}
+      className={talking ? 'busu-hop' : idle}
+      style={talking ? undefined : { animationDelay: delay }}
     >
       {armsUp && (
         <g stroke={LINE} strokeWidth={3} strokeLinecap="round">

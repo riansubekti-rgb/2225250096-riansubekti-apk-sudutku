@@ -1,27 +1,15 @@
 {
-  "version": "0.3.0",
-  "note": "Kalimat Busu di halaman Masuk (perkenalan) dan saat Busu diketuk di Beranda. Mood: happy, think, cheer, oops, wink, wow, sad, proud.",
+  "version": "0.3.1",
+  "note": "Perkenalan di halaman Masuk = SATU kalimat utuh, diucapkan sekali saat Busu diketuk. tapLines = saat Busu diketuk di Beranda.",
   "intro": [
     {
       "mood": "cheer",
-      "text": "Haiii! Aku Busu, si busur derajat yang supeeer suka sudut!"
-    },
-    {
-      "mood": "proud",
-      "text": "Aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika. Keren, kan?"
-    },
-    {
-      "mood": "wink",
-      "text": "Aku bakal nemenin kamu supaya materi garis dan sudut jadi gampang dan seru banget!"
-    },
-    {
-      "mood": "cheer",
-      "text": "Yuk, kita mulai petualangannya! Ketik kode siswamu di bawah, yaa!"
+      "text": "Hai! Aku Busu, si busur derajat yang suka sudut, yang dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika, agar membuat kamu mudah memahami materi garis dan sudut."
     }
   ],
   "welcomeBack": {
     "mood": "cheer",
-    "text": "Yeay, kamu datang lagi! Ketik kode siswamu, yuk lanjut belajar!"
+    "text": "Hai! Aku Busu, si busur derajat yang suka sudut, yang dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika, agar membuat kamu mudah memahami materi garis dan sudut."
   },
   "tapLines": [
     {

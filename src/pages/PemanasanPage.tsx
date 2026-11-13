@@ -126,7 +126,7 @@ function Done({ correct }: { correct: number }) {
   }, [correct]);
   return (
     <div className="flex flex-col items-center gap-3 pt-4 text-center">
-      <Busu mood="cheer" size={130} bob />
+      <Busu mood="cheer" size={130} />
       <p className="text-2xl font-bold">Pemanasan selesai!</p>
       <p className="text-ink-muted">Kamu siap mengenal hubungan antar sudut.</p>
       <Link to="/kenali" className="btn-primary mt-2 w-full max-w-sm">

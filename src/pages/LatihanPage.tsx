@@ -103,7 +103,7 @@ export function LatihanPage() {
   if (phase === 'summary') {
     return (
       <div className="flex flex-col items-center gap-3 pt-2 text-center">
-        <Busu mood="cheer" size={110} bob />
+        <Busu mood="cheer" size={110} />
         <p className="text-2xl font-bold">Set {setNo} selesai!</p>
         <div className="card w-full text-left">
           <p className="mb-2 text-sm text-ink-muted">Kemampuan menghitungmu:</p>

@@ -16,8 +16,8 @@ export function HomePage() {
   const pretestPending = tasks.some((t) => t.key === 'pre');
   const tap = useBusuTap();
   const heroText = tap.line?.text ?? 'Yuk jelajahi dunia sudut bersamaku. Ketuk aku kalau mau dengar fakta seru!';
-  // Busu langsung menyapa saat Beranda dibuka, dan bicara lagi setiap kali diketuk.
-  const voice = useSpeech({ text: tap.line ? heroText : `Hai ${nickname ?? ''}! ${heroText}`, auto: true, baseMood: tap.line?.mood ?? 'happy' });
+  // Busu berbicara setiap kali diketuk (tidak otomatis saat halaman dibuka).
+  const voice = useSpeech({ text: tap.line ? heroText : undefined, auto: Boolean(tap.line), baseMood: tap.line?.mood ?? 'happy' });
   if (!ready) return null;
 
   return (
@@ -34,7 +34,7 @@ export function HomePage() {
             aria-label="Ketuk Busu"
             className="shrink-0 rounded-full bg-white/15 p-2 transition-transform active:scale-90"
           >
-            <Busu mood={voice.mood ?? tap.line?.mood ?? 'happy'} size={84} bob talking={voice.speaking} />
+            <Busu mood={voice.mood ?? tap.line?.mood ?? 'happy'} size={84} talking={voice.speaking} />
           </button>
           <div className="flex-1">
             <p className="text-xl font-bold leading-tight">Hai, {nickname}!</p>

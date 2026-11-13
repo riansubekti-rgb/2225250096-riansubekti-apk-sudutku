@@ -6,6 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.3.1] — 2026-11-14 — Busu bicara saat diketuk
+
+### Diubah
+- Suara Busu **normal** (nada & kecepatan biasa).
+- **Layar "Ketuk untuk mulai" dihapus.** Busu bicara **hanya saat diketuk** (atau tombol 🔊) di semua halaman.
+- Perkenalan di halaman Masuk menjadi **satu kalimat utuh** yang diucapkan sekali.
+- Busu **bergerak sendiri setiap beberapa detik** (lompat kecil & menoleh; di layar soal hanya miring sedikit).
+
 ## [0.3.0] — 2026-11-14 — Busu gadis remaja yang heboh + backsound
 
 ### Ditambahkan

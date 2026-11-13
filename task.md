@@ -112,6 +112,7 @@
 - [x] 7.13 12 misi dunia nyata + adegan `chair` & `square` + daftar misi
 - [x] 7.15 Busu bicara otomatis + ekspresi mengikuti kalimat + suara lucu & cepat + tombol 🔊/🔇 (D17)
 - [x] 7.16 Busu gadis remaja bersemangat + layar pembuka + backsound di layar santai (D18)
+- [x] 7.17 Revisi D19: suara normal, bicara saat diketuk, perkenalan satu kalimat, Busu bergerak sendiri
 - [ ] 7.14 Validasi isi Tanya Busu & kalimat Busu oleh peneliti/ahli (lihat content/REVIEW-konten.md §5b)
 
 ## Fase 8 — Mutu & Rilis

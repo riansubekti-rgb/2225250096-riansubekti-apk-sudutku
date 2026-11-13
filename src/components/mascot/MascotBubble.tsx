@@ -12,15 +12,15 @@ function nodeToText(node: ReactNode): string {
 }
 
 /**
- * Busu + balon kata pendek (≤ 2 kalimat). Busu langsung membacakan isinya (bila suara nyala),
- * dan ekspresinya berganti mengikuti kalimat yang sedang diucapkan. 🔊 untuk mengulang.
+ * Busu + balon kata pendek (≤ 2 kalimat). Ketuk Busu (atau 🔊) agar Busu membacakannya;
+ * ekspresinya berganti mengikuti kalimat yang sedang diucapkan.
  */
 export function MascotBubble({
   mood = 'happy',
   size = 56,
   live = false,
   say,
-  autoSpeak = true,
+  autoSpeak = false,
   children,
 }: {
   mood?: BusuMood;
@@ -42,9 +42,15 @@ export function MascotBubble({
 
   return (
     <div ref={ref} className="flex scroll-mb-24 items-end gap-2">
-      <div className="shrink-0">
+      <button
+        type="button"
+        className="shrink-0 rounded-full transition-transform active:scale-90"
+        onClick={() => text && voice.toggle(text)}
+        aria-label={voice.speaking ? 'Hentikan suara Busu' : 'Ketuk Busu untuk mendengarnya'}
+        tabIndex={text && voice.available ? 0 : -1}
+      >
         <Busu mood={voice.mood ?? mood} size={size} talking={voice.speaking} />
-      </div>
+      </button>
       <div
         role={live ? 'status' : undefined}
         aria-live={live ? 'polite' : undefined}

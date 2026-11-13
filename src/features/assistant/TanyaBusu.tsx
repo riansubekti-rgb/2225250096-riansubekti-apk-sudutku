@@ -16,13 +16,18 @@ type Msg = { from: 'user'; text: string } | { from: 'busu'; a: Answer };
 
 function BusuMsg({ a, onAsk }: { a: Answer; onAsk: (q: string) => void }) {
   const speakText = [a.text, ...(a.steps ?? []).map((s) => `${s.text}. ${s.note}.`)].join(' ');
-  // Busu langsung membacakan jawabannya; ekspresi mengikuti kalimat yang diucapkan.
-  const { speaking, toggle, available, mood } = useSpeech({ text: speakText, auto: true, baseMood: a.mood as BusuMood });
+  // Ketuk Busu atau 🔊 untuk mendengar jawabannya; ekspresi mengikuti kalimat yang diucapkan.
+  const { speaking, toggle, available, mood } = useSpeech({ text: speakText, baseMood: a.mood as BusuMood });
   return (
     <div className="flex items-start gap-2">
-      <div className="shrink-0 pt-1">
+      <button
+        type="button"
+        className="shrink-0 rounded-full pt-1 active:scale-90"
+        onClick={() => toggle(speakText)}
+        aria-label={speaking ? 'Hentikan suara Busu' : 'Ketuk Busu untuk mendengar jawabannya'}
+      >
         <Busu mood={mood ?? (a.mood as BusuMood)} size={46} talking={speaking} />
-      </div>
+      </button>
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         <div className="rounded-card rounded-tl-sm border border-line bg-surface px-3 py-2 text-[15px] leading-snug shadow-sm">
           <p>{a.text}</p>

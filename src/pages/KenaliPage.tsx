@@ -203,7 +203,7 @@ function DoneView({ score }: { score: number }) {
   const great = score >= QUIZ_COUNT - 1;
   return (
     <div className="flex flex-col items-center gap-3 pt-4 text-center">
-      <Busu mood={great ? 'cheer' : 'happy'} size={130} bob />
+      <Busu mood={great ? 'cheer' : 'happy'} size={130} />
       <p className="text-2xl font-bold">
         Kamu benar {score} dari {QUIZ_COUNT}!
       </p>

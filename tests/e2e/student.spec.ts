@@ -38,7 +38,6 @@ test('siswa: masuk → pemanasan → kenali → lab → misi 3D → ganti siswa'
 
 test('kode salah ketik ditolak', async ({ page }) => {
   await page.goto('/masuk');
-  await page.getByRole('button', { name: 'Ketuk untuk mulai' }).click();
   await page.getByLabel('Ketik kode siswamu').fill('A07J');
   await page.getByRole('button', { name: 'Masuk' }).click();
   await expect(page.getByRole('alert')).toContainText('belum tepat');

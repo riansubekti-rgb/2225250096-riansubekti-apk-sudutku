@@ -1,15 +1,7 @@
 import type { Page } from '@playwright/test';
 
-/** Lewati layar pembuka "Ketuk untuk mulai!" bila tampil. */
-export async function passGate(page: Page) {
-  const gate = page.getByRole('button', { name: 'Ketuk untuk mulai' });
-  if (await gate.isVisible().catch(() => false)) await gate.click();
-}
-
 export async function loginNew(page: Page, code: string, nickname: string) {
   await page.goto('/masuk');
-  await page.getByRole('button', { name: 'Ketuk untuk mulai' }).or(page.getByLabel('Ketik kode siswamu')).first().waitFor();
-  await passGate(page);
   await page.getByLabel('Ketik kode siswamu').fill(code);
   await page.getByRole('button', { name: 'Masuk' }).click();
   await page.getByLabel('Nama panggilan').fill(nickname);

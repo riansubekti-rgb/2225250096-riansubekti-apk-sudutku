@@ -3,8 +3,8 @@
  * tanpa layanan luar. Diucapkan per kalimat agar ekspresi Busu bisa berganti mengikuti isi kalimat.
  */
 
-/** Suara khas Busu: gadis remaja yang bersemangat — nada tinggi & tempo cepat. */
-export const VOICE = { rate: 1.25, pitch: 1.9 };
+/** Suara Busu: nada & kecepatan normal (suara perempuan Indonesia bila tersedia). */
+export const VOICE = { rate: 1, pitch: 1 };
 
 /** Ubah teks matematika menjadi kalimat yang enak dibacakan. */
 export function toSpeakable(text: string): string {

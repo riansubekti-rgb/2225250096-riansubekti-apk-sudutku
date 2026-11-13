@@ -294,7 +294,7 @@ function MissionList({ onPick }: { onPick: (i: number) => void }) {
 function AllDone() {
   return (
     <div className="flex flex-col items-center gap-3 pt-4 text-center">
-      <Busu mood="cheer" size={130} bob />
+      <Busu mood="cheer" size={130} />
       <p className="text-2xl font-bold">Semua misi selesai!</p>
       <p className="text-ink-muted">Kamu sudah memakai hubungan sudut untuk memecahkan masalah sehari-hari.</p>
       <div className="mt-2 flex w-full max-w-sm flex-col gap-3">

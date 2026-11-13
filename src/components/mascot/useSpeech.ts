@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { canSpeak, speakSentences, splitSentences, userHasInteracted } from '../../platform/speech';
+import { canSpeak, speakSentences, splitSentences } from '../../platform/speech';
 import { logEvent } from '../../data/log';
 import { moodFromText } from './moodFromText';
 import { useVoice } from './voiceStore';
 import type { BusuMood } from './Busu';
 
 /**
- * Suara Busu untuk satu balon kata.
- * - `auto`: langsung bicara saat teks muncul/berubah (bila suara nyala & layar sudah pernah disentuh).
- * - `mood`: ekspresi yang mengikuti kalimat yang sedang diucapkan (null bila diam).
+ * Suara Busu untuk satu balon kata. Busu hanya berbicara saat DIKETUK (`toggle`),
+ * atau bila `auto` diisi (dipakai Beranda tepat setelah siswa mengetuk Busu).
+ * `mood` = ekspresi yang mengikuti kalimat yang sedang diucapkan (null bila diam).
  */
 export function useSpeech(opts: { text?: string; auto?: boolean; baseMood?: BusuMood } = {}) {
   const enabled = useVoice((s) => s.enabled);
@@ -18,8 +18,9 @@ export function useSpeech(opts: { text?: string; auto?: boolean; baseMood?: Busu
   const base = opts.baseMood ?? 'happy';
 
   const play = useCallback(
-    (text: string) => {
-      const sentences = splitSentences(text);
+    (text: string, whole = false) => {
+      // whole: ucapkan sekali jalan tanpa dipecah per kalimat (perkenalan di halaman Masuk)
+      const sentences = whole ? [text] : splitSentences(text);
       setSpeaking(true);
       setMood(moodFromText(sentences[0] ?? '', base));
       cancel.current = speakSentences(sentences, {
@@ -37,23 +38,22 @@ export function useSpeech(opts: { text?: string; auto?: boolean; baseMood?: Busu
   useEffect(() => () => cancel.current?.(), []);
 
   useEffect(() => {
-    if (!opts.auto || !opts.text || !enabled || !canSpeak() || !userHasInteracted()) return;
-    const t = window.setTimeout(() => play(opts.text!), 150);
-    return () => window.clearTimeout(t);
-    // bicara ulang hanya bila teksnya berubah
+    if (!opts.auto || !opts.text || !enabled || !canSpeak()) return;
+    play(opts.text);
+    // bicara hanya bila teksnya berubah (mis. setelah Busu diketuk)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [opts.text, opts.auto, enabled]);
 
-  const toggle = (text?: string) => {
+  const toggle = (text?: string, o: { whole?: boolean } = {}) => {
     if (speaking) {
       cancel.current?.();
       return;
     }
     const t = text ?? opts.text;
-    if (!t) return;
+    if (!t || !enabled) return;
     void logEvent('busu_speak', { length: t.length });
-    play(t);
+    play(t, o.whole);
   };
 
-  return { speaking, mood, toggle, available: canSpeak() };
+  return { speaking, mood, toggle, available: canSpeak() && enabled };
 }

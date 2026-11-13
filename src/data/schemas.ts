@@ -250,7 +250,7 @@ export const AccessCodesSchema = z.object({
 });
 
 const MoodSchema = z.enum(['happy', 'think', 'cheer', 'oops', 'wink', 'wow', 'sad', 'proud']);
-const BusuLineSchema = z.object({ mood: MoodSchema, text: z.string().max(160) });
+const BusuLineSchema = z.object({ mood: MoodSchema, text: z.string().max(220) });
 
 export const TanyaSchema = z.object({
   version: z.string(),

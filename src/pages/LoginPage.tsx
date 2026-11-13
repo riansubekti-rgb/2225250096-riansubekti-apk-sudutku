@@ -1,8 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { BusuIntro } from '../components/mascot/BusuIntro';
-import { StartGate } from '../components/mascot/StartGate';
-import { userHasInteracted } from '../platform/speech';
 import { MascotBubble } from '../components/mascot/MascotBubble';
 import { isValidStudentCode, makeStudentCode, normalizeCode } from '../domain/profile/studentCode';
 import { createProfile, findProfile } from '../data/profiles';
@@ -24,8 +22,6 @@ export function LoginPage() {
   const [code, setCode] = useState('');
   const [nickname, setNickname] = useState('');
   const [error, setError] = useState('');
-  // Layar pembuka hanya bila layar belum pernah disentuh (agar Busu bisa langsung bersuara).
-  const [gate, setGate] = useState(() => !userHasInteracted());
 
   if (profile) return <Navigate to="/" replace />;
 
@@ -57,8 +53,7 @@ export function LoginPage() {
 
   return (
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col gap-5 pt-2">
-      {gate && <StartGate onStart={() => setGate(false)} />}
-      {step.kind === 'code' && !gate && (
+      {step.kind === 'code' && (
         <>
           <BusuIntro />
           <form onSubmit={submitCode} className="card flex flex-col gap-3">

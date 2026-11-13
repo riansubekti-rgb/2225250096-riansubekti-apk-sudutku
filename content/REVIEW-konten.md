@@ -267,10 +267,7 @@ _Catatan validator:_ ______________________________________
 ## 5b. Maskot Busu & Tanya Busu
 
 **Perkenalan di halaman Masuk:**
-- (cheer) Haiii! Aku Busu, si busur derajat yang supeeer suka sudut!
-- (proud) Aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika. Keren, kan?
-- (wink) Aku bakal nemenin kamu supaya materi garis dan sudut jadi gampang dan seru banget!
-- (cheer) Yuk, kita mulai petualangannya! Ketik kode siswamu di bawah, yaa!
+- (cheer) Hai! Aku Busu, si busur derajat yang suka sudut, yang dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika, agar membuat kamu mudah memahami materi garis dan sudut.
 
 **Kalimat saat Busu diketuk di Beranda:**
 - (proud) Tahukah kamu? Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180 derajat! Hebat, kan?
