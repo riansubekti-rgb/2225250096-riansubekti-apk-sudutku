@@ -149,9 +149,78 @@ function kite(a: number, labels: [string, string]): BuiltScene {
   };
 }
 
+/** Kursi lipat pantai — dua pasang kaki bersilangan (huruf X), bidang XY. Sudut atas a, bawah bertolak belakang. */
+function chair(a: number, labels: [string, string]): BuiltScene {
+  const root = new THREE.Group();
+  const L = 1.7;
+  const half = (a / 2) * R;
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(6, 3), mat(0xd9d4c7));
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = -L * Math.cos(half);
+  root.add(floor);
+  for (const z of [-0.45, 0.45]) {
+    for (const deg of [90 - a / 2, 90 + a / 2]) {
+      const leg = box(2 * L, 0.09, 0.09, 0x8d6e63);
+      leg.rotation.z = deg * R;
+      leg.position.set(0, 0, z + (deg > 90 ? 0.05 : 0));
+      root.add(leg);
+    }
+  }
+  const seat = box(2 * L * Math.sin(half), 0.05, 1.0, 0xef9a9a);
+  seat.position.set(0, L * Math.cos(half), 0);
+  root.add(seat);
+  return {
+    root,
+    plane: { origin: new THREE.Vector3(0, 0, 0.56), u: new THREE.Vector3(1, 0, 0), v: new THREE.Vector3(0, 1, 0) },
+    arcs: [
+      { from: 90 - a / 2, to: 90 + a / 2, label: labels[0], colored: true },
+      { from: 270 - a / 2, to: 270 + a / 2, label: labels[1], colored: true },
+    ],
+    arcRadius: 0.5,
+    camera: { pos: [2.6, 1.2, 4.6], target: [0, 0, 0] },
+    planar: { pos: [0, 0, 6.2], target: [0, 0, 0] },
+  };
+}
+
+/** Penggaris siku tukang kayu + garis miring dari pojoknya — bidang XY. Sudut a dan 90° − a. */
+function square(a: number, labels: [string, string]): BuiltScene {
+  const root = new THREE.Group();
+  const board = new THREE.Mesh(new THREE.PlaneGeometry(4.2, 3.2), mat(0xe6cfa7));
+  board.position.set(1.1, 0.9, -0.05);
+  root.add(board);
+  const armH = box(2.9, 0.28, 0.05, 0x90a4ae);
+  armH.position.set(1.17, -0.14, 0);
+  root.add(armH);
+  const armV = box(0.28, 2.3, 0.05, 0x90a4ae);
+  armV.position.set(-0.14, 1.15, 0);
+  root.add(armV);
+  const line = box(2.5, 0.03, 0.01, 0x37474f);
+  line.rotation.z = a * R;
+  line.position.set(1.25 * Math.cos(a * R), 1.25 * Math.sin(a * R), 0.01);
+  root.add(line);
+  const pencil = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.9, 8), mat(0xffca28));
+  pencil.rotation.z = (a - 90) * R;
+  pencil.position.set(2.75 * Math.cos(a * R), 2.75 * Math.sin(a * R), 0.12);
+  root.add(pencil);
+  return {
+    root,
+    plane: { origin: new THREE.Vector3(0, 0, 0.06), u: new THREE.Vector3(1, 0, 0), v: new THREE.Vector3(0, 1, 0) },
+    arcs: [
+      { from: 0, to: a, label: labels[0], colored: true },
+      { from: a, to: 90, label: labels[1], colored: true, outer: true },
+    ],
+    arcRadius: 0.75,
+    rightMark: true,
+    camera: { pos: [2.2, 1.4, 4.8], target: [0.9, 0.8, 0] },
+    planar: { pos: [0.9, 0.9, 5.8], target: [0.9, 0.9, 0] },
+  };
+}
+
 export const SCENES: Record<SceneId, (a: number, labels: [string, string]) => BuiltScene> = {
   crossbuck,
   door,
   garden,
   kite,
+  chair,
+  square,
 };

@@ -205,7 +205,7 @@ export const MissionsSchema = z.object({
   missions: z.array(
     z.object({
       id: z.string(),
-      sceneId: z.enum(['crossbuck', 'door', 'garden', 'kite']),
+      sceneId: z.enum(['crossbuck', 'door', 'garden', 'kite', 'chair', 'square']),
       title: z.string(),
       context: z.string().max(220),
       ask: z.string(),
@@ -247,6 +247,35 @@ export const AccessCodesSchema = z.object({
       }),
     }),
   ),
+});
+
+const MoodSchema = z.enum(['happy', 'think', 'cheer', 'oops', 'wink', 'wow', 'sad', 'proud']);
+const BusuLineSchema = z.object({ mood: MoodSchema, text: z.string().max(160) });
+
+export const TanyaSchema = z.object({
+  version: z.string(),
+  note: z.string().optional(),
+  greeting: z.string(),
+  suggestions: z.array(z.string()).min(1),
+  fallback: z.object({ mood: MoodSchema, text: z.string(), followups: z.array(z.string()).optional() }),
+  entries: z.array(
+    z.object({
+      id: z.string(),
+      keywords: z.array(z.string().regex(/^[a-z0-9 &]+$/, 'kata kunci huruf kecil')).min(1),
+      mood: MoodSchema,
+      answer: z.string().max(320),
+      figure: FigureSpecSchema.optional(),
+      followups: z.array(z.string()).optional(),
+    }),
+  ),
+});
+
+export const BusuContentSchema = z.object({
+  version: z.string(),
+  note: z.string().optional(),
+  intro: z.array(BusuLineSchema).min(1),
+  welcomeBack: BusuLineSchema,
+  tapLines: z.array(BusuLineSchema).min(2),
 });
 
 export type Worked = z.infer<typeof WorkedSchema>;

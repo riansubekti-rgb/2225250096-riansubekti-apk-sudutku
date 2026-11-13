@@ -28,6 +28,7 @@ export const EXTRA_TITLES: Record<string, string> = {
   '/tes/akhir': 'Tes Akhir',
   '/peneliti': 'Mode Peneliti',
   '/kode': 'Kode dari Guru',
+  '/tanya': 'Tanya Busu',
 };
 
 /** Halaman yang boleh dibuka tanpa login siswa. */

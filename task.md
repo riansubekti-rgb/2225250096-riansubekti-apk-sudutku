@@ -85,7 +85,7 @@
 - [x] 6.6 Adegan: rangka layang-layang (pengganti persimpangan — D14)
 - ~~6.7 Adegan: palang kereta~~ — dibatalkan (konteks butir tes, D14)
 - [x] 6.8 Transisi "Lihat sebagai gambar 2D"
-- [x] 6.9 F7 Misi Dunia Nyata (rumuskan → terapkan → tafsirkan) — 5 misi (target 6–10)
+- [x] 6.9 F7 Misi Dunia Nyata (rumuskan → terapkan → tafsirkan) — 12 misi
 - [ ] 6.10 Integrasi tombol "Lihat di dunia nyata" pada kartu konsep
 - **Selesai bila:** ≥ 30 fps & memori ≤ 150 MB pada perangkat kelas bawah; tidak ada kebocoran memori setelah 10× buka-tutup adegan.
 
@@ -105,6 +105,12 @@
 - [x] 7.8 Kode dari guru (D13) untuk membuka instrumen di banyak HP
 - [x] 7.9 Tes E2E Playwright (alur siswa, penelitian, mode pesawat) di 360×640 & tablet — 8/8 lulus
 - [x] 7.10 Ikon PNG 192/512/maskable/apple-touch; service worker didaftarkan saat aplikasi dibuka
+
+## Fase 7c — v0.2 (14 Nov 2026)
+- [x] 7.11 Busu 8 ekspresi + mulut bicara + suara TTS + perkenalan di Masuk + ketuk di Beranda (D16)
+- [x] 7.12 F15 Tanya Busu offline: bank 27 topik, kalkulator langkah, salah ketik, fallback jujur (D15)
+- [x] 7.13 12 misi dunia nyata + adegan `chair` & `square` + daftar misi
+- [ ] 7.14 Validasi isi Tanya Busu & kalimat Busu oleh peneliti/ahli (lihat content/REVIEW-konten.md §5b)
 
 ## Fase 8 — Mutu & Rilis
 - [ ] 8.1 Audit aksesibilitas (kontras, ukuran font 130%, pembaca layar dasar)

@@ -7,7 +7,9 @@ import warmup from '../../content/warmup/warmup.json';
 import missions from '../../content/literacy/missions.json';
 import paas from '../../content/instruments/paas.json';
 import access from '../../content/instruments/access-codes.json';
-import { AccessCodesSchema, ConceptsSchema, LiteracyTestSchema, MissionsSchema, PaasSchema, TemplatesSchema, WarmupSchema, WorkedSchema } from './schemas';
+import tanya from '../../content/mascot/tanya.json';
+import busu from '../../content/mascot/busu.json';
+import { AccessCodesSchema, BusuContentSchema, TanyaSchema, ConceptsSchema, LiteracyTestSchema, MissionsSchema, PaasSchema, TemplatesSchema, WarmupSchema, WorkedSchema } from './schemas';
 import { generateFromTemplate, pairKey } from '../domain/problems/generator';
 import { isTestItem, testKeyCount } from './exclusions';
 import { parseLinear, solveRelation } from '../domain/algebra/linear';
@@ -49,6 +51,12 @@ describe('template latihan', () => {
       }
   });
   it('skala Paas lolos skema', () => expect(PaasSchema.parse(paas).max).toBe(9));
+  it('Busu & Tanya Busu lolos skema; id unik; perkenalan menyebut pembuat', () => {
+    const t = TanyaSchema.parse(tanya);
+    const ids = t.entries.map((e) => e.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(BusuContentSchema.parse(busu).intro.map((l) => l.text).join(' ')).toContain('Rian Subekti');
+  });
   it('kode dari guru unik & lolos skema', () => {
     const c = AccessCodesSchema.parse(access).codes.map((x) => x.code);
     expect(new Set(c).size).toBe(c.length);

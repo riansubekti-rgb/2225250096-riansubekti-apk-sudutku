@@ -13,6 +13,7 @@ import { PemanasanPage } from '../pages/PemanasanPage';
 import { MisiPage } from '../pages/MisiPage';
 import { ProgresPage } from '../pages/ProgresPage';
 import { KodePage } from '../pages/KodePage';
+import { TanyaPage } from '../pages/TanyaPage';
 import { AngketPage } from '../pages/AngketPage';
 import { PenelitiPage } from '../pages/PenelitiPage';
 import { PlaceholderPage } from '../pages/PlaceholderPage';
@@ -46,6 +47,7 @@ export function App() {
           <Route path="/angket/:id" element={<AngketPage />} />
           <Route path="/peneliti" element={<PenelitiPage />} />
           <Route path="/kode" element={<KodePage />} />
+          <Route path="/tanya" element={<TanyaPage />} />
           {ROUTES.filter((r) => r.path !== '/').map((r) => {
             const Page = PAGES[r.path];
             return <Route key={r.path} path={r.path} element={Page ? <Page /> : <PlaceholderPage title={r.title} />} />;

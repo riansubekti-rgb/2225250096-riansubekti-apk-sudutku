@@ -191,6 +191,132 @@ _Catatan validator:_ ______________________________________
   - Ya, karena 2x + x + 15 = 180.
 - Penjelasan: Sudut berpenyiku masing-masing harus kurang dari 90°. Tukang taman memakai 180°, padahal seharusnya 90°.
 
+### Misi 6: Kursi Lipat Pantai — konteks personal, Bertolak belakang
+- Konteks: Kaki kursi lipat pantai bersilangan membentuk huruf X. Sudut antara kedua kaki di bagian atas 64°.
+- Pertanyaan: Berapa besar sudut antara kedua kaki di bagian bawah?
+- Jawaban: x = 64; sudut 64° dan 64°
+- Tafsirkan: Kursi dilipat lebih rapat sehingga sudut atasnya menjadi 40°. Berapa sudut bawahnya sekarang?
+  - **40° ✅**
+  - 140°
+  - 64°
+- Penjelasan: Sudut atas dan bawah bertolak belakang, jadi selalu sama besar: 40°.
+
+### Misi 7: Penggaris Siku Tukang Kayu — konteks occupational, Berpenyiku
+- Konteks: Tukang kayu meletakkan penggaris siku di papan, lalu menarik garis miring dari pojoknya. Garis itu membentuk sudut 24° dengan sisi mendatar.
+- Pertanyaan: Berapa besar sudut antara garis miring dan sisi tegak?
+- Jawaban: x = 66; sudut 24° dan 66°
+- Tafsirkan: Tukang kayu ingin garis miring membagi pojok menjadi dua sudut yang sama besar. Berapa besar masing-masing?
+  - **45° ✅**
+  - 90°
+  - 24°
+- Penjelasan: Pojok penggaris siku besarnya 90°. Jika dibagi sama besar: 90° : 2 = 45°.
+
+### Misi 8: Pintu Gerbang Sekolah — konteks societal, Berpelurus
+- Konteks: Dilihat dari atas, pagar dan ambang gerbang membentuk garis lurus. Sudut pintu dengan ambang (2x + 20)° dan sudut pintu dengan pagar (x + 10)°.
+- Pertanyaan: Hitung nilai x dan besar kedua sudut.
+- Jawaban: x = 50; sudut 120° dan 60°
+- Tafsirkan: Sudut mana yang lebih besar, dan berapa selisihnya?
+  - **Sudut pintu–ambang, selisihnya 60°. ✅**
+  - Sudut pintu–pagar, selisihnya 60°.
+  - Keduanya sama besar.
+- Penjelasan: Sudut pintu–ambang 120° dan sudut pintu–pagar 60°. Selisihnya 120° − 60° = 60°.
+
+### Misi 9: Rambu Silang Baru — konteks societal, Bertolak belakang
+- Konteks: Rambu silang lain dibuat dengan sudut atas (4x − 30)° dan sudut bawah (2x + 20)°.
+- Pertanyaan: Hitung nilai x dan besar sudut atasnya.
+- Jawaban: x = 25; sudut 70° dan 70°
+- Tafsirkan: Berapa besar sudut di samping rambu (di antara sudut atas dan sudut bawah)?
+  - **110° ✅**
+  - 70°
+  - 180°
+- Penjelasan: Sudut samping berpelurus dengan sudut atas: 180° − 70° = 110°.
+
+### Misi 10: Kursi Lipat Taman — konteks personal, Bertolak belakang
+- Konteks: Pada kursi lipat lain, sudut atas antara kakinya (2x + 15)° dan sudut bawahnya (3x − 10)°.
+- Pertanyaan: Hitung nilai x dan besar kedua sudut.
+- Jawaban: x = 25; sudut 65° dan 65°
+- Tafsirkan: Rina menjawab x = 35 karena ia menulis 2x + 15 + 3x − 10 = 180. Apa kesalahannya?
+  - **Sudut atas dan bawah bertolak belakang, jadi harus sama besar, bukan berjumlah 180°. ✅**
+  - Seharusnya jumlahnya 90°.
+  - Tidak ada yang salah.
+- Penjelasan: Aturan yang tepat: 2x + 15 = 3x − 10, sehingga x = 25 dan kedua sudut 65°.
+
+### Misi 11: Layang-Layang Festival — konteks personal, Berpelurus
+- Konteks: Pada layang-layang festival, salah satu sudut di persilangan kedua bilah besarnya 118°.
+- Pertanyaan: Berapa besar sudut yang bersebelahan dengannya?
+- Jawaban: x = 62; sudut 118° dan 62°
+- Tafsirkan: Berapa besar sudut yang bertolak belakang dengan sudut 118° itu?
+  - **118° ✅**
+  - 62°
+  - 180°
+- Penjelasan: Sudut bertolak belakang sama besar, jadi 118°.
+
+### Misi 12: Garis Potong di Papan — konteks occupational, Berpenyiku
+- Konteks: Garis miring dari pojok penggaris siku membagi pojok menjadi sudut (x + 20)° dan (2x + 10)°.
+- Pertanyaan: Hitung nilai x dan besar kedua sudut.
+- Jawaban: x = 20; sudut 40° dan 50°
+- Tafsirkan: Apakah garis miring itu lebih dekat ke sisi mendatar atau ke sisi tegak?
+  - **Lebih dekat ke sisi mendatar, karena sudutnya dengan sisi mendatar lebih kecil (40°). ✅**
+  - Lebih dekat ke sisi tegak.
+  - Tepat di tengah.
+- Penjelasan: Sudut dengan sisi mendatar 40°, lebih kecil dari 50°, jadi garisnya lebih dekat ke sisi mendatar.
+
+
+_Catatan validator:_ ______________________________________
+
+## 5b. Maskot Busu & Tanya Busu
+
+**Perkenalan di halaman Masuk:**
+- (happy) Hai! Aku Busu, si busur derajat yang suka sudut.
+- (proud) Aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika.
+- (wink) Tugasku menemanimu supaya kamu mudah memahami materi garis dan sudut.
+- (cheer) Yuk mulai! Ketik kode siswamu di bawah, ya.
+
+**Kalimat saat Busu diketuk di Beranda:**
+- (proud) Tahukah kamu? Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180°!
+- (think) Pelurus = lurus = 180°. Penyiku = siku = 90°. Gampang diingat, kan?
+- (wink) Sudut bertolak belakang itu seperti anak kembar: besarnya selalu sama.
+- (wow) Hihi, geli! Ayo lanjut belajar.
+- (cheer) Ada yang belum paham? Ketuk Tanya Busu, aku siap membantu!
+- (happy) Coba lihat sekelilingmu. Pintu, jendela, dan meja penuh dengan sudut!
+- (think) Kalau melihat tanda kotak kecil ∟, ingat: itu sudut siku-siku, 90°.
+- (proud) Setiap kali kamu salah lalu mencoba lagi, otakmu sedang bertambah kuat!
+
+**Tanya Busu (offline, bukan AI)** — sapaan: Hai! Aku Busu. Tanyakan apa saja tentang garis dan sudut. Kamu juga bisa mengetik soal, misalnya “2x + 4x = 90” atau “penyiku dari 35”.
+
+| Topik | Contoh kata kunci | Jawaban Busu |
+|---|---|---|
+| salam | halo, hai, hi | Hai juga! Senang bertemu kamu. Mau tanya apa tentang sudut hari ini? |
+| terima-kasih | terima kasih, oke paham, sudah paham | Sama-sama! Senang bisa membantu. Semangat terus belajarnya! |
+| siapa-busu | siapa kamu, kamu siapa, siapa busu | Aku Busu, si busur derajat yang suka sudut! Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180°. |
+| pembuat | siapa pembuat, yang membuat, siapa yang buat | SudutKu dan aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika. Tujuannya supaya kamu mudah memahami materi garis dan sudut. |
+| sudut | apa itu sudut, pengertian sudut, sudut adalah | Sudut terbentuk dari dua sinar yang berawal di satu titik. Titik itu disebut titik sudut, dan besar sudut diukur dalam derajat (°). |
+| derajat | derajat, satuan sudut, busur derajat | Besar sudut diukur dalam derajat (°) memakai busur derajat, seperti aku! Garis lurus besarnya 180°, sudut siku-siku 90°, dan satu putaran penuh 360°. |
+| jenis-sudut | lancip, tumpul, refleks | Sudut lancip kurang dari 90°. Sudut siku-siku tepat 90°, sudut tumpul antara 90° dan 180°, dan sudut lurus tepat 180°. |
+| siku | siku, sudut siku, tanda kotak | Sudut siku-siku besarnya 90°. Tandanya kotak kecil ∟ di titik sudut. Kalau kamu melihat tanda ini, ingat: jumlahnya 90°! |
+| lurus | sudut lurus, garis lurus, apa itu sudut lurus | Garis lurus membentuk sudut 180°. Kalau sebuah sinar membagi garis lurus menjadi dua sudut, jumlah kedua sudut itu tetap 180°. |
+| pelurus | pelurus, sudut pelurus, apa itu pelurus | Dua sudut berpelurus jika keduanya membentuk garis lurus. Jumlahnya selalu 180°. Contoh: 65° dan 115°. |
+| penyiku | penyiku, sudut penyiku, apa itu penyiku | Dua sudut berpenyiku jika keduanya membentuk sudut siku-siku. Jumlahnya selalu 90°. Contoh: 35° dan 55°. |
+| tolak-belakang | tolak belakang, tolak, berhadapan | Saat dua garis berpotongan, sudut-sudut yang saling berhadapan disebut sudut bertolak belakang. Besarnya selalu sama! |
+| beda-pelurus-penyiku | beda&pelurus&penyiku, tertukar&pelurus&penyiku, bedakan&pelurus&penyiku | Lihat gambarnya dulu! Kalau kedua sudut membentuk garis lurus, itu berpelurus (180°). Kalau ada tanda ∟, itu berpenyiku (90°). Ingat: peLURUS = lurus, penySIKU = siku. |
+| kenapa-tolak | kenapa&tolak, kenapa&sama besar, bukti&tolak | Misalkan sudut a dan b bertolak belakang, dan sudut c ada di antaranya. a + c = 180° dan b + c = 180°, jadi a = 180° − c = b. Karena itu besarnya pasti sama! |
+| cari-x | cari x, mencari x, nilai x | Pakai 4 langkah: Kenali hubungannya, tulis Aturannya (= 180, = 90, atau sama dengan), Hitung x, lalu Periksa. Coba ketik soalnya, misalnya “2x + 4x = 90”, nanti aku tunjukkan langkahnya! |
+| kahp | langkah, cara mengerjakan, cara menjawab | Ingat K-A-H-P! Kenali jenis hubungannya, tulis Aturannya, Hitung, lalu Periksa apakah jawabannya cocok dengan sifat sudutnya. |
+| periksa | periksa, cek jawaban, masuk akal | Masukkan jawabanmu ke sifat sudutnya. Berpelurus: jumlahnya harus 180°. Berpenyiku: jumlahnya 90°. Bertolak belakang: keduanya harus sama besar. |
+| x-atau-sudut | x atau sudut, yang ditanya, besar sudutnya | Jangan berhenti di nilai x! Kalau yang ditanya besar sudut, ganti x ke ekspresinya. Contoh: x = 15 dan sudutnya 2x, jadi besar sudutnya 2 × 15 = 30°. |
+| pindah-ruas | pindah ruas, ruas, tanda berubah | Yang kita lakukan pada satu ruas harus dilakukan juga pada ruas lain. Kalau +10 dipindah ke kanan, kurangi kedua ruas dengan 10, sehingga tandanya seperti berubah menjadi −10. |
+| empat-sudut | empat sudut, 4 sudut, sekitar titik | Empat sudut di sekitar titik potong dua garis jumlahnya 360°, satu putaran penuh. Sudut yang bersebelahan berpelurus (180°), dan yang berhadapan sama besar. |
+| contoh-nyata | kehidupan sehari, contoh nyata, dunia nyata | Banyak sekali! Pintu yang dibuka terhadap dinding (berpelurus), pojok taman atau meja (siku-siku), dan rambu silang perlintasan (bertolak belakang). Coba Misi Dunia Nyata untuk melihatnya dalam 3D! |
+| tiga-d | 3d, putar gambar, lihat sebagai 2d | Di Misi Dunia Nyata, geser gambar dengan satu jari untuk memutarnya, dan cubit untuk memperbesar. Ketuk “Lihat sebagai 2D” untuk melihat model matematikanya. |
+| tes | pretest, posttest, tes awal | Tes Awal dan Tes Akhir dikerjakan sendiri tanpa bantuanku, ya. Dari situ gurumu bisa tahu seberapa besar kemajuanmu. Kamu pasti bisa! |
+| lupa-kode | lupa kode, kode siswa, kode hilang | Kode siswamu ada di kartu dari guru. Kalau kartunya hilang, tanyakan ke gurumu, ya. Jangan memakai kode teman supaya progresmu tidak tercampur. |
+| bingung | susah, sulit, pusing | Tidak apa-apa, semua orang pernah bingung. Coba buka Contoh Bertahap, langkahnya dibuka pelan-pelan. Atau tanyakan bagian yang membingungkan, aku bantu! |
+| bosan | bosan, malas, ngantuk | Wah, ayo semangat! Coba Lab Sudut: geser garisnya dan lihat angkanya berubah. Atau kumpulkan lencana di Misi Dunia Nyata! |
+| garis-sejajar | sehadap, berseberangan, sejajar | Sudut pada garis sejajar (sehadap, berseberangan) akan kamu pelajari nanti. Di SudutKu kita fokus pada sudut berpelurus, berpenyiku, dan bertolak belakang dulu, ya. |
+
+Jawaban bila tidak paham: Hmm, aku belum paham pertanyaanmu. Aku hanya tahu tentang garis dan sudut. Coba pakai kata lain, atau pilih salah satu pertanyaan di bawah ini.
+
+Selain bank di atas, Busu menghitung otomatis persamaan x (mis. 2x + 4x = 90) dan pasangan sudut (mis. penyiku dari 35) dengan langkah-langkah.
 
 _Catatan validator:_ ______________________________________
 

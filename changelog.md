@@ -6,6 +6,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.2.0] — 2026-11-14 — Busu lebih hidup, Tanya Busu, 12 misi
+
+### Ditambahkan
+- **Busu**: 8 ekspresi (senang, berpikir, bersorak, ups, mengedip, kagum, sedih, bangga), mulut bergerak saat berbicara, suara text-to-speech bawaan HP (tombol 🔊), perkenalan di halaman Masuk yang menyebut pembuat (Kak Rian Subekti), Busu bisa diketuk di Beranda.
+- **Tanya Busu** (offline): 27 topik tanya-jawab, kalkulator persamaan x & pasangan sudut dengan langkah, toleran salah ketik & bahasa sehari-hari, jujur bila tidak tahu. Bisa dibuka sebagai halaman atau lembar melayang (💬) di halaman belajar.
+- **Misi Dunia Nyata**: 12 misi (dari 5), adegan 3D baru *kursi lipat* & *penggaris siku*, daftar misi dengan tanda selesai.
+- Tes: 128 unit test, 10 tes E2E.
+
+### Privasi
+- Teks pertanyaan Tanya Busu **tidak disimpan**; yang dicatat hanya jenis jawaban (`ask_busu`).
+
 ## [0.1.0] — 2026-11-14 — Prototipe lengkap (siap uji coba terbatas)
 
 ### Ditambahkan

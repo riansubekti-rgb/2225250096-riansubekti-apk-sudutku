@@ -12,13 +12,14 @@ SudutKu dikembangkan untuk penelitian R&D (ADDIE) S1 Pendidikan Matematika. Ranc
 
 ## Fitur
 
-**Untuk siswa** (ditemani maskot Busu, si busur derajat)
+**Untuk siswa** (ditemani maskot Busu, si busur derajat — 8 ekspresi, bisa berbicara 🔊)
 1. **Pemanasan:** istilah dasar dan cek prasyarat.
 2. **Kenali Hubungan:** satu konsep per layar, gambar berwarna, kuis identifikasi.
 3. **Lab Sudut:** seret garis, angka dan persamaan berubah langsung di gambar.
 4. **Contoh Bertahap:** langkah *Kenali → Aturan → Hitung → Periksa* dibuka satu per satu, lalu siswa mengerjakan soal kembar.
 5. **Latihan adaptif:** bantuan berkurang saat siswa makin mahir; umpan balik menyasar miskonsepsi; skala usaha mental setiap 5 soal.
-6. **Misi Dunia Nyata (3D, Three.js):** rumuskan → terapkan → tafsirkan (literasi matematis PISA).
+6. **Misi Dunia Nyata (3D, Three.js):** 12 misi; rumuskan → terapkan → tafsirkan (literasi matematis PISA).
+8. **Tanya Busu:** tanya apa saja tentang garis & sudut, atau ketik soal — Busu menjawab & menghitung dengan langkah (offline).
 7. **Progres & lencana.**
 
 **Untuk peneliti**
@@ -84,7 +85,7 @@ Langkah ini cukup dilakukan sekali. Setelah itu, setiap perubahan otomatis ikut 
 > ⚠️ Selama penelitian, siswa **jangan menghapus data Chrome**, karena progres tersimpan di HP.
 
 ## Status
-✅ **Prototipe lengkap v0.1, siap uji coba terbatas.** Semua fitur M (Must) di PRD sudah berjalan dan teruji otomatis.
+✅ **v0.2, siap uji coba terbatas.** Semua fitur M (Must) di PRD sudah berjalan dan teruji otomatis.
 ⏳ Sebelum uji coba resmi: **validasi ahli** atas butir tes, angket, dan materi (masih berstatus DRAF), lalu pasang online.
 
 ## Kredit

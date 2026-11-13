@@ -1,0 +1,472 @@
+{
+  "version": "0.1.0-draft",
+  "note": "Bank tanya-jawab Tanya Busu (offline, tanpa AI). Kata kunci ditulis huruf kecil; 'a&b' = semua kata harus ada. Jawaban ≤ 3 kalimat (beban kognitif rendah). DRAF — perlu ditinjau peneliti.",
+  "greeting": "Hai! Aku Busu. Tanyakan apa saja tentang garis dan sudut. Kamu juga bisa mengetik soal, misalnya “2x + 4x = 90” atau “penyiku dari 35”.",
+  "suggestions": [
+    "Apa itu sudut berpelurus?",
+    "Apa bedanya pelurus dan penyiku?",
+    "Kenapa sudut bertolak belakang sama besar?",
+    "Bagaimana cara mencari x?",
+    "Penyiku dari 35 berapa?",
+    "2x + 4x = 90"
+  ],
+  "fallback": {
+    "mood": "think",
+    "text": "Hmm, aku belum paham pertanyaanmu. Aku hanya tahu tentang garis dan sudut. Coba pakai kata lain, atau pilih salah satu pertanyaan di bawah ini.",
+    "followups": [
+      "Apa itu sudut berpelurus?",
+      "Apa itu sudut berpenyiku?",
+      "Apa itu sudut bertolak belakang?",
+      "Bagaimana cara mencari x?"
+    ]
+  },
+  "entries": [
+    {
+      "id": "salam",
+      "keywords": [
+        "halo",
+        "hai",
+        "hi",
+        "hallo",
+        "pagi",
+        "siang",
+        "sore",
+        "malam",
+        "assalamualaikum",
+        "permisi"
+      ],
+      "mood": "happy",
+      "answer": "Hai juga! Senang bertemu kamu. Mau tanya apa tentang sudut hari ini?",
+      "followups": [
+        "Apa itu sudut berpelurus?",
+        "Apa bedanya pelurus dan penyiku?",
+        "Bagaimana cara mencari x?"
+      ]
+    },
+    {
+      "id": "terima-kasih",
+      "keywords": [
+        "terima kasih",
+        "oke paham",
+        "sudah paham",
+        "mengerti sekarang"
+      ],
+      "mood": "cheer",
+      "answer": "Sama-sama! Senang bisa membantu. Semangat terus belajarnya!"
+    },
+    {
+      "id": "siapa-busu",
+      "keywords": [
+        "siapa kamu",
+        "kamu siapa",
+        "siapa busu",
+        "busu itu",
+        "kamu apa",
+        "nama kamu"
+      ],
+      "mood": "proud",
+      "answer": "Aku Busu, si busur derajat yang suka sudut! Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180°.",
+      "followups": [
+        "Siapa yang membuat SudutKu?",
+        "Apa itu derajat?"
+      ]
+    },
+    {
+      "id": "pembuat",
+      "keywords": [
+        "siapa pembuat",
+        "yang membuat",
+        "siapa yang buat",
+        "dibuat oleh",
+        "pembuat aplikasi",
+        "rian"
+      ],
+      "mood": "proud",
+      "answer": "SudutKu dan aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika. Tujuannya supaya kamu mudah memahami materi garis dan sudut."
+    },
+    {
+      "id": "sudut",
+      "keywords": [
+        "apa itu sudut",
+        "pengertian sudut",
+        "sudut adalah",
+        "arti sudut",
+        "sudut itu apa",
+        "definisi sudut"
+      ],
+      "mood": "happy",
+      "answer": "Sudut terbentuk dari dua sinar yang berawal di satu titik. Titik itu disebut titik sudut, dan besar sudut diukur dalam derajat (°).",
+      "followups": [
+        "Apa itu derajat?",
+        "Apa saja jenis sudut?"
+      ]
+    },
+    {
+      "id": "derajat",
+      "keywords": [
+        "derajat",
+        "satuan sudut",
+        "busur derajat",
+        "mengukur sudut",
+        "cara mengukur"
+      ],
+      "mood": "proud",
+      "answer": "Besar sudut diukur dalam derajat (°) memakai busur derajat, seperti aku! Garis lurus besarnya 180°, sudut siku-siku 90°, dan satu putaran penuh 360°."
+    },
+    {
+      "id": "jenis-sudut",
+      "keywords": [
+        "lancip",
+        "tumpul",
+        "refleks",
+        "jenis sudut",
+        "macam sudut",
+        "jenis jenis sudut"
+      ],
+      "mood": "think",
+      "answer": "Sudut lancip kurang dari 90°. Sudut siku-siku tepat 90°, sudut tumpul antara 90° dan 180°, dan sudut lurus tepat 180°."
+    },
+    {
+      "id": "siku",
+      "keywords": [
+        "siku",
+        "sudut siku",
+        "tanda kotak",
+        "kotak kecil",
+        "apa itu sudut siku",
+        "pengertian sudut siku"
+      ],
+      "mood": "think",
+      "answer": "Sudut siku-siku besarnya 90°. Tandanya kotak kecil ∟ di titik sudut. Kalau kamu melihat tanda ini, ingat: jumlahnya 90°!",
+      "figure": {
+        "type": "complementary",
+        "a": 45,
+        "labels": [
+          "",
+          ""
+        ]
+      }
+    },
+    {
+      "id": "lurus",
+      "keywords": [
+        "sudut lurus",
+        "garis lurus",
+        "apa itu sudut lurus",
+        "pengertian sudut lurus"
+      ],
+      "mood": "happy",
+      "answer": "Garis lurus membentuk sudut 180°. Kalau sebuah sinar membagi garis lurus menjadi dua sudut, jumlah kedua sudut itu tetap 180°.",
+      "figure": {
+        "type": "supplementary",
+        "a": 70,
+        "labels": [
+          "70°",
+          "110°"
+        ]
+      }
+    },
+    {
+      "id": "pelurus",
+      "keywords": [
+        "pelurus",
+        "sudut pelurus",
+        "apa itu pelurus",
+        "pengertian pelurus",
+        "apa itu sudut pelurus",
+        "pengertian sudut pelurus",
+        "sudut pelurus itu"
+      ],
+      "mood": "happy",
+      "answer": "Dua sudut berpelurus jika keduanya membentuk garis lurus. Jumlahnya selalu 180°. Contoh: 65° dan 115°.",
+      "figure": {
+        "type": "supplementary",
+        "a": 65,
+        "labels": [
+          "65°",
+          "115°"
+        ]
+      },
+      "followups": [
+        "Pelurus dari 40 berapa?",
+        "Apa bedanya pelurus dan penyiku?"
+      ]
+    },
+    {
+      "id": "penyiku",
+      "keywords": [
+        "penyiku",
+        "sudut penyiku",
+        "apa itu penyiku",
+        "pengertian penyiku",
+        "apa itu sudut penyiku",
+        "pengertian sudut penyiku",
+        "sudut penyiku itu"
+      ],
+      "mood": "happy",
+      "answer": "Dua sudut berpenyiku jika keduanya membentuk sudut siku-siku. Jumlahnya selalu 90°. Contoh: 35° dan 55°.",
+      "figure": {
+        "type": "complementary",
+        "a": 35,
+        "labels": [
+          "35°",
+          "55°"
+        ]
+      },
+      "followups": [
+        "Penyiku dari 35 berapa?",
+        "Apa bedanya pelurus dan penyiku?"
+      ]
+    },
+    {
+      "id": "tolak-belakang",
+      "keywords": [
+        "tolak belakang",
+        "tolak",
+        "berhadapan",
+        "bersilangan",
+        "berpotongan",
+        "silang",
+        "apa itu sudut tolak belakang",
+        "pengertian sudut tolak belakang",
+        "sudut tolak belakang itu"
+      ],
+      "mood": "wink",
+      "answer": "Saat dua garis berpotongan, sudut-sudut yang saling berhadapan disebut sudut bertolak belakang. Besarnya selalu sama!",
+      "figure": {
+        "type": "vertical",
+        "a": 50,
+        "labels": [
+          "50°",
+          "50°",
+          "",
+          ""
+        ],
+        "highlight": [
+          0,
+          1
+        ]
+      },
+      "followups": [
+        "Kenapa sudut bertolak belakang sama besar?"
+      ]
+    },
+    {
+      "id": "beda-pelurus-penyiku",
+      "keywords": [
+        "beda&pelurus&penyiku",
+        "tertukar&pelurus&penyiku",
+        "bedakan&pelurus&penyiku",
+        "pelurus&penyiku",
+        "beda&180&90"
+      ],
+      "mood": "think",
+      "answer": "Lihat gambarnya dulu! Kalau kedua sudut membentuk garis lurus, itu berpelurus (180°). Kalau ada tanda ∟, itu berpenyiku (90°). Ingat: peLURUS = lurus, penySIKU = siku.",
+      "followups": [
+        "Apa itu sudut berpelurus?",
+        "Apa itu sudut berpenyiku?"
+      ]
+    },
+    {
+      "id": "kenapa-tolak",
+      "keywords": [
+        "kenapa&tolak",
+        "kenapa&sama besar",
+        "bukti&tolak",
+        "alasan&tolak",
+        "kok sama"
+      ],
+      "mood": "think",
+      "answer": "Misalkan sudut a dan b bertolak belakang, dan sudut c ada di antaranya. a + c = 180° dan b + c = 180°, jadi a = 180° − c = b. Karena itu besarnya pasti sama!",
+      "figure": {
+        "type": "vertical",
+        "a": 60,
+        "labels": [
+          "a",
+          "b",
+          "c",
+          ""
+        ],
+        "highlight": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "id": "cari-x",
+      "keywords": [
+        "cari x",
+        "mencari x",
+        "nilai x",
+        "menentukan x",
+        "variabel",
+        "x itu",
+        "soal x",
+        "pakai x",
+        "menghitung x"
+      ],
+      "mood": "proud",
+      "answer": "Pakai 4 langkah: Kenali hubungannya, tulis Aturannya (= 180, = 90, atau sama dengan), Hitung x, lalu Periksa. Coba ketik soalnya, misalnya “2x + 4x = 90”, nanti aku tunjukkan langkahnya!",
+      "followups": [
+        "2x + 4x = 90",
+        "3x + 15 = 2x + 35"
+      ]
+    },
+    {
+      "id": "kahp",
+      "keywords": [
+        "langkah",
+        "cara mengerjakan",
+        "cara menjawab",
+        "kahp",
+        "kenali aturan",
+        "cara menyelesaikan"
+      ],
+      "mood": "happy",
+      "answer": "Ingat K-A-H-P! Kenali jenis hubungannya, tulis Aturannya, Hitung, lalu Periksa apakah jawabannya cocok dengan sifat sudutnya."
+    },
+    {
+      "id": "periksa",
+      "keywords": [
+        "periksa",
+        "cek jawaban",
+        "masuk akal",
+        "benar tidak",
+        "cara mengecek",
+        "memeriksa"
+      ],
+      "mood": "wink",
+      "answer": "Masukkan jawabanmu ke sifat sudutnya. Berpelurus: jumlahnya harus 180°. Berpenyiku: jumlahnya 90°. Bertolak belakang: keduanya harus sama besar."
+    },
+    {
+      "id": "x-atau-sudut",
+      "keywords": [
+        "x atau sudut",
+        "yang ditanya",
+        "besar sudutnya",
+        "setelah x",
+        "sesudah dapat x",
+        "ganti x"
+      ],
+      "mood": "think",
+      "answer": "Jangan berhenti di nilai x! Kalau yang ditanya besar sudut, ganti x ke ekspresinya. Contoh: x = 15 dan sudutnya 2x, jadi besar sudutnya 2 × 15 = 30°."
+    },
+    {
+      "id": "pindah-ruas",
+      "keywords": [
+        "pindah ruas",
+        "ruas",
+        "tanda berubah",
+        "kurung",
+        "tanda kurung",
+        "kedua ruas"
+      ],
+      "mood": "think",
+      "answer": "Yang kita lakukan pada satu ruas harus dilakukan juga pada ruas lain. Kalau +10 dipindah ke kanan, kurangi kedua ruas dengan 10, sehingga tandanya seperti berubah menjadi −10."
+    },
+    {
+      "id": "empat-sudut",
+      "keywords": [
+        "empat sudut",
+        "4 sudut",
+        "sekitar titik",
+        "satu putaran",
+        "putaran",
+        "360"
+      ],
+      "mood": "wow",
+      "answer": "Empat sudut di sekitar titik potong dua garis jumlahnya 360°, satu putaran penuh. Sudut yang bersebelahan berpelurus (180°), dan yang berhadapan sama besar."
+    },
+    {
+      "id": "contoh-nyata",
+      "keywords": [
+        "kehidupan sehari",
+        "contoh nyata",
+        "dunia nyata",
+        "di sekitar",
+        "sehari hari",
+        "contoh dalam kehidupan"
+      ],
+      "mood": "happy",
+      "answer": "Banyak sekali! Pintu yang dibuka terhadap dinding (berpelurus), pojok taman atau meja (siku-siku), dan rambu silang perlintasan (bertolak belakang). Coba Misi Dunia Nyata untuk melihatnya dalam 3D!"
+    },
+    {
+      "id": "tiga-d",
+      "keywords": [
+        "3d",
+        "putar gambar",
+        "lihat sebagai 2d",
+        "gambar 3d",
+        "cara memutar"
+      ],
+      "mood": "wink",
+      "answer": "Di Misi Dunia Nyata, geser gambar dengan satu jari untuk memutarnya, dan cubit untuk memperbesar. Ketuk “Lihat sebagai 2D” untuk melihat model matematikanya."
+    },
+    {
+      "id": "tes",
+      "keywords": [
+        "pretest",
+        "posttest",
+        "tes awal",
+        "tes akhir",
+        "nilai tes",
+        "kunci jawaban"
+      ],
+      "mood": "wink",
+      "answer": "Tes Awal dan Tes Akhir dikerjakan sendiri tanpa bantuanku, ya. Dari situ gurumu bisa tahu seberapa besar kemajuanmu. Kamu pasti bisa!"
+    },
+    {
+      "id": "lupa-kode",
+      "keywords": [
+        "lupa kode",
+        "kode siswa",
+        "kode hilang",
+        "kode saya"
+      ],
+      "mood": "think",
+      "answer": "Kode siswamu ada di kartu dari guru. Kalau kartunya hilang, tanyakan ke gurumu, ya. Jangan memakai kode teman supaya progresmu tidak tercampur."
+    },
+    {
+      "id": "bingung",
+      "keywords": [
+        "susah",
+        "sulit",
+        "pusing",
+        "bingung",
+        "tidak paham",
+        "tidak bisa",
+        "capek",
+        "takut salah"
+      ],
+      "mood": "sad",
+      "answer": "Tidak apa-apa, semua orang pernah bingung. Coba buka Contoh Bertahap, langkahnya dibuka pelan-pelan. Atau tanyakan bagian yang membingungkan, aku bantu!",
+      "followups": [
+        "Apa bedanya pelurus dan penyiku?",
+        "Bagaimana cara mencari x?"
+      ]
+    },
+    {
+      "id": "bosan",
+      "keywords": [
+        "bosan",
+        "malas",
+        "ngantuk"
+      ],
+      "mood": "wow",
+      "answer": "Wah, ayo semangat! Coba Lab Sudut: geser garisnya dan lihat angkanya berubah. Atau kumpulkan lencana di Misi Dunia Nyata!"
+    },
+    {
+      "id": "garis-sejajar",
+      "keywords": [
+        "sehadap",
+        "berseberangan",
+        "sejajar",
+        "transversal",
+        "sepihak"
+      ],
+      "mood": "think",
+      "answer": "Sudut pada garis sejajar (sehadap, berseberangan) akan kamu pelajari nanti. Di SudutKu kita fokus pada sudut berpelurus, berpenyiku, dan bertolak belakang dulu, ya."
+    }
+  ]
+}

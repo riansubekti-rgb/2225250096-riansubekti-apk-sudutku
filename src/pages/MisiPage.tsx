@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import raw from '../../content/literacy/missions.json';
 import { MissionsSchema, type Mission } from '../data/schemas';
@@ -12,6 +12,7 @@ import { relationMisconception } from '../domain/checker/misconception';
 import { hasWebGL } from '../platform/webgl';
 import { logEvent, recordAttempt } from '../data/log';
 import type { Scene3DHandle } from '../three/Scene3D';
+import { loadDoneMissions } from '../features/progress/progress';
 
 const Scene3D = lazy(() => import('../three/Scene3D'));
 const data = MissionsSchema.parse(raw);
@@ -27,7 +28,8 @@ const PHASE_LABEL: Record<Exclude<Phase, 'done'>, string> = {
 /** Misi Dunia Nyata (F7): literasi matematis PISA — rumuskan → terapkan → tafsirkan, dengan ilustrasi 3D. */
 export function MisiPage() {
   const [params, setParams] = useSearchParams();
-  const idx = Math.min(Math.max(Number(params.get('misi') ?? 0) || 0, 0), data.missions.length);
+  if (params.get('misi') === null) return <MissionList onPick={(i) => setParams({ misi: String(i) })} />;
+  const idx = Math.min(Math.max(Number(params.get('misi')) || 0, 0), data.missions.length);
   const m = data.missions[idx];
   if (!m) return <AllDone />;
   return <MissionView key={m.id} m={m} no={idx + 1} onNext={() => setParams({ misi: String(idx + 1) })} />;
@@ -232,6 +234,59 @@ function MissionView({ m, no, onNext }: { m: Mission; no: number; onNext: () => 
           )}
         </>
       )}
+    </div>
+  );
+}
+
+const REL_VAR: Record<Relation, string> = {
+  supplementary: 'var(--rel-sup)',
+  complementary: 'var(--rel-comp)',
+  vertical: 'var(--rel-vert)',
+};
+
+/** Daftar misi: siswa memilih sendiri; misi yang sudah selesai ditandai ✓. */
+function MissionList({ onPick }: { onPick: (i: number) => void }) {
+  const [done, setDone] = useState<Set<string> | null>(null);
+  useEffect(() => {
+    void loadDoneMissions().then(setDone);
+  }, []);
+  if (!done) return null;
+  return (
+    <div className="flex flex-col gap-3">
+      <MascotBubble mood="wink">
+        {`Ada ${data.missions.length} misi dunia nyata! Kamu sudah menyelesaikan ${done.size}. Pilih misi yang ingin kamu coba.`}
+      </MascotBubble>
+      <ol className="grid grid-cols-1 gap-2 min-[600px]:grid-cols-2">
+        {data.missions.map((m, i) => {
+          const ok = done.has(m.id);
+          const algebra = /x/.test(m.e1) && m.e1 !== 'x';
+          return (
+            <li key={m.id}>
+              <button
+                type="button"
+                onClick={() => onPick(i)}
+                className={`flex min-h-touch w-full items-center gap-3 rounded-card border bg-surface px-3 py-3 text-left shadow-sm ${ok ? 'border-accent' : 'border-line'}`}
+              >
+                <span
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 text-sm font-bold"
+                  style={{ borderColor: REL_VAR[m.relation], color: REL_VAR[m.relation] }}
+                >
+                  {ok ? '✓' : i + 1}
+                </span>
+                <span className="flex-1">
+                  <span className="block font-bold leading-tight">{m.title}</span>
+                  <span className="block text-xs text-ink-muted">
+                    {RELATION_LABEL[m.relation]} · {algebra ? 'pakai x' : 'angka'}
+                  </span>
+                </span>
+                <span aria-hidden className="text-xl text-accent">
+                  ›
+                </span>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
     </div>
   );
 }

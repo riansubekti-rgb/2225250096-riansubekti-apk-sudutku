@@ -3,6 +3,14 @@ import { useSession } from '../../data/session';
 import { loadMastery } from '../../data/mastery';
 import { masteryStatus, type MasteryRec } from '../../domain/learner/mastery';
 
+/** Id misi yang sudah diselesaikan profil aktif. */
+export async function loadDoneMissions(): Promise<Set<string>> {
+  const profileId = useSession.getState().profile?.id;
+  if (profileId == null) return new Set();
+  const events = await db.events.where('profileId').equals(profileId).filter((e) => e.type === 'mission_complete').toArray();
+  return new Set(events.map((e) => String(e.payload.missionId)));
+}
+
 /** Hitung lencana (F11) dari data milik profil aktif saja. */
 export async function loadProgress(): Promise<{ mastery: MasteryRec[]; earned: Set<string> }> {
   const profileId = useSession.getState().profile?.id;

@@ -151,7 +151,7 @@ Prioritas: **M** = Must (v1), **S** = Should, **C** = Could.
 - Mesin adaptif memilih soal berikutnya dan tingkat bantuan berdasarkan model penguasaan siswa (lihat architecture.md §6).
 
 ### F7. Misi Dunia Nyata (Literasi Matematis) — M
-- 5 misi kontekstual (v0.1) dengan adegan **3D Three.js** yang bisa diputar dan diperbesar:
+- 12 misi kontekstual (v0.2; 5 misi di v0.1) dengan adegan **3D Three.js** yang bisa diputar dan diperbesar:
   - Rambu silang perlintasan berbentuk X (bertolak belakang)
   - Pintu kamar dilihat dari atas (berpelurus)
   - Jalan setapak di pojok taman, angka dan bervariabel (berpenyiku)
@@ -183,6 +183,12 @@ Dua instrumen dengan frekuensi berbeda, agar pengukuran itu sendiri tidak menamb
 - Bilah progres per bagian dan **lencana di akhir bagian** saja.
 - **Maskot Busu** (D8b) menyapa di Beranda/layar penutup dan menjadi "suara" petunjuk & umpan balik (kecil, diam saat soal).
 - **Tidak ada**: poin/skor berjalan, papan peringkat, timer kompetitif, atau animasi hadiah di tengah soal.
+
+### F15. Tanya Busu — S (ditambahkan v0.2 atas permintaan peneliti)
+- Siswa mengetik pertanyaan; Busu menjawab dari **bank tanya-jawab offline** (`content/mascot/tanya.json`) dan **menghitung otomatis** persamaan x serta pasangan sudut, lengkap dengan langkah dan gambar.
+- **Bukan AI/LLM daring** (keputusan D15): tanpa internet, tanpa biaya, pertanyaan tidak keluar dari HP dan tidak disimpan (hanya jenis jawaban yang dicatat).
+- Bila tidak paham, Busu jujur berkata belum paham dan memberi saran pertanyaan.
+- Dibuka dari Beranda (halaman penuh) atau tombol 💬 di halaman belajar (lembar melayang, soal tidak hilang). **Tidak tersedia** di mode tes/angket.
 
 ### F12. Profil, Sesi & Data — M
 - Login sederhana: kode kelas + kode siswa dari kartu kode yang dibagikan peneliti (tanpa email atau nomor HP).
@@ -279,6 +285,8 @@ Buka aplikasi → Masuk (kode kelas + kode siswa)
 | D11 | Hosting | Vercel, subdomain gratis (mis. `sudutku.vercel.app`) |
 | D12 | Perangkat bersama | Satu ponsel bisa dipakai bergantian → wajib ada multi-profil, ganti sesi, dan ekspor di akhir pertemuan |
 | D13 | Membuka instrumen | **Kode dari guru** (`TESAWAL`, `ANGKET1/2`, `TESAKHIR`, `PENDAPAT`) diketik siswa di HP masing-masing; Mode Peneliti tetap untuk ekspor. Lihat panduan-uji-coba.md |
+| D15 | Tanya Busu | Asisten **offline berbasis aturan** (bank tanya-jawab + kalkulator), bukan AI daring — menjaga D3 (tanpa server) & privasi anak. AI daring hanya bila peneliti memutuskan lain |
+| D16 | Busu v0.2 | 8 ekspresi, perkenalan di halaman Masuk (menyebut pembuat), suara text-to-speech bawaan HP (dipicu ketukan 🔊), Busu bisa diketuk di Beranda |
 | D14 | Kebocoran tes | Materi, latihan, dan misi tidak boleh memakai butir/konteks yang sama dengan pretest/posttest — dicek otomatis di `content.test.ts` |
 
 **Usulan pembagian 2 pertemuan** (perlu dikonfirmasi):

@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import { Busu } from '../components/mascot/Busu';
+import { BusuIntro } from '../components/mascot/BusuIntro';
 import { MascotBubble } from '../components/mascot/MascotBubble';
 import { isValidStudentCode, makeStudentCode, normalizeCode } from '../domain/profile/studentCode';
 import { createProfile, findProfile } from '../data/profiles';
@@ -55,11 +55,7 @@ export function LoginPage() {
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col gap-5 pt-2">
       {step.kind === 'code' && (
         <>
-          <div className="flex flex-col items-center text-center">
-            <Busu mood="happy" size={120} bob />
-            <p className="mt-2 text-2xl font-bold">Hai! Aku Busu.</p>
-            <p className="text-ink-muted">Si busur derajat yang suka sudut.</p>
-          </div>
+          <BusuIntro />
           <form onSubmit={submitCode} className="card flex flex-col gap-3">
             <label htmlFor="kode" className="font-bold">
               Ketik kode siswamu

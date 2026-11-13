@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "note": "Kalimat Busu di halaman Masuk (perkenalan) dan saat Busu diketuk di Beranda. Mood: happy, think, cheer, oops, wink, wow, sad, proud.",
+  "intro": [
+    { "mood": "happy", "text": "Hai! Aku Busu, si busur derajat yang suka sudut." },
+    { "mood": "proud", "text": "Aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika." },
+    { "mood": "wink", "text": "Tugasku menemanimu supaya kamu mudah memahami materi garis dan sudut." },
+    { "mood": "cheer", "text": "Yuk mulai! Ketik kode siswamu di bawah, ya." }
+  ],
+  "welcomeBack": { "mood": "happy", "text": "Hai lagi! Ketik kode siswamu untuk melanjutkan." },
+  "tapLines": [
+    { "mood": "proud", "text": "Tahukah kamu? Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180°!" },
+    { "mood": "think", "text": "Pelurus = lurus = 180°. Penyiku = siku = 90°. Gampang diingat, kan?" },
+    { "mood": "wink", "text": "Sudut bertolak belakang itu seperti anak kembar: besarnya selalu sama." },
+    { "mood": "wow", "text": "Hihi, geli! Ayo lanjut belajar." },
+    { "mood": "cheer", "text": "Ada yang belum paham? Ketuk Tanya Busu, aku siap membantu!" },
+    { "mood": "happy", "text": "Coba lihat sekelilingmu. Pintu, jendela, dan meja penuh dengan sudut!" },
+    { "mood": "think", "text": "Kalau melihat tanda kotak kecil ∟, ingat: itu sudut siku-siku, 90°." },
+    { "mood": "proud", "text": "Setiap kali kamu salah lalu mencoba lagi, otakmu sedang bertambah kuat!" }
+  ]
+}

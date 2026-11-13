@@ -151,6 +151,8 @@ Prinsip: **3D menunjukkan "di mana sudut ini ada di dunia nyata", bukan pamer ef
 | Pintu dari atas (`door`) | Berpelurus | Bukaan pintu | Pintu–ambang & pintu–dinding |
 | Pojok taman (`garden`) | Berpenyiku | Arah jalan setapak | Jalan–pagar bawah & jalan–pagar samping (+ tanda siku) |
 | Rangka layang-layang (`kite`) | Berpelurus (+ bertolak belakang) | Sudut antarbilah | Dua sudut bersebelahan |
+| Kursi lipat (`chair`) | Bertolak belakang | Bukaan kaki | Sudut atas & bawah kaki |
+| Penggaris siku tukang kayu (`square`) | Berpenyiku | Arah garis miring | Garis–sisi mendatar & garis–sisi tegak (+ tanda siku) |
 
 > Revisi 14 Nov 2026 (D14): adegan gunting/laptop/persimpangan/palang/kertas **tidak dipakai** karena konteks itu ada di butir tes. Parameter dibangkitkan dari data misi; siswa memutar/memperbesar adegan, tidak mengubah parameternya (agar soal tetap tetap).
 
@@ -185,6 +187,12 @@ Busu adalah busur derajat setengah lingkaran (180°) berwarna kuning dengan mata
 | Masuk, Beranda, layar penutup bagian | Besar (84–130 px) | Boleh bergoyang pelan (`bob`), mati bila *reduce motion* | Sapaan, motivasi, hasil |
 | Kartu konsep, Lab, petunjuk, umpan balik | Kecil (≤ 56 px) | **Diam** | "Suara" yang menyampaikan kalimat inti/petunjuk (≤ 2 kalimat) |
 | Mode tes (pretest/posttest), kuesioner | — | — | **Tidak tampil** (menjaga kesetaraan kondisi tes) |
+
+**Tambahan v0.2 (D16):**
+- **Perkenalan** di halaman Masuk: 4 kalimat diketik huruf demi huruf (mulut Busu bergerak), ekspresi berganti tiap kalimat; tampil penuh sekali per HP, berikutnya sapaan singkat (ketuk Busu untuk memutar ulang).
+- **Suara**: tombol 🔊 pada balon kata membacakan isi dengan text-to-speech bawaan HP (offline). Tidak pernah auto-play; simbol matematika dibacakan sebagai kata ("derajat", "sama dengan").
+- **Busu diketuk** di Beranda → fakta/semangat acak dengan ekspresi berbeda.
+- **Tanya Busu**: Busu besar boleh berganti ekspresi di layar obrolan; jawaban ≤ 3 kalimat + langkah + gambar bila perlu (tetap satu ide per balon).
 
 Aturan: Busu tidak pernah menutupi gambar sudut, tidak bersuara, dan tidak menambah teks di luar balon kata. Ekspresi `oops` dipakai untuk jawaban salah (lembut, tidak mengejek), dan `cheer` untuk jawaban benar.
 

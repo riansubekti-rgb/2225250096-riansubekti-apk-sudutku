@@ -5,6 +5,8 @@ import { RelationChip } from '../components/RelationChip';
 import { Busu } from '../components/mascot/Busu';
 import { useSession } from '../data/session';
 import { UpdateBanner } from '../components/UpdateBanner';
+import { useBusuTap } from '../components/mascot/useBusuTap';
+import { useSpeech } from '../components/mascot/useSpeech';
 import { useResearchTasks } from '../features/research/useResearchTasks';
 
 export function HomePage() {
@@ -12,7 +14,10 @@ export function HomePage() {
   const { tasks, ready } = useResearchTasks();
   // Tes Awal harus dikerjakan sebelum materi terbuka agar skor pretest tidak tercampur efek belajar.
   const pretestPending = tasks.some((t) => t.key === 'pre');
+  const tap = useBusuTap();
+  const voice = useSpeech();
   if (!ready) return null;
+  const heroText = tap.line?.text ?? 'Yuk jelajahi dunia sudut bersamaku. Ketuk aku kalau mau dengar fakta seru!';
 
   return (
     <div className="flex flex-col gap-4">
@@ -22,12 +27,29 @@ export function HomePage() {
         style={{ background: 'linear-gradient(135deg, var(--hero-from), var(--hero-to))', color: 'var(--on-hero)' }}
       >
         <div className="flex items-center gap-3">
-          <div className="shrink-0 rounded-full bg-white/15 p-2">
-            <Busu mood="happy" size={84} bob />
-          </div>
-          <div>
+          <button
+            type="button"
+            onClick={tap.next}
+            aria-label="Ketuk Busu"
+            className="shrink-0 rounded-full bg-white/15 p-2 transition-transform active:scale-90"
+          >
+            <Busu mood={tap.line?.mood ?? 'happy'} size={84} bob talking={voice.speaking} />
+          </button>
+          <div className="flex-1">
             <p className="text-xl font-bold leading-tight">Hai, {nickname}!</p>
-            <p className="mt-1 text-[15px] leading-snug opacity-95">Yuk jelajahi dunia sudut bersamaku. Pilih bagian di bawah, ya.</p>
+            <p className="mt-1 text-[15px] leading-snug opacity-95" aria-live="polite">
+              {heroText}
+            </p>
+            {voice.available && (
+              <button
+                type="button"
+                onClick={() => voice.toggle(`Hai ${nickname}! ${heroText}`)}
+                aria-label={voice.speaking ? 'Hentikan suara Busu' : 'Dengarkan Busu'}
+                className="mt-2 flex h-9 items-center gap-1 rounded-full bg-white/20 px-3 text-sm font-bold"
+              >
+                {voice.speaking ? '⏹ Berhenti' : '🔊 Dengar'}
+              </button>
+            )}
           </div>
         </div>
       </section>
@@ -106,6 +128,20 @@ export function HomePage() {
           })}
         </ol>
       </nav>
+
+      {!pretestPending && (
+        <Link
+          to="/tanya"
+          className="flex min-h-touch items-center gap-3 rounded-card border-2 border-accent bg-surface px-4 py-3 shadow-sm"
+        >
+          <Busu mood="wink" size={48} />
+          <span className="flex-1">
+            <span className="block font-bold">💬 Tanya Busu</span>
+            <span className="block text-sm text-ink-muted">Ada yang belum paham? Tanya aku!</span>
+          </span>
+          <span aria-hidden className="text-xl text-accent">›</span>
+        </Link>
+      )}
 
       {!pretestPending && (
         <Link to="/progres" className="btn-secondary">

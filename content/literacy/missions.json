@@ -56,7 +56,11 @@
       "e2": "x",
       "interpret": {
         "question": "Jika jalan setapak digeser sehingga sudut pertama menjadi 50°, sudut yang lain menjadi berapa?",
-        "options": ["40°", "130°", "50°"],
+        "options": [
+          "40°",
+          "130°",
+          "50°"
+        ],
         "answer": 0,
         "explain": "Kedua sudut tetap berpenyiku, jadi 90° − 50° = 40°."
       }
@@ -73,7 +77,11 @@
       "e2": "x+10",
       "interpret": {
         "question": "Berapa besar sudut yang bertolak belakang dengan sudut (3x + 10)°?",
-        "options": ["130°", "50°", "180°"],
+        "options": [
+          "130°",
+          "50°",
+          "180°"
+        ],
         "answer": 0,
         "explain": "Sudut bertolak belakang sama besar dengan sudut (3x + 10)° = 130°."
       }
@@ -97,6 +105,153 @@
         ],
         "answer": 0,
         "explain": "Sudut berpenyiku masing-masing harus kurang dari 90°. Tukang taman memakai 180°, padahal seharusnya 90°."
+      }
+    },
+    {
+      "id": "m-kursi",
+      "sceneId": "chair",
+      "title": "Kursi Lipat Pantai",
+      "context": "Kaki kursi lipat pantai bersilangan membentuk huruf X. Sudut antara kedua kaki di bagian atas 64°.",
+      "ask": "Berapa besar sudut antara kedua kaki di bagian bawah?",
+      "pisaContext": "personal",
+      "relation": "vertical",
+      "e1": "64",
+      "e2": "x",
+      "interpret": {
+        "question": "Kursi dilipat lebih rapat sehingga sudut atasnya menjadi 40°. Berapa sudut bawahnya sekarang?",
+        "options": [
+          "40°",
+          "140°",
+          "64°"
+        ],
+        "answer": 0,
+        "explain": "Sudut atas dan bawah bertolak belakang, jadi selalu sama besar: 40°."
+      }
+    },
+    {
+      "id": "m-siku",
+      "sceneId": "square",
+      "title": "Penggaris Siku Tukang Kayu",
+      "context": "Tukang kayu meletakkan penggaris siku di papan, lalu menarik garis miring dari pojoknya. Garis itu membentuk sudut 24° dengan sisi mendatar.",
+      "ask": "Berapa besar sudut antara garis miring dan sisi tegak?",
+      "pisaContext": "occupational",
+      "relation": "complementary",
+      "e1": "24",
+      "e2": "x",
+      "interpret": {
+        "question": "Tukang kayu ingin garis miring membagi pojok menjadi dua sudut yang sama besar. Berapa besar masing-masing?",
+        "options": [
+          "45°",
+          "90°",
+          "24°"
+        ],
+        "answer": 0,
+        "explain": "Pojok penggaris siku besarnya 90°. Jika dibagi sama besar: 90° : 2 = 45°."
+      }
+    },
+    {
+      "id": "m-gerbang",
+      "sceneId": "door",
+      "title": "Pintu Gerbang Sekolah",
+      "context": "Dilihat dari atas, pagar dan ambang gerbang membentuk garis lurus. Sudut pintu dengan ambang (2x + 20)° dan sudut pintu dengan pagar (x + 10)°.",
+      "ask": "Hitung nilai x dan besar kedua sudut.",
+      "pisaContext": "societal",
+      "relation": "supplementary",
+      "e1": "2x+20",
+      "e2": "x+10",
+      "interpret": {
+        "question": "Sudut mana yang lebih besar, dan berapa selisihnya?",
+        "options": [
+          "Sudut pintu–ambang, selisihnya 60°.",
+          "Sudut pintu–pagar, selisihnya 60°.",
+          "Keduanya sama besar."
+        ],
+        "answer": 0,
+        "explain": "Sudut pintu–ambang 120° dan sudut pintu–pagar 60°. Selisihnya 120° − 60° = 60°."
+      }
+    },
+    {
+      "id": "m-rambu-2",
+      "sceneId": "crossbuck",
+      "title": "Rambu Silang Baru",
+      "context": "Rambu silang lain dibuat dengan sudut atas (4x − 30)° dan sudut bawah (2x + 20)°.",
+      "ask": "Hitung nilai x dan besar sudut atasnya.",
+      "pisaContext": "societal",
+      "relation": "vertical",
+      "e1": "4x-30",
+      "e2": "2x+20",
+      "interpret": {
+        "question": "Berapa besar sudut di samping rambu (di antara sudut atas dan sudut bawah)?",
+        "options": [
+          "110°",
+          "70°",
+          "180°"
+        ],
+        "answer": 0,
+        "explain": "Sudut samping berpelurus dengan sudut atas: 180° − 70° = 110°."
+      }
+    },
+    {
+      "id": "m-kursi-2",
+      "sceneId": "chair",
+      "title": "Kursi Lipat Taman",
+      "context": "Pada kursi lipat lain, sudut atas antara kakinya (2x + 15)° dan sudut bawahnya (3x − 10)°.",
+      "ask": "Hitung nilai x dan besar kedua sudut.",
+      "pisaContext": "personal",
+      "relation": "vertical",
+      "e1": "2x+15",
+      "e2": "3x-10",
+      "interpret": {
+        "question": "Rina menjawab x = 35 karena ia menulis 2x + 15 + 3x − 10 = 180. Apa kesalahannya?",
+        "options": [
+          "Sudut atas dan bawah bertolak belakang, jadi harus sama besar, bukan berjumlah 180°.",
+          "Seharusnya jumlahnya 90°.",
+          "Tidak ada yang salah."
+        ],
+        "answer": 0,
+        "explain": "Aturan yang tepat: 2x + 15 = 3x − 10, sehingga x = 25 dan kedua sudut 65°."
+      }
+    },
+    {
+      "id": "m-layangan-2",
+      "sceneId": "kite",
+      "title": "Layang-Layang Festival",
+      "context": "Pada layang-layang festival, salah satu sudut di persilangan kedua bilah besarnya 118°.",
+      "ask": "Berapa besar sudut yang bersebelahan dengannya?",
+      "pisaContext": "personal",
+      "relation": "supplementary",
+      "e1": "118",
+      "e2": "x",
+      "interpret": {
+        "question": "Berapa besar sudut yang bertolak belakang dengan sudut 118° itu?",
+        "options": [
+          "118°",
+          "62°",
+          "180°"
+        ],
+        "answer": 0,
+        "explain": "Sudut bertolak belakang sama besar, jadi 118°."
+      }
+    },
+    {
+      "id": "m-siku-2",
+      "sceneId": "square",
+      "title": "Garis Potong di Papan",
+      "context": "Garis miring dari pojok penggaris siku membagi pojok menjadi sudut (x + 20)° dan (2x + 10)°.",
+      "ask": "Hitung nilai x dan besar kedua sudut.",
+      "pisaContext": "occupational",
+      "relation": "complementary",
+      "e1": "x+20",
+      "e2": "2x+10",
+      "interpret": {
+        "question": "Apakah garis miring itu lebih dekat ke sisi mendatar atau ke sisi tegak?",
+        "options": [
+          "Lebih dekat ke sisi mendatar, karena sudutnya dengan sisi mendatar lebih kecil (40°).",
+          "Lebih dekat ke sisi tegak.",
+          "Tepat di tengah."
+        ],
+        "answer": 0,
+        "explain": "Sudut dengan sisi mendatar 40°, lebih kecil dari 50°, jadi garisnya lebih dekat ke sisi mendatar."
       }
     }
   ]

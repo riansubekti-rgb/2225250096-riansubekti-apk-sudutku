@@ -122,6 +122,18 @@ for i, m in enumerate(ms['missions'], 1):
            [f"- Penjelasan: {it['explain']}", '']
 out.append(NOTE)
 
+# 5b. Busu & Tanya Busu
+bu = load('mascot/busu.json')
+tq = load('mascot/tanya.json')
+out += ['## 5b. Maskot Busu & Tanya Busu', '', '**Perkenalan di halaman Masuk:**'] + [f"- ({l['mood']}) {l['text']}" for l in bu['intro']]
+out += ['', '**Kalimat saat Busu diketuk di Beranda:**'] + [f"- ({l['mood']}) {l['text']}" for l in bu['tapLines']]
+out += ['', '**Tanya Busu (offline, bukan AI)** — sapaan: ' + tq['greeting'], '', '| Topik | Contoh kata kunci | Jawaban Busu |', '|---|---|---|']
+for e in tq['entries']:
+    out.append(f"| {e['id']} | {', '.join(e['keywords'][:3])} | {e['answer']} |")
+out += ['', f"Jawaban bila tidak paham: {tq['fallback']['text']}", '',
+        'Selain bank di atas, Busu menghitung otomatis persamaan x (mis. 2x + 4x = 90) dan pasangan sudut (mis. penyiku dari 35) dengan langkah-langkah.']
+out.append(NOTE)
+
 # 6. Instrumen kuesioner (draf)
 out += ['## 6. Instrumen Kuesioner (DRAF terjemahan — ganti dengan versi tervalidasi)', '']
 pa = load('instruments/paas.json')

@@ -2,6 +2,11 @@ import { useEffect } from 'react';
 import { Link, Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { PUBLIC_PATHS, ROUTES, titleFor } from './routes';
 import { InAppBrowserNotice } from '../components/InAppBrowserNotice';
+import { TanyaSheet } from '../features/assistant/TanyaSheet';
+import { useTanya } from '../features/assistant/useTanya';
+
+/** Halaman belajar yang boleh membuka Tanya Busu (bukan tes/angket/peneliti). */
+const ASK_PATHS = ['/pemanasan', '/kenali', '/lab', '/contoh', '/latihan', '/misi', '/progres'];
 import { IDLE_MS, useSession } from '../data/session';
 
 /**
@@ -44,6 +49,7 @@ export function Layout() {
           </button>
         )}
         <h1 className={`flex-1 truncate text-lg font-bold ${showBack ? '' : 'px-2'}`}>{title}</h1>
+        {profile && ASK_PATHS.includes(pathname) && <AskButton />}
         {profile && pathname !== '/selesai' && (
           <Link
             to="/selesai"
@@ -56,6 +62,7 @@ export function Layout() {
         )}
       </header>
       <InAppBrowserNotice />
+      <TanyaSheet />
       <main className="flex flex-1 flex-col px-4 py-4">
         <Outlet />
       </main>
@@ -87,4 +94,18 @@ function useIdleLogout(active: boolean, touch: () => void, onIdle: () => void) {
     // onIdle sengaja tidak dimasukkan: cukup dipasang ulang saat status login berubah.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
+}
+
+function AskButton() {
+  const setOpen = useTanya((s) => s.setOpen);
+  return (
+    <button
+      type="button"
+      onClick={() => setOpen(true)}
+      className="flex min-h-touch min-w-touch items-center justify-center rounded-full text-xl"
+      aria-label="Tanya Busu"
+    >
+      💬
+    </button>
+  );
 }

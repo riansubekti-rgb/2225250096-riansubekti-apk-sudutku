@@ -52,6 +52,34 @@ body {
   animation: busu-bob 2.6s ease-in-out infinite;
 }
 
+/* Mulut Busu bergerak saat berbicara (hanya ketika suara diputar). */
+@keyframes busu-talk {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
+}
+.busu-talk {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: busu-talk 0.28s ease-in-out infinite;
+}
+
+/* Kursor ketik untuk perkenalan Busu */
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+.type-caret::after {
+  content: '▍';
+  margin-left: 1px;
+  animation: caret 0.8s step-end infinite;
+}
+
 /* Tanpa animasi bila siswa meminta gerak dikurangi (desain.md §7, §9). */
 @media (prefers-reduced-motion: reduce) {
   *,
