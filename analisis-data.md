@@ -9,7 +9,8 @@ Setiap HP menghasilkan satu ZIP berisi 10 file. Setiap baris memuat `device_id` 
 1. Ekstrak semua ZIP ke folder terpisah, mis. `P1/hp-01/`, `P1/hp-02/`, …
 2. Untuk setiap jenis file (mis. `assessments.csv`), tempel semua isinya menjadi satu tabel. Di Excel: *Data › Get Data › From Folder* lalu *Combine*.
 3. **Hapus duplikat** berdasarkan kombinasi `device_id` + `local_id`. Duplikat muncul jika satu HP diekspor lebih dari sekali.
-4. Analisis per siswa memakai kolom `student_code`. Siswa yang memakai HP berbeda di pertemuan 1 dan 2 tetap tergabung lewat kode yang sama.
+4. Periksa `profiles.csv`: siswa dengan `self_created = 1` yang hanya punya pretest atau hanya posttest mungkin membuat dua kode — cocokkan dengan daftar nama milik peneliti.
+5. Analisis per siswa memakai kolom `student_code`. Siswa yang memakai HP berbeda di pertemuan 1 dan 2 tetap tergabung lewat kode yang sama.
 
 > Catatan: `assessment_summary.csv` dan `questionnaire_summary.csv` adalah **ringkasan per HP**. Jika seorang siswa mengerjakan pretest di HP A dan posttest di HP B, hitung ulang ringkasannya dari `assessments.csv` gabungan (lihat §3).
 
@@ -24,6 +25,7 @@ Setiap HP menghasilkan satu ZIP berisi 10 file. Setiap baris memuat `device_id` 
 | `ratings.csv` | satu rating usaha mental | `set_id`, `mental_effort` (1–9) |
 | `attempts.csv` | satu langkah pengerjaan latihan/kuis | `problem_id`, `relation`, `kcs`, `mode`, `step`, `correct`, `misconception`, `hint_level`, `duration_ms` |
 | `mastery.csv` | satu keterampilan siswa | `kc`, `relation`, `p` (0–1), `n` |
+| `profiles.csv` | satu profil di HP | `student_code`, `class_code`, `self_created` (1 = kode dibuat siswa sendiri), `created_iso` — tanpa nama panggilan |
 | `sessions.csv` | satu sesi masuk–keluar | `started_iso`, `ended_iso`, `end_reason` (switch/idle) |
 | `events.csv` | satu aktivitas | `type` (lab_drag, mission_complete, scene3d_to2d, …), `payload_json` |
 | `meta.json` | info ekspor | versi aplikasi, versi & status validasi instrumen, parameter adaptif |

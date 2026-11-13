@@ -67,7 +67,7 @@ describe('ekspor data penelitian', () => {
     });
     const files = unzipSync(new Uint8Array(buf));
     expect(Object.keys(files).sort()).toEqual(
-      ['assessment_summary.csv', 'assessments.csv', 'attempts.csv', 'events.csv', 'mastery.csv', 'meta.json', 'questionnaire_summary.csv', 'questionnaires.csv', 'ratings.csv', 'sessions.csv'].sort(),
+      ['assessment_summary.csv', 'assessments.csv', 'attempts.csv', 'events.csv', 'mastery.csv', 'meta.json', 'profiles.csv', 'questionnaire_summary.csv', 'questionnaires.csv', 'ratings.csv', 'sessions.csv'].sort(),
     );
     expect(JSON.parse(strFromU8(files['meta.json']!)).app).toBe('SudutKu');
   });

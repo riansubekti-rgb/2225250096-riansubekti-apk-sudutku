@@ -116,6 +116,7 @@
 - [x] 7.18 D20: suara remaja, subtitle berjalan, Busu mondar-mandir di halaman Masuk
 - [x] 7.19 D21: bicara otomatis + Busu berjalan-jalan & pulang ke rumah (Masuk, Peta Belajar)
 - [x] 7.20 D22: kode siswa acak (kartu tersimpan + CSV) & halaman Profil
+- [x] 7.21 D23: siswa membuat kode sendiri + sakelar peneliti + profiles.csv
 - [ ] 7.14 Validasi isi Tanya Busu & kalimat Busu oleh peneliti/ahli (lihat content/REVIEW-konten.md §5b)
 
 ## Fase 8 — Mutu & Rilis

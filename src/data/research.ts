@@ -9,6 +9,8 @@ export interface ResearchState {
   susOpen: boolean;
   /** Pertemuan ke- (D9: 2 pertemuan); dicatat pada kuesioner IL/EL/GL. */
   meeting: number;
+  /** Siswa boleh membuat kode sendiri di halaman Masuk (D23). */
+  allowSelfCode: boolean;
 }
 
 export const DEFAULT_RESEARCH: ResearchState = {
@@ -17,6 +19,7 @@ export const DEFAULT_RESEARCH: ResearchState = {
   clOpen: false,
   susOpen: false,
   meeting: 1,
+  allowSelfCode: true,
 };
 
 export async function getResearch(): Promise<ResearchState> {

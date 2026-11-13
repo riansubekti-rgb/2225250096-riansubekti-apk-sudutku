@@ -15,6 +15,7 @@ Hal terpenting: **data siswa hanya tersimpan di HP masing-masing.** Tidak ada se
 - [ ] **Buat & cetak kartu kode siswa (acak):** Halaman Masuk › *Mode Peneliti* › buat PIN › *Kartu kode siswa (acak)* › isi huruf kelas (mis. `A`) dan jumlah siswa › **🎲 Buat kode acak** › *Cetak kartu*. Gunting kartunya, satu kartu per siswa. Kode berbentuk 6 karakter acak, mis. `A7C-WAQ`.
   - ⚠️ **Buat kode di SATU perangkat saja** (HP/laptop peneliti) dan simpan. Daftar kode tersimpan di perangkat itu; membuat ulang di perangkat lain menghasilkan kode berbeda.
   - Unduh **daftar kode (CSV)** lalu isi kolom nama siswa di Excel milik peneliti — pasangan kode ↔ nama **tidak** dimasukkan ke aplikasi.
+  - **Alternatif:** siswa membuat kode sendiri (halaman Masuk › *✨ Buat kode sendiri*). Minta siswa **menulis kodenya di buku** dan catat pasangannya di daftar Anda. Untuk penelitian resmi, sebaiknya **matikan** pilihan ini di Mode Peneliti (*Izinkan siswa membuat kode sendiri*) dan pakai kartu dari Anda, agar satu siswa = satu kode.
 - [ ] Buat **daftar pasangan nama siswa ↔ kode** di kertas atau Excel milik peneliti. Daftar ini **tidak** dimasukkan ke aplikasi dan disimpan terpisah dari data penelitian.
 - [ ] Siapkan surat izin sekolah dan persetujuan orang tua (lihat privasi-dan-persetujuan.md).
 - [ ] Kirim link ke grup kelas sehari sebelumnya, dengan pesan: *"Buka link ini di Chrome, ketuk ⋮ › Tambahkan ke layar utama."* Pemasangan sebelum hari H menghemat kuota dan waktu.

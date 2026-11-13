@@ -42,3 +42,26 @@ test('kode lama A07H ditolak; peneliti membuat kode acak yang sah & tersimpan', 
   await expect(cards).toHaveCount(5);
   expect(await cards.allInnerTexts()).toEqual(codes);
 });
+
+test('siswa membuat kode sendiri, wajib mencatat, lalu bisa masuk lagi dengan kode itu', async ({ page }) => {
+  await page.goto('/masuk');
+  await page.getByRole('button', { name: /Buat kode sendiri/ }).click();
+  await page.getByRole('radio', { name: 'B' }).click();
+  await page.getByLabel('Nama panggilan').fill('Bima');
+  await page.getByRole('button', { name: /Buat kodeku/ }).click();
+  const codeText = (await page.locator('p.tracking-\\[0\\.2em\\]').innerText()).trim();
+  expect(isValidStudentCode(normalizeCode(codeText))).toBe(true);
+  expect(codeText[0]).toBe('B');
+  const go = page.getByRole('button', { name: /Masuk & mulai belajar/ });
+  await expect(go).toBeDisabled();
+  await page.getByLabel('Aku sudah mencatat kodeku').check();
+  await go.click();
+  await expect(page.getByText('Hai, Bima!')).toBeVisible();
+
+  // keluar, lalu masuk lagi dengan kode buatan sendiri
+  await page.getByRole('link', { name: /Profil Bima/ }).click();
+  await page.getByRole('button', { name: /Keluar & ganti siswa/ }).click();
+  await page.getByLabel('Ketik kode siswamu').fill(codeText);
+  await page.getByRole('button', { name: 'Masuk' }).click();
+  await expect(page.getByText(/Apakah kamu/)).toContainText('Bima');
+});

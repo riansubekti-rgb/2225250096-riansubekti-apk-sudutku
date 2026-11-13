@@ -168,6 +168,12 @@ function Dashboard() {
       </section>
 
       <section className="card divide-y divide-line">
+        <Toggle
+          label="Izinkan siswa membuat kode sendiri"
+          desc="Matikan saat penelitian resmi bila semua siswa memakai kartu kode dari Anda."
+          checked={r.allowSelfCode}
+          onChange={(v) => void update({ allowSelfCode: v })}
+        />
         <Toggle label="Tes Awal (pretest)" desc="Siswa wajib mengerjakan sebelum materi terbuka." checked={r.pretestOpen} onChange={(v) => void update({ pretestOpen: v })} />
         <Toggle label="Tes Akhir (posttest)" desc="Buka di akhir pertemuan terakhir." checked={r.posttestOpen} onChange={(v) => void update({ posttestOpen: v })} />
         <Toggle label="Angket beban belajar (IL/EL/GL)" desc={`Dicatat untuk pertemuan ${r.meeting}.`} checked={r.clOpen} onChange={(v) => void update({ clOpen: v })} />

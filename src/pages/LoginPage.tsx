@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { BusuIntro } from '../components/mascot/BusuIntro';
 import { MascotBubble } from '../components/mascot/MascotBubble';
@@ -6,9 +6,10 @@ import { CODE_SHAPE, formatCode, isExampleCode, isValidStudentCode, normalizeCod
 import { createProfile, findProfile } from '../data/profiles';
 import { useSession } from '../data/session';
 import type { Profile } from '../data/db';
+import { SelfCode } from '../features/profile/SelfCode';
+import { getResearch } from '../data/research';
 
-type Step = { kind: 'code' } | { kind: 'nickname'; code: string } | { kind: 'confirm'; profile: Profile };
-
+type Step = { kind: 'code' } | { kind: 'self' } | { kind: 'nickname'; code: string } | { kind: 'confirm'; profile: Profile };
 
 /**
  * Masuk dengan MENGETIK kode siswa (bukan memilih dari daftar) agar tidak salah masuk ke profil teman
@@ -21,6 +22,11 @@ export function LoginPage() {
   const [code, setCode] = useState('');
   const [nickname, setNickname] = useState('');
   const [error, setError] = useState('');
+  const [allowSelf, setAllowSelf] = useState(false);
+
+  useEffect(() => {
+    void getResearch().then((r) => setAllowSelf(r.allowSelfCode));
+  }, []);
 
   if (profile) return <Navigate to="/" replace />;
 
@@ -76,7 +82,7 @@ export function LoginPage() {
               aria-describedby="kode-help"
             />
             <p id="kode-help" className="text-sm text-ink-muted">
-              Ketik 6 huruf/angka yang tertulis di <b>kartu kode dari gurumu</b>. Belum punya kartu? Minta ke guru, ya.
+              Ketik 6 huruf/angka dari <b>kartu kode</b> atau kode yang pernah kamu buat.
             </p>
             {error && (
               <p role="alert" className="text-sm font-bold" style={{ color: 'var(--ask)' }}>
@@ -86,11 +92,23 @@ export function LoginPage() {
             <button type="submit" className="btn-primary" disabled={!code}>
               Masuk
             </button>
+            {allowSelf && (
+              <button type="button" className="btn-secondary" onClick={() => setStep({ kind: 'self' })}>
+                ✨ Belum punya kode? Buat kode sendiri
+              </button>
+            )}
           </form>
           <Link to="/peneliti" className="mx-auto py-3 text-sm text-ink-muted underline">
             Mode Peneliti
           </Link>
         </>
+      )}
+
+      {step.kind === 'self' && (
+        <SelfCode
+          onCancel={() => setStep({ kind: 'code' })}
+          onDone={(p) => void login(p).then(() => navigate('/', { replace: true }))}
+        />
       )}
 
       {step.kind === 'nickname' && (

@@ -53,6 +53,11 @@ export async function buildExportFiles(): Promise<Record<string, string>> {
   const sc = (profileId: number) => code.get(profileId) ?? `?${profileId}`;
   const files: Record<string, string> = {};
 
+  files['profiles.csv'] = toCsv(
+    ['device_id', 'local_id', 'student_code', 'class_code', 'self_created', 'created_iso'],
+    profiles.map((p) => [device, p.id, p.studentCode, p.classCode, p.selfCreated ? 1 : 0, isoWib(p.createdAt)]),
+  );
+
   files['sessions.csv'] = toCsv(
     ['device_id', 'local_id', 'student_code', 'started_iso', 'ended_iso', 'end_reason'],
     sessions.map((s) => [device, s.id, sc(s.profileId), isoWib(s.startedAt), isoWib(s.endedAt), s.endReason]),

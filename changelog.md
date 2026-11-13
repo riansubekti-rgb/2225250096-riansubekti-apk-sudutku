@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.5.0] — 2026-11-14 — Siswa bisa membuat kode sendiri
+
+### Ditambahkan
+- Halaman Masuk: **✨ Belum punya kode? Buat kode sendiri** — pilih huruf kelas & nama panggilan → kode acak unik ditampilkan besar dengan tombol **Salin**; siswa wajib mencentang "Aku sudah mencatat kodeku" sebelum masuk.
+- Mode Peneliti: sakelar **Izinkan siswa membuat kode sendiri** (bawaan nyala).
+- Ekspor: file baru **`profiles.csv`** (kode, kelas, `self_created`, tanggal dibuat; tanpa nama panggilan).
+
 ## [0.4.1] — 2026-11-14
 
 ### Diperbaiki

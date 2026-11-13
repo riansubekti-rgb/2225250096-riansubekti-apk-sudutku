@@ -11,6 +11,8 @@ export interface Profile {
   createdAt: number;
   /** emoji avatar pilihan siswa (tidak diekspor) */
   avatar?: string;
+  /** true bila kode dibuat siswa sendiri (bukan dari kartu peneliti) — D23 */
+  selfCreated?: boolean;
 }
 
 export type EndReason = 'switch' | 'idle' | 'close';
