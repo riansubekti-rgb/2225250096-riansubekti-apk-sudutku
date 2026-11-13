@@ -52,11 +52,13 @@ export function BusuIntro() {
 
   /** Ketik baris k; bila `withVoice`, ucapkan sekaligus dan lanjut otomatis ke baris berikutnya. */
   const playLine = useCallback(
-    (k: number, withVoice: boolean, all = lines) => {
+    (k: number, withVoice: boolean, all = lines, keepText = false) => {
       clearTimers();
       setI(k);
-      setShown(0);
       const text = all[k]!.text;
+      // keepText: sentuhan pertama hanya menyalakan suara — teks tidak diulang agar tata letak
+      // tidak bergeser tepat saat siswa mengetuk tombol di bawahnya.
+      if (!keepText) setShown(0);
       if (reduce) setShown(text.length);
       else {
         const id = window.setInterval(() => setShown((n) => (n >= text.length ? n : n + 1)), withVoice ? CHAR_MS_VOICE : CHAR_MS_SILENT);
@@ -97,7 +99,7 @@ export function BusuIntro() {
     if (!needTap) return;
     const start = () => {
       setNeedTap(false);
-      playLine(i, true, lines);
+      playLine(i, true, lines, true);
     };
     window.addEventListener('pointerdown', start, { once: true });
     return () => window.removeEventListener('pointerdown', start);
@@ -114,13 +116,18 @@ export function BusuIntro() {
       <button type="button" onClick={replay} aria-label="Putar ulang perkenalan Busu" className="rounded-full">
         <Busu mood={line.mood} size={128} bob={done && !talking} talking={talking || (!done && !reduce)} />
       </button>
-      {needTap && (
-        <p className="mt-1 animate-pulse rounded-full bg-accent px-3 py-1 text-sm font-bold text-on-accent">👆 Ketuk layar untuk mendengar Busu</p>
-      )}
+      {/* ruang tetap: petunjuk hilang tanpa menggeser tata letak */}
+      <p
+        aria-hidden={!needTap}
+        className={`mt-1 rounded-full bg-accent px-3 py-1 text-sm font-bold text-on-accent ${needTap ? 'animate-pulse' : 'invisible'}`}
+      >
+        👆 Ketuk layar untuk mendengar Busu
+      </p>
       <div className="relative mt-2 w-full rounded-card border border-line bg-surface px-4 py-3 text-left shadow-sm" aria-live="polite">
         <span aria-hidden className="absolute -top-[7px] left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 border-l border-t border-line bg-surface" />
-        <p className={`min-h-[3em] text-[17px] font-bold leading-snug ${done ? '' : 'type-caret'}`}>{line.text.slice(0, shown)}</p>
-        <div className="mt-2 flex items-center justify-between gap-2">
+        {/* tinggi tetap (3 baris) agar formulir di bawahnya tidak bergeser saat teks diketik */}
+        <p className={`min-h-[4.2em] text-[17px] font-bold leading-snug ${done ? '' : 'type-caret'}`}>{line.text.slice(0, shown)}</p>
+        <div className="mt-2 flex min-h-[40px] items-center justify-between gap-2">
           {lines.length > 1 ? (
             <span className="flex gap-1" aria-hidden>
               {lines.map((_, k) => (
