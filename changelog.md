@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.2.1] — 2026-11-14 — Busu bicara otomatis
+
+### Diubah
+- Busu **langsung berbicara** setiap kali muncul (perkenalan, Beranda, balon umpan balik, Tanya Busu); perkenalan berlanjut sendiri kalimat demi kalimat dengan teks yang muncul mengikuti suara.
+- **Ekspresi mengikuti kalimat** yang sedang diucapkan.
+- Suara lebih **lucu dan cepat** (pitch 1,75; kecepatan 1,2×).
+- Tombol **🔊/🔇** di header untuk mematikan suara (penting di kelas).
+- Balon yang berisi teks tebal/angka kini ikut dibacakan.
+
 ## [0.2.0] — 2026-11-14 — Busu lebih hidup, Tanya Busu, 12 misi
 
 ### Ditambahkan

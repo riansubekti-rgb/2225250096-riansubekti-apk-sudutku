@@ -110,6 +110,7 @@
 - [x] 7.11 Busu 8 ekspresi + mulut bicara + suara TTS + perkenalan di Masuk + ketuk di Beranda (D16)
 - [x] 7.12 F15 Tanya Busu offline: bank 27 topik, kalkulator langkah, salah ketik, fallback jujur (D15)
 - [x] 7.13 12 misi dunia nyata + adegan `chair` & `square` + daftar misi
+- [x] 7.15 Busu bicara otomatis + ekspresi mengikuti kalimat + suara lucu & cepat + tombol 🔊/🔇 (D17)
 - [ ] 7.14 Validasi isi Tanya Busu & kalimat Busu oleh peneliti/ahli (lihat content/REVIEW-konten.md §5b)
 
 ## Fase 8 — Mutu & Rilis

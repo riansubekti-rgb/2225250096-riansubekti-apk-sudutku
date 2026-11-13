@@ -1,26 +1,59 @@
-import { useEffect, useRef, useState } from 'react';
-import { canSpeak, speak } from '../../platform/speech';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { canSpeak, speakSentences, splitSentences, userHasInteracted } from '../../platform/speech';
 import { logEvent } from '../../data/log';
+import { moodFromText } from './moodFromText';
+import { useVoice } from './voiceStore';
+import type { BusuMood } from './Busu';
 
-/** Status bicara Busu untuk satu balon kata. Menghentikan suara saat komponen dilepas. */
-export function useSpeech() {
+/**
+ * Suara Busu untuk satu balon kata.
+ * - `auto`: langsung bicara saat teks muncul/berubah (bila suara nyala & layar sudah pernah disentuh).
+ * - `mood`: ekspresi yang mengikuti kalimat yang sedang diucapkan (null bila diam).
+ */
+export function useSpeech(opts: { text?: string; auto?: boolean; baseMood?: BusuMood } = {}) {
+  const enabled = useVoice((s) => s.enabled);
   const [speaking, setSpeaking] = useState(false);
-  const stop = useRef<(() => void) | null>(null);
+  const [mood, setMood] = useState<BusuMood | null>(null);
+  const cancel = useRef<(() => void) | null>(null);
+  const base = opts.baseMood ?? 'happy';
 
-  useEffect(() => () => stop.current?.(), []);
+  const play = useCallback(
+    (text: string) => {
+      const sentences = splitSentences(text);
+      setSpeaking(true);
+      setMood(moodFromText(sentences[0] ?? '', base));
+      cancel.current = speakSentences(sentences, {
+        onSentence: (i) => setMood(moodFromText(sentences[i]!, base)),
+        onEnd: () => {
+          setSpeaking(false);
+          setMood(null);
+          cancel.current = null;
+        },
+      });
+    },
+    [base],
+  );
 
-  const toggle = (text: string) => {
+  useEffect(() => () => cancel.current?.(), []);
+
+  useEffect(() => {
+    if (!opts.auto || !opts.text || !enabled || !canSpeak() || !userHasInteracted()) return;
+    const t = window.setTimeout(() => play(opts.text!), 150);
+    return () => window.clearTimeout(t);
+    // bicara ulang hanya bila teksnya berubah
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [opts.text, opts.auto, enabled]);
+
+  const toggle = (text?: string) => {
     if (speaking) {
-      stop.current?.();
+      cancel.current?.();
       return;
     }
-    setSpeaking(true);
-    void logEvent('busu_speak', { length: text.length });
-    stop.current = speak(text, () => {
-      setSpeaking(false);
-      stop.current = null;
-    });
+    const t = text ?? opts.text;
+    if (!t) return;
+    void logEvent('busu_speak', { length: t.length });
+    play(t);
   };
 
-  return { speaking, toggle, available: canSpeak() };
+  return { speaking, mood, toggle, available: canSpeak() };
 }

@@ -4,6 +4,8 @@ import { PUBLIC_PATHS, ROUTES, titleFor } from './routes';
 import { InAppBrowserNotice } from '../components/InAppBrowserNotice';
 import { TanyaSheet } from '../features/assistant/TanyaSheet';
 import { useTanya } from '../features/assistant/useTanya';
+import { useVoice } from '../components/mascot/voiceStore';
+import { canSpeak } from '../platform/speech';
 
 /** Halaman belajar yang boleh membuka Tanya Busu (bukan tes/angket/peneliti). */
 const ASK_PATHS = ['/pemanasan', '/kenali', '/lab', '/contoh', '/latihan', '/misi', '/progres'];
@@ -49,6 +51,7 @@ export function Layout() {
           </button>
         )}
         <h1 className={`flex-1 truncate text-lg font-bold ${showBack ? '' : 'px-2'}`}>{title}</h1>
+        {!pathname.startsWith('/tes') && !pathname.startsWith('/angket') && <VoiceToggle />}
         {profile && ASK_PATHS.includes(pathname) && <AskButton />}
         {profile && pathname !== '/selesai' && (
           <Link
@@ -106,6 +109,23 @@ function AskButton() {
       aria-label="Tanya Busu"
     >
       💬
+    </button>
+  );
+}
+
+/** Nyala/mati suara Busu — penting di kelas agar 30 HP tidak berbunyi bersamaan. */
+function VoiceToggle() {
+  const { enabled, setEnabled } = useVoice();
+  if (!canSpeak()) return null;
+  return (
+    <button
+      type="button"
+      onClick={() => setEnabled(!enabled)}
+      className="flex min-h-touch min-w-touch items-center justify-center rounded-full text-xl"
+      aria-label={enabled ? 'Matikan suara Busu' : 'Nyalakan suara Busu'}
+      aria-pressed={enabled}
+    >
+      {enabled ? '🔊' : '🔇'}
     </button>
   );
 }

@@ -190,7 +190,7 @@ Busu adalah busur derajat setengah lingkaran (180°) berwarna kuning dengan mata
 
 **Tambahan v0.2 (D16):**
 - **Perkenalan** di halaman Masuk: 4 kalimat diketik huruf demi huruf (mulut Busu bergerak), ekspresi berganti tiap kalimat; tampil penuh sekali per HP, berikutnya sapaan singkat (ketuk Busu untuk memutar ulang).
-- **Suara**: tombol 🔊 pada balon kata membacakan isi dengan text-to-speech bawaan HP (offline). Tidak pernah auto-play; simbol matematika dibacakan sebagai kata ("derajat", "sama dengan").
+- **Suara (revisi D17)**: Busu **otomatis** membacakan setiap balon kata begitu muncul (setelah sentuhan pertama di halaman), per kalimat; **ekspresi berganti mengikuti isi kalimat** (`moodFromText`: ups/sedih/kagum/bersorak/bangga/mengedip/berpikir). Suara tinggi & cepat (pitch 1,75; rate 1,2). Hanya satu Busu bicara pada satu waktu. Tombol 🔊/🔇 di header mematikan semua suara; 🔊 di balon untuk mengulang. Simbol matematika dibacakan sebagai kata ("derajat", "sama dengan").
 - **Busu diketuk** di Beranda → fakta/semangat acak dengan ekspresi berbeda.
 - **Tanya Busu**: Busu besar boleh berganti ekspresi di layar obrolan; jawaban ≤ 3 kalimat + langkah + gambar bila perlu (tetap satu ide per balon).
 

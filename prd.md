@@ -287,6 +287,7 @@ Buka aplikasi → Masuk (kode kelas + kode siswa)
 | D13 | Membuka instrumen | **Kode dari guru** (`TESAWAL`, `ANGKET1/2`, `TESAKHIR`, `PENDAPAT`) diketik siswa di HP masing-masing; Mode Peneliti tetap untuk ekspor. Lihat panduan-uji-coba.md |
 | D15 | Tanya Busu | Asisten **offline berbasis aturan** (bank tanya-jawab + kalkulator), bukan AI daring — menjaga D3 (tanpa server) & privasi anak. AI daring hanya bila peneliti memutuskan lain |
 | D16 | Busu v0.2 | 8 ekspresi, perkenalan di halaman Masuk (menyebut pembuat), suara text-to-speech bawaan HP (dipicu ketukan 🔊), Busu bisa diketuk di Beranda |
+| D17 | Suara Busu otomatis | **Revisi atas permintaan peneliti:** Busu langsung berbicara setiap muncul (setelah sentuhan pertama, aturan autoplay browser), ekspresi mengikuti kalimat, suara tinggi & cepat (pitch 1,75; rate 1,2). Mitigasi kelas: tombol 🔊/🔇 di header (tersimpan per HP) |
 | D14 | Kebocoran tes | Materi, latihan, dan misi tidak boleh memakai butir/konteks yang sama dengan pretest/posttest — dicek otomatis di `content.test.ts` |
 
 **Usulan pembagian 2 pertemuan** (perlu dikonfirmasi):
