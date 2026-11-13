@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.3.2] — 2026-11-14 — Subtitle berjalan & Busu mondar-mandir
+
+### Diubah
+- Suara Busu seperti **remaja ±15 tahun** (nada 1,3; kecepatan 1,05×).
+- Perkenalan di halaman Masuk tampil sebagai **subtitle berjalan** (potongan pendek, kata yang diucapkan disorot), bukan paragraf diam.
+- Di halaman Masuk, Busu **mondar-mandir naik-turun** di sisi kanan layar setiap beberapa detik; berhenti saat diketuk dan berbicara.
+
 ## [0.3.1] — 2026-11-14 — Busu bicara saat diketuk
 
 ### Diubah

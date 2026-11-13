@@ -3,8 +3,8 @@
  * tanpa layanan luar. Diucapkan per kalimat agar ekspresi Busu bisa berganti mengikuti isi kalimat.
  */
 
-/** Suara Busu: nada & kecepatan normal (suara perempuan Indonesia bila tersedia). */
-export const VOICE = { rate: 1, pitch: 1 };
+/** Suara Busu: remaja ±15 tahun — suara perempuan Indonesia, nada sedikit di atas normal, tempo santai. */
+export const VOICE = { rate: 1.05, pitch: 1.3 };
 
 /** Ubah teks matematika menjadi kalimat yang enak dibacakan. */
 export function toSpeakable(text: string): string {
