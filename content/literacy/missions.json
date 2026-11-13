@@ -1,0 +1,103 @@
+{
+  "version": "0.1.0-draft",
+  "note": "Konteks SENGAJA berbeda dari butir pretest/posttest (gunting, jalan, kertas, palang, laptop) agar tes tidak bocor.",
+  "missions": [
+    {
+      "id": "m-rambu",
+      "sceneId": "crossbuck",
+      "title": "Rambu Silang Perlintasan",
+      "context": "Rambu perlintasan kereta berbentuk huruf X dari dua papan yang bersilangan. Sudut di bagian atas besarnya 55°.",
+      "ask": "Berapa besar sudut di bagian bawah rambu?",
+      "pisaContext": "societal",
+      "relation": "vertical",
+      "e1": "55",
+      "e2": "x",
+      "interpret": {
+        "question": "Andi berkata: “Kalau papannya dibuat lebih miring sehingga sudut atasnya 70°, sudut bawahnya tetap 55°.” Bagaimana pendapatmu?",
+        "options": [
+          "Andi keliru, sudut bawah ikut menjadi 70° karena sudut bertolak belakang selalu sama besar.",
+          "Andi benar, sudut bawah tidak ikut berubah.",
+          "Andi keliru, sudut bawah menjadi 110° karena jumlahnya 180°."
+        ],
+        "answer": 0,
+        "explain": "Sudut atas dan bawah bertolak belakang. Jika satu berubah, yang lain ikut berubah dan tetap sama besar."
+      }
+    },
+    {
+      "id": "m-pintu",
+      "sceneId": "door",
+      "title": "Pintu Kamar",
+      "context": "Dilihat dari atas, dinding dan ambang pintu membentuk satu garis lurus. Pintu dibuka sehingga membentuk sudut 65° dengan ambang pintu.",
+      "ask": "Berapa besar sudut antara pintu dan dinding?",
+      "pisaContext": "personal",
+      "relation": "supplementary",
+      "e1": "65",
+      "e2": "x",
+      "interpret": {
+        "question": "Bisakah pintu dibuka sehingga kedua sudut itu sama besar?",
+        "options": [
+          "Bisa, masing-masing 90°, yaitu saat pintu tegak lurus dengan dinding.",
+          "Tidak bisa, karena kedua sudut selalu berbeda.",
+          "Bisa, masing-masing 180°."
+        ],
+        "answer": 0,
+        "explain": "Jumlah kedua sudut 180°. Jika sama besar, masing-masing 180° : 2 = 90°."
+      }
+    },
+    {
+      "id": "m-taman",
+      "sceneId": "garden",
+      "title": "Jalan Setapak di Pojok Taman",
+      "context": "Pagar di pojok taman membentuk sudut siku-siku. Jalan setapak dibuat dari pojok itu dan membentuk sudut 33° dengan pagar bawah.",
+      "ask": "Berapa besar sudut antara jalan setapak dan pagar yang lain?",
+      "pisaContext": "societal",
+      "relation": "complementary",
+      "e1": "33",
+      "e2": "x",
+      "interpret": {
+        "question": "Jika jalan setapak digeser sehingga sudut pertama menjadi 50°, sudut yang lain menjadi berapa?",
+        "options": ["40°", "130°", "50°"],
+        "answer": 0,
+        "explain": "Kedua sudut tetap berpenyiku, jadi 90° − 50° = 40°."
+      }
+    },
+    {
+      "id": "m-layangan",
+      "sceneId": "kite",
+      "title": "Rangka Layang-Layang Hias",
+      "context": "Dua bilah bambu rangka layang-layang hias bersilangan. Dua sudut yang bersebelahan besarnya (3x + 10)° dan (x + 10)°.",
+      "ask": "Hitung nilai x dan besar kedua sudut.",
+      "pisaContext": "personal",
+      "relation": "supplementary",
+      "e1": "3x+10",
+      "e2": "x+10",
+      "interpret": {
+        "question": "Berapa besar sudut yang bertolak belakang dengan sudut (3x + 10)°?",
+        "options": ["130°", "50°", "180°"],
+        "answer": 0,
+        "explain": "Sudut bertolak belakang sama besar dengan sudut (3x + 10)° = 130°."
+      }
+    },
+    {
+      "id": "m-taman-2",
+      "sceneId": "garden",
+      "title": "Taman Bunga Baru",
+      "context": "Di pojok taman lain yang juga siku-siku, jalan setapak membagi pojok menjadi sudut 2x° dan (x + 15)°.",
+      "ask": "Hitung nilai x dan besar kedua sudut.",
+      "pisaContext": "occupational",
+      "relation": "complementary",
+      "e1": "2x",
+      "e2": "x+15",
+      "interpret": {
+        "question": "Tukang taman menghitung x = 55. Apakah jawabannya masuk akal?",
+        "options": [
+          "Tidak, karena 2·55 = 110° sudah lebih dari 90°, padahal pojoknya siku-siku.",
+          "Ya, karena 55 bilangan bulat.",
+          "Ya, karena 2x + x + 15 = 180."
+        ],
+        "answer": 0,
+        "explain": "Sudut berpenyiku masing-masing harus kurang dari 90°. Tukang taman memakai 180°, padahal seharusnya 90°."
+      }
+    }
+  ]
+}

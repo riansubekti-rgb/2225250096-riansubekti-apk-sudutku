@@ -1,0 +1,21 @@
+{
+  "id": "sus",
+  "version": "0.1.0-draft",
+  "validated": false,
+  "title": "Angket Kemudahan Aplikasi",
+  "note": "DRAF terjemahan sederhana System Usability Scale (Brooke, 1996). Pertimbangkan versi Indonesia tervalidasi (mis. Sharfina & Santoso, 2016). Polaritas: butir ganjil +, genap −.",
+  "intro": "Pilih seberapa setuju kamu dengan setiap pernyataan tentang aplikasi SudutKu.",
+  "scale": { "min": 1, "max": 5, "minLabel": "Sangat tidak setuju", "maxLabel": "Sangat setuju" },
+  "items": [
+    { "id": "SUS1", "subscale": "SUS", "polarity": "+", "text": "Saya rasa saya akan sering memakai aplikasi ini." },
+    { "id": "SUS2", "subscale": "SUS", "polarity": "-", "text": "Saya merasa aplikasi ini terlalu rumit." },
+    { "id": "SUS3", "subscale": "SUS", "polarity": "+", "text": "Saya merasa aplikasi ini mudah dipakai." },
+    { "id": "SUS4", "subscale": "SUS", "polarity": "-", "text": "Saya butuh bantuan orang lain untuk bisa memakai aplikasi ini." },
+    { "id": "SUS5", "subscale": "SUS", "polarity": "+", "text": "Bagian-bagian aplikasi ini terhubung dengan baik." },
+    { "id": "SUS6", "subscale": "SUS", "polarity": "-", "text": "Banyak hal di aplikasi ini yang tidak konsisten." },
+    { "id": "SUS7", "subscale": "SUS", "polarity": "+", "text": "Saya rasa kebanyakan teman saya bisa cepat belajar memakai aplikasi ini." },
+    { "id": "SUS8", "subscale": "SUS", "polarity": "-", "text": "Aplikasi ini membingungkan untuk dipakai." },
+    { "id": "SUS9", "subscale": "SUS", "polarity": "+", "text": "Saya merasa yakin saat memakai aplikasi ini." },
+    { "id": "SUS10", "subscale": "SUS", "polarity": "-", "text": "Saya perlu belajar banyak hal dulu sebelum bisa memakai aplikasi ini." }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "note": "Kode yang ditulis guru di papan tulis lalu diketik siswa untuk membuka instrumen di HP masing-masing. Ganti kodenya sebelum uji coba bila perlu (huruf besar, tanpa spasi). Ini bukan pengaman kuat — cukup untuk mengatur urutan kegiatan di kelas.",
+  "codes": [
+    { "code": "TESAWAL", "label": "Tes Awal (pretest) — pertemuan 1", "patch": { "pretestOpen": true, "meeting": 1 } },
+    { "code": "ANGKET1", "label": "Angket beban belajar — pertemuan 1", "patch": { "clOpen": true, "meeting": 1 } },
+    { "code": "ANGKET2", "label": "Angket beban belajar — pertemuan 2", "patch": { "clOpen": true, "meeting": 2 } },
+    { "code": "TESAKHIR", "label": "Tes Akhir (posttest) — pertemuan 2", "patch": { "posttestOpen": true, "meeting": 2 } },
+    { "code": "PENDAPAT", "label": "Angket kemudahan (SUS) & pendapat siswa", "patch": { "susOpen": true, "meeting": 2 } }
+  ]
+}

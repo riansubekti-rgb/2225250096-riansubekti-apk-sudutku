@@ -1,0 +1,12 @@
+node_modules
+dist
+dev-dist
+*.local
+.vercel
+playwright-report
+test-results
+coverage
+__pycache__
+# data penelitian hasil ekspor — JANGAN di-commit (data anak di bawah umur)
+exports/
+*.zip

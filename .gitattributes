@@ -1,0 +1,4 @@
+# Akhir baris seragam (LF) agar build di server Linux (Vercel) konsisten
+* text=auto eol=lf
+*.png binary
+*.zip binary

@@ -1,0 +1,11 @@
+{
+  "id": "paas",
+  "version": "0.1.0-draft",
+  "validated": false,
+  "note": "Adaptasi skala usaha mental 9 poin (Paas, 1992). Terjemahan DRAF — ganti dengan versi tervalidasi peneliti.",
+  "question": "Seberapa besar usaha pikiran yang kamu keluarkan untuk mengerjakan soal-soal tadi?",
+  "min": 1,
+  "max": 9,
+  "minLabel": "Sangat sangat ringan",
+  "maxLabel": "Sangat sangat berat"
+}

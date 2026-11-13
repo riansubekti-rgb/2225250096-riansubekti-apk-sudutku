@@ -1,0 +1,21 @@
+{
+  "id": "cl-questionnaire",
+  "version": "0.1.0-draft",
+  "validated": false,
+  "title": "Angket Beban Belajar",
+  "note": "DRAF terjemahan bebas (disederhanakan untuk siswa SMP) dari kuesioner beban kognitif Leppink dkk. (2013). Ganti dengan terjemahan tervalidasi sebelum dipakai.",
+  "intro": "Pikirkan kegiatan belajar dengan SudutKu hari ini. Pilih angka yang paling sesuai. 0 = sama sekali tidak, 10 = sangat setuju.",
+  "scale": { "min": 0, "max": 10, "minLabel": "Sama sekali tidak", "maxLabel": "Sangat setuju" },
+  "items": [
+    { "id": "IL1", "subscale": "IL", "text": "Materi yang dipelajari hari ini sangat rumit." },
+    { "id": "IL2", "subscale": "IL", "text": "Rumus-rumus yang dipelajari hari ini terasa sangat rumit." },
+    { "id": "IL3", "subscale": "IL", "text": "Konsep dan pengertian yang dipelajari hari ini terasa sangat rumit." },
+    { "id": "EL1", "subscale": "EL", "text": "Petunjuk dan penjelasan di aplikasi sangat tidak jelas." },
+    { "id": "EL2", "subscale": "EL", "text": "Petunjuk dan penjelasan di aplikasi tidak membantu saya belajar." },
+    { "id": "EL3", "subscale": "EL", "text": "Petunjuk dan penjelasan di aplikasi memakai kata-kata yang membingungkan." },
+    { "id": "GL1", "subscale": "GL", "text": "Kegiatan hari ini membuat saya lebih paham materinya." },
+    { "id": "GL2", "subscale": "GL", "text": "Kegiatan hari ini menambah pengetahuan saya tentang hubungan antar sudut." },
+    { "id": "GL3", "subscale": "GL", "text": "Kegiatan hari ini membuat saya lebih paham rumus-rumusnya." },
+    { "id": "GL4", "subscale": "GL", "text": "Kegiatan hari ini membuat saya lebih paham konsep dan pengertiannya." }
+  ]
+}

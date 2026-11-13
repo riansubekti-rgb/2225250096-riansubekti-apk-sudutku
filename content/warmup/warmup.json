@@ -1,0 +1,56 @@
+{
+  "version": "0.1.0-draft",
+  "note": "Pre-training (P7): istilah dasar sebelum hubungan antar sudut + cek prasyarat (IL03).",
+  "cards": [
+    {
+      "id": "w-sudut",
+      "title": "Sudut",
+      "text": "Sudut terbentuk dari dua sinar yang berawal di satu titik. Titik itu disebut titik sudut.",
+      "figure": { "kind": "angle", "deg": 50 }
+    },
+    {
+      "id": "w-besar",
+      "title": "Besar sudut",
+      "text": "Besar sudut diukur dengan busur derajat. Satuannya derajat, ditulis °.",
+      "figure": { "kind": "angle", "deg": 50, "label": "50°" }
+    },
+    {
+      "id": "w-siku",
+      "title": "Sudut siku-siku",
+      "text": "Sudut siku-siku besarnya 90°. Tandanya kotak kecil ∟ di titik sudut.",
+      "figure": { "kind": "right" }
+    },
+    {
+      "id": "w-lurus",
+      "title": "Sudut lurus",
+      "text": "Garis lurus membentuk sudut 180°. Sudut ini disebut sudut lurus.",
+      "figure": { "kind": "straight" }
+    }
+  ],
+  "checks": [
+    {
+      "id": "wc-1",
+      "type": "choice",
+      "question": "Berapa besar sudut siku-siku?",
+      "options": ["45°", "90°", "180°"],
+      "answer": 1,
+      "remedial": "w-siku"
+    },
+    {
+      "id": "wc-2",
+      "type": "choice",
+      "question": "Garis lurus membentuk sudut sebesar…",
+      "options": ["90°", "180°", "360°"],
+      "answer": 1,
+      "remedial": "w-lurus"
+    },
+    {
+      "id": "wc-3",
+      "type": "number",
+      "question": "Hitunglah: 180 − 65 = …",
+      "answer": 115,
+      "remedial": null,
+      "hint": "Kurangi 60 dulu: 180 − 60 = 120. Lalu kurangi 5 lagi."
+    }
+  ]
+}

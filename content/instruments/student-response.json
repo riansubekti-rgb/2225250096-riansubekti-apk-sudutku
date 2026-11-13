@@ -1,0 +1,18 @@
+{
+  "id": "student-response",
+  "version": "0.1.0-draft",
+  "validated": false,
+  "title": "Angket Pendapat Siswa",
+  "note": "DRAF butir respons siswa (aspek tampilan, kemudahan, manfaat). Ganti dengan angket yang disusun & divalidasi peneliti.",
+  "intro": "Ceritakan pendapatmu tentang SudutKu. Tidak ada jawaban benar atau salah.",
+  "scale": { "min": 1, "max": 4, "minLabel": "Sangat tidak setuju", "maxLabel": "Sangat setuju" },
+  "items": [
+    { "id": "R1", "subscale": "tampilan", "text": "Gambar sudut di aplikasi jelas dan mudah dilihat." },
+    { "id": "R2", "subscale": "tampilan", "text": "Warna yang berbeda membantu saya membedakan jenis sudut." },
+    { "id": "R3", "subscale": "kemudahan", "text": "Penjelasan di aplikasi singkat dan mudah dipahami." },
+    { "id": "R4", "subscale": "kemudahan", "text": "Langkah Kenali, Aturan, Hitung, Periksa membantu saya mengerjakan soal." },
+    { "id": "R5", "subscale": "manfaat", "text": "Setelah memakai aplikasi ini, saya tidak lagi tertukar antara sudut berpelurus dan berpenyiku." },
+    { "id": "R6", "subscale": "manfaat", "text": "Saya lebih percaya diri mengerjakan soal sudut yang memakai x." }
+  ],
+  "open": [{ "id": "R7", "text": "Apa yang paling kamu sukai atau ingin diperbaiki dari SudutKu? (boleh dikosongkan)" }]
+}

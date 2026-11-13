@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0-draft",
+  "note": "Template soal latihan. Pasangan yang sama dengan butir pretest/posttest otomatis ditolak generator.",
+  "templates": [
+    { "id": "num-sup", "relation": "supplementary", "kind": "numeric", "known": [15, 165] },
+    { "id": "num-comp", "relation": "complementary", "kind": "numeric", "known": [10, 80] },
+    { "id": "num-vert", "relation": "vertical", "kind": "numeric", "known": [15, 165] },
+    { "id": "alg-sup-ax", "relation": "supplementary", "kind": "algebra", "a1": [1, 6], "a2": [1, 6], "b1": [0, 0], "b2": [0, 0] },
+    { "id": "alg-sup-axb", "relation": "supplementary", "kind": "algebra", "a1": [1, 5], "a2": [1, 5], "b1": [-30, 30], "b2": [-30, 30], "bStep": 5 },
+    { "id": "alg-comp-ax", "relation": "complementary", "kind": "algebra", "a1": [1, 6], "a2": [1, 6], "b1": [0, 0], "b2": [0, 0] },
+    { "id": "alg-comp-axb", "relation": "complementary", "kind": "algebra", "a1": [1, 4], "a2": [1, 4], "b1": [-20, 20], "b2": [-20, 20], "bStep": 5 },
+    { "id": "alg-vert-axb", "relation": "vertical", "kind": "algebra", "a1": [2, 6], "a2": [1, 4], "b1": [-40, 40], "b2": [-40, 40], "bStep": 5 }
+  ]
+}

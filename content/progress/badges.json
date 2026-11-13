@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "badges": [
+    { "id": "pemanasan", "icon": "✏️", "title": "Siap Mulai", "desc": "Menyelesaikan Pemanasan" },
+    { "id": "pengenal", "icon": "🔍", "title": "Pengenal Sudut", "desc": "Benar minimal 5 dari 6 tantangan Kenali Hubungan" },
+    { "id": "peneliti-lab", "icon": "🧪", "title": "Peneliti Lab", "desc": "Mencoba ketiga mode Lab Sudut" },
+    { "id": "penghitung", "icon": "🧮", "title": "Jago Menghitung", "desc": "Menguasai soal angka pada satu jenis sudut" },
+    { "id": "penakluk-x", "icon": "✖️", "title": "Penakluk x", "desc": "Menguasai soal bervariabel pada satu jenis sudut" },
+    { "id": "penjelajah", "icon": "🌏", "title": "Penjelajah", "desc": "Menyelesaikan 3 Misi Dunia Nyata" }
+  ],
+  "kcLabel": {
+    "KC_IDENTIFY": "Mengenali hubungan",
+    "KC_RULE": "Memilih aturan",
+    "KC_NUMERIC": "Menghitung (angka)",
+    "KC_ALGEBRA": "Menghitung (pakai x)"
+  }
+}

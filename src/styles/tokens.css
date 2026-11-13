@@ -1,0 +1,64 @@
+/* Token desain — sumber tunggal warna (desain.md §2–3). Jangan tulis hex di komponen. */
+:root {
+  /* Kode warna hubungan sudut (Okabe–Ito, aman buta warna; selalu dipasangkan simbol) */
+  --rel-sup: #0072b2; /* berpelurus */
+  --rel-comp: #d55e00; /* berpenyiku */
+  --rel-vert: #009e73; /* bertolak belakang */
+  --ask: #cc79a7; /* sudut yang ditanyakan */
+
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --ink: #1f2328;
+  --ink-muted: #5f6672;
+  --line: #d9dce1;
+  --accent: #3b3f99;
+  --on-accent: #ffffff;
+  --hero-from: #3b3f99;
+  --hero-to: #5b5fc7;
+  --on-hero: #ffffff;
+
+  --radius: 14px;
+  --space: 8px;
+  --font: 'Atkinson Hyperlegible', 'Noto Sans', system-ui, sans-serif;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --rel-sup: #56b4e9;
+    --rel-comp: #f0a35e;
+    --rel-vert: #4fd1a5;
+    --bg: #14161a;
+    --surface: #1d2026;
+    --ink: #ecedee;
+    --ink-muted: #a3a9b1;
+    --line: #30343b;
+    --accent: #a5a8ff;
+    --on-accent: #14161a;
+    --hero-from: #2e3180;
+    --hero-to: #4a4eb0;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --rel-sup: #56b4e9;
+  --rel-comp: #f0a35e;
+  --rel-vert: #4fd1a5;
+  --bg: #14161a;
+  --surface: #1d2026;
+  --ink: #ecedee;
+  --ink-muted: #a3a9b1;
+  --line: #30343b;
+  --accent: #a5a8ff;
+  --on-accent: #14161a;
+  --hero-from: #2e3180;
+  --hero-to: #4a4eb0;
+  color-scheme: dark;
+}

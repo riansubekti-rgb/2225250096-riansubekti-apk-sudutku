@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#3B3F99"/>
+  <!-- garis lurus (berpelurus) + sinar: logo SudutKu -->
+  <line x1="96" y1="352" x2="416" y2="352" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"/>
+  <line x1="256" y1="352" x2="368" y2="144" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"/>
+  <path d="M 336 352 A 80 80 0 0 0 294 282" fill="none" stroke="#56B4E9" stroke-width="22" stroke-linecap="round"/>
+  <path d="M 216 352 A 40 40 0 0 1 275 317" fill="none" stroke="#F0A35E" stroke-width="22" stroke-linecap="round"/>
+</svg>

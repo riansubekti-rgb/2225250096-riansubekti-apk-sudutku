@@ -1,0 +1,478 @@
+{
+  "id": "literacy-pretest",
+  "version": "0.1.0-draft",
+  "kind": "test",
+  "validated": false,
+  "title": "Pretest Literasi Matematis",
+  "note": "DRAF disusun AI (Claude) — wajib ditinjau peneliti & divalidasi ahli sebelum dipakai.",
+  "items": [
+    {
+      "stem": "Pada gambar, ∠AOB adalah sudut siku-siku. Sinar OC membaginya sehingga ∠AOC = 32°. Berapa besar ∠COB?",
+      "figure": {
+        "type": "complementary",
+        "a": 32,
+        "labels": [
+          "32°",
+          "?"
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "58°"
+        },
+        {
+          "id": "B",
+          "text": "148°",
+          "distractor": "M_COMP_AS_SUP"
+        },
+        {
+          "id": "C",
+          "text": "32°",
+          "distractor": "M_VERT_AS_SUP"
+        },
+        {
+          "id": "D",
+          "text": "68°",
+          "distractor": "M_ARITH"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "employ",
+        "context": "intra-matematis",
+        "relation": "complementary",
+        "description": "Menghitung pasangan sudut berpenyiku dari gambar"
+      },
+      "difficulty": "mudah",
+      "id": "PRE01",
+      "parallelOf": "POST01",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "Dua garis lurus berpotongan di titik O. Salah satu sudut yang terbentuk besarnya 47°. Berapa besar sudut yang bertolak belakang dengannya?",
+      "figure": {
+        "type": "vertical",
+        "a": 47,
+        "labels": [
+          "47°",
+          "?",
+          "",
+          ""
+        ],
+        "highlight": [
+          0,
+          1
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "47°"
+        },
+        {
+          "id": "B",
+          "text": "133°",
+          "distractor": "M_VERT_AS_SUP"
+        },
+        {
+          "id": "C",
+          "text": "43°",
+          "distractor": "M_SUP_AS_COMP"
+        },
+        {
+          "id": "D",
+          "text": "94°",
+          "distractor": "M_UNKNOWN"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "employ",
+        "context": "intra-matematis",
+        "relation": "vertical",
+        "description": "Menghitung sudut bertolak belakang dari gambar"
+      },
+      "difficulty": "mudah",
+      "id": "PRE02",
+      "parallelOf": "POST02",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "Saat gunting dibuka, sudut antara kedua mata pisaunya 35°. Berapa besar sudut antara kedua pegangan gunting itu?",
+      "figure": {
+        "type": "vertical",
+        "a": 35,
+        "labels": [
+          "35°",
+          "?",
+          "",
+          ""
+        ],
+        "highlight": [
+          0,
+          1
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "35°"
+        },
+        {
+          "id": "B",
+          "text": "145°",
+          "distractor": "M_VERT_AS_SUP"
+        },
+        {
+          "id": "C",
+          "text": "55°",
+          "distractor": "M_SUP_AS_COMP"
+        },
+        {
+          "id": "D",
+          "text": "70°",
+          "distractor": "M_UNKNOWN"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "formulate",
+        "context": "personal",
+        "relation": "vertical",
+        "description": "Memodelkan gunting sebagai dua garis berpotongan (bertolak belakang)"
+      },
+      "difficulty": "mudah",
+      "id": "PRE03",
+      "parallelOf": "POST03",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "Jalan Merdeka yang lurus dipotong oleh Jalan Melati. Salah satu sudut di persimpangan itu 72°. Berapa besar sudut yang bersebelahan dengannya pada sisi Jalan Merdeka yang sama?",
+      "figure": {
+        "type": "supplementary",
+        "a": 72,
+        "labels": [
+          "72°",
+          "?"
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "108°"
+        },
+        {
+          "id": "B",
+          "text": "72°",
+          "distractor": "M_VERT_AS_SUP"
+        },
+        {
+          "id": "C",
+          "text": "18°",
+          "distractor": "M_SUP_AS_COMP"
+        },
+        {
+          "id": "D",
+          "text": "118°",
+          "distractor": "M_ARITH"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "formulate",
+        "context": "societal",
+        "relation": "supplementary",
+        "description": "Memodelkan persimpangan jalan lurus sebagai sudut berpelurus"
+      },
+      "difficulty": "sedang",
+      "id": "PRE04",
+      "parallelOf": "POST04",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "Rina menggunting selembar kertas persegi dengan garis lurus dari salah satu pojoknya, sehingga sudut pojok itu terbagi dua. Salah satu bagian besarnya 28°. Berapa besar bagian yang lain?",
+      "figure": {
+        "type": "complementary",
+        "a": 28,
+        "labels": [
+          "28°",
+          "?"
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "62°"
+        },
+        {
+          "id": "B",
+          "text": "152°",
+          "distractor": "M_COMP_AS_SUP"
+        },
+        {
+          "id": "C",
+          "text": "28°",
+          "distractor": "M_VERT_AS_SUP"
+        },
+        {
+          "id": "D",
+          "text": "72°",
+          "distractor": "M_ARITH"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "formulate",
+        "context": "personal",
+        "relation": "complementary",
+        "description": "Mengenali pojok persegi (90°) sebagai dasar sudut berpenyiku"
+      },
+      "difficulty": "sedang",
+      "id": "PRE05",
+      "parallelOf": "POST05",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "∠P = (2x)° dan ∠Q = (3x)° adalah sudut berpenyiku. Berapa besar sudut yang lebih besar?",
+      "figure": {
+        "type": "complementary",
+        "a": 36,
+        "labels": [
+          "2x",
+          "3x"
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "54°"
+        },
+        {
+          "id": "B",
+          "text": "18°",
+          "distractor": "M_X_NOT_ANGLE"
+        },
+        {
+          "id": "C",
+          "text": "108°",
+          "distractor": "M_COMP_AS_SUP"
+        },
+        {
+          "id": "D",
+          "text": "36°",
+          "distractor": "M_UNKNOWN"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "employ",
+        "context": "intra-matematis",
+        "relation": "complementary",
+        "description": "Menyelesaikan sudut berpenyiku bervariabel"
+      },
+      "difficulty": "sedang",
+      "id": "PRE06",
+      "parallelOf": "POST06",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "∠K = (2x + 10)° dan ∠L = (3x − 5)° adalah sudut berpelurus. Berapa besar ∠L?",
+      "figure": {
+        "type": "supplementary",
+        "a": 80,
+        "labels": [
+          "2x + 10",
+          "3x − 5"
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "100°"
+        },
+        {
+          "id": "B",
+          "text": "35°",
+          "distractor": "M_X_NOT_ANGLE"
+        },
+        {
+          "id": "C",
+          "text": "80°",
+          "distractor": "M_UNKNOWN"
+        },
+        {
+          "id": "D",
+          "text": "46°",
+          "distractor": "M_SUP_AS_COMP"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "employ",
+        "context": "intra-matematis",
+        "relation": "supplementary",
+        "description": "Menyelesaikan sudut berpelurus bervariabel dengan konstanta"
+      },
+      "difficulty": "sulit",
+      "id": "PRE07",
+      "parallelOf": "POST07",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "Palang pintu perlintasan kereta terangkat sehingga membentuk sudut 50° dengan garis jalan di sisi kanan tiangnya. Sari menghitung sudut palang dengan garis jalan di sisi kiri adalah 130°, sedangkan Tiara menghitung 40°. Pendapat mana yang tepat?",
+      "figure": {
+        "type": "supplementary",
+        "a": 50,
+        "labels": [
+          "50°",
+          "?"
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Sari, karena kedua sudut berada pada garis jalan yang lurus sehingga jumlahnya 180°"
+        },
+        {
+          "id": "B",
+          "text": "Tiara, karena kedua sudut berpenyiku sehingga jumlahnya 90°",
+          "distractor": "M_SUP_AS_COMP"
+        },
+        {
+          "id": "C",
+          "text": "Keduanya benar, karena bergantung pada arah melihatnya",
+          "distractor": "M_UNKNOWN"
+        },
+        {
+          "id": "D",
+          "text": "Keduanya salah, karena sudut di sisi kiri juga 50°",
+          "distractor": "M_VERT_AS_SUP"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "interpret",
+        "context": "societal",
+        "relation": "supplementary",
+        "description": "Mengevaluasi dua jawaban berdasarkan sifat sudut berpelurus"
+      },
+      "difficulty": "sedang",
+      "id": "PRE08",
+      "parallelOf": "POST08",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "Sebuah laptop diletakkan di meja datar. Layarnya dibuka sehingga sudut antara layar dan keyboard 110°. Dina berkata, “Sudut antara layar dan permukaan meja di belakang laptop juga 110°.” Bagaimana pendapatmu?",
+      "figure": {
+        "type": "supplementary",
+        "a": 110,
+        "labels": [
+          "110°",
+          "?"
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Dina salah; sudut itu 70°, karena keyboard dan meja di belakangnya membentuk garis lurus"
+        },
+        {
+          "id": "B",
+          "text": "Dina benar, karena kedua sudut saling bertolak belakang",
+          "distractor": "M_VERT_AS_SUP"
+        },
+        {
+          "id": "C",
+          "text": "Dina salah; sudut itu 20°, karena selisihnya dengan sudut siku-siku",
+          "distractor": "M_SUP_AS_COMP"
+        },
+        {
+          "id": "D",
+          "text": "Dina salah; sudut itu 250°, karena satu putaran penuh 360°",
+          "distractor": "M_UNKNOWN"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "interpret",
+        "context": "personal",
+        "relation": "supplementary",
+        "description": "Menafsirkan klaim dalam konteks laptop menggunakan sudut berpelurus"
+      },
+      "difficulty": "sedang",
+      "id": "PRE09",
+      "parallelOf": "POST09",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    },
+    {
+      "stem": "Dua garis berpotongan membentuk sepasang sudut bertolak belakang (3x − 20)° dan (x + 40)°. Budi menjawab x = 40. Pernyataan mana yang paling tepat tentang jawaban Budi?",
+      "figure": {
+        "type": "vertical",
+        "a": 70,
+        "labels": [
+          "3x − 20",
+          "x + 40",
+          "",
+          ""
+        ],
+        "highlight": [
+          0,
+          1
+        ]
+      },
+      "options": [
+        {
+          "id": "A",
+          "text": "Salah, karena jika x = 40 kedua sudut menjadi 100° dan 80°, padahal sudut bertolak belakang harus sama besar"
+        },
+        {
+          "id": "B",
+          "text": "Benar, karena 100° + 80° = 180°",
+          "distractor": "M_VERT_AS_SUP"
+        },
+        {
+          "id": "C",
+          "text": "Benar, karena 40 adalah bilangan bulat positif",
+          "distractor": "M_UNKNOWN"
+        },
+        {
+          "id": "D",
+          "text": "Salah, karena jumlah kedua sudut itu seharusnya 90°",
+          "distractor": "M_COMP_AS_SUP"
+        }
+      ],
+      "answer": "A",
+      "indicator": {
+        "pisaProcess": "interpret",
+        "context": "intra-matematis",
+        "relation": "vertical",
+        "description": "Memeriksa kewajaran penyelesaian aljabar dengan sifat sudut bertolak belakang"
+      },
+      "difficulty": "sulit",
+      "id": "PRE10",
+      "parallelOf": "POST10",
+      "type": "mcq",
+      "shuffleOptions": true,
+      "score": 1
+    }
+  ]
+}
