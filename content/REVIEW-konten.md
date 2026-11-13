@@ -65,8 +65,8 @@ _Catatan validator:_ ______________________________________
 | 6 | Bertolak belakang, sudut a = 115° | Bertolak belakang |
 
 **Umpan balik:**
-- correct: Benar!
-- wrong: Belum tepat.
+- correct: Yeay, benar!
+- wrong: Ups, belum tepat!
 - supplementary: Sudut a dan b membentuk garis lurus, jadi berpelurus (jumlahnya 180°).
 - complementary: Ada tanda ∟, jadi sudut a dan b berpenyiku (jumlahnya 90°).
 - vertical: Sudut a dan b berhadapan pada dua garis yang berpotongan, jadi bertolak belakang (sama besar).
@@ -105,14 +105,14 @@ _Catatan validator:_ ______________________________________
 - Bertolak belakang: Kedua sudut berhadapan pada dua garis yang berpotongan, jadi bertolak belakang.
 
 **Umpan balik:**
-- correct: Tepat!
-- wrong: Belum tepat. Coba lagi, atau buka petunjuk.
+- correct: Tepat sekali! Keren!
+- wrong: Ups, belum tepat. Coba lagi, kamu pasti bisa!
 - reveal: Tidak apa-apa. Ini jawabannya, perhatikan baik-baik ya.
 - M_COMP_AS_SUP: Kamu memakai 180°. Lihat tanda ∟ di gambar: kedua sudut membentuk 90°.
 - M_SUP_AS_COMP: Kamu memakai 90°. Lihat lagi: kedua sudut membentuk garis lurus, jadi jumlahnya 180°.
 - M_VERT_AS_SUP: Sudut bertolak belakang itu sama besar, bukan berjumlah 180°.
 - M_X_NOT_ANGLE: Itu nilai x. Sekarang ganti x ke dalam {expr} untuk mendapat besar sudutnya.
-- check: Cocok dengan sifat hubungannya. Jawabanmu masuk akal!
+- check: Yeay, cocok dengan sifat hubungannya! Jawabanmu masuk akal!
 
 **Petunjuk bertingkat:**
 - identify: (1) Lihat gambarnya: apakah ada garis lurus, tanda ∟, atau dua garis yang berpotongan? → (2) Garis lurus → berpelurus. Tanda ∟ → berpenyiku. Saling berhadapan → bertolak belakang.
@@ -267,22 +267,22 @@ _Catatan validator:_ ______________________________________
 ## 5b. Maskot Busu & Tanya Busu
 
 **Perkenalan di halaman Masuk:**
-- (happy) Hai! Aku Busu, si busur derajat yang suka sudut.
-- (proud) Aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika.
-- (wink) Tugasku menemanimu supaya kamu mudah memahami materi garis dan sudut.
-- (cheer) Yuk mulai! Ketik kode siswamu di bawah, ya.
+- (cheer) Haiii! Aku Busu, si busur derajat yang supeeer suka sudut!
+- (proud) Aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika. Keren, kan?
+- (wink) Aku bakal nemenin kamu supaya materi garis dan sudut jadi gampang dan seru banget!
+- (cheer) Yuk, kita mulai petualangannya! Ketik kode siswamu di bawah, yaa!
 
 **Kalimat saat Busu diketuk di Beranda:**
-- (proud) Tahukah kamu? Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180°!
-- (think) Pelurus = lurus = 180°. Penyiku = siku = 90°. Gampang diingat, kan?
-- (wink) Sudut bertolak belakang itu seperti anak kembar: besarnya selalu sama.
-- (wow) Hihi, geli! Ayo lanjut belajar.
-- (cheer) Ada yang belum paham? Ketuk Tanya Busu, aku siap membantu!
-- (happy) Coba lihat sekelilingmu. Pintu, jendela, dan meja penuh dengan sudut!
-- (think) Kalau melihat tanda kotak kecil ∟, ingat: itu sudut siku-siku, 90°.
-- (proud) Setiap kali kamu salah lalu mencoba lagi, otakmu sedang bertambah kuat!
+- (proud) Tahukah kamu? Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180 derajat! Hebat, kan?
+- (wink) Ingat ya! Pelurus itu lurus, 180 derajat. Penyiku itu siku, 90 derajat. Gampang banget!
+- (cheer) Sudut bertolak belakang itu kayak anak kembar! Besarnya selalu sama. Seru, kan?
+- (wow) Hihihi, geli! Ayo ayo, lanjut belajar!
+- (cheer) Ada yang bikin bingung? Tanya Busu aja! Aku siap banget bantuin kamu!
+- (wow) Wah, coba lihat sekelilingmu! Pintu, jendela, meja, semuanya penuh sudut!
+- (wink) Kalau lihat kotak kecil di pojok sudut, itu tandanya siku-siku. Sembilan puluh derajat!
+- (proud) Salah itu nggak apa-apa! Setiap kali mencoba lagi, otakmu makin kuat. Semangat!
 
-**Tanya Busu (offline, bukan AI)** — sapaan: Hai! Aku Busu. Tanyakan apa saja tentang garis dan sudut. Kamu juga bisa mengetik soal, misalnya “2x + 4x = 90” atau “penyiku dari 35”.
+**Tanya Busu (offline, bukan AI)** — sapaan: Haiii! Aku Busu! Tanya apa aja tentang garis dan sudut, ya! Kamu juga bisa ketik soal, misalnya “2x + 4x = 90” atau “penyiku dari 35”.
 
 | Topik | Contoh kata kunci | Jawaban Busu |
 |---|---|---|

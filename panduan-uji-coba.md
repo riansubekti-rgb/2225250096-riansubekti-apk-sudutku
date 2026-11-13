@@ -32,6 +32,8 @@ Hal terpenting: **data siswa hanya tersimpan di HP masing-masing.** Tidak ada se
 
 ---
 
+> 🎵 **Musik & 🔊 suara Busu:** layar pertama adalah "Ketuk untuk mulai!" — setelah diketuk, musik menyala dan Busu berbicara otomatis. Musik hanya di layar santai (berhenti saat belajar/tes). Tombol 🎵 dan 🔊 di kanan atas untuk mematikannya.
+>
 > 🔊 **Suara Busu:** Busu berbicara otomatis. Di kelas, minta siswa **memakai earphone** atau **mengecilkan volume**. Bila kelas terlalu ramai, ketuk **🔊 di kanan atas** sehingga menjadi 🔇 (tersimpan di HP itu).
 
 ## 2. Pertemuan 1 (± 80 menit)

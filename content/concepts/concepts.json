@@ -2,8 +2,8 @@
   "version": "0.1.0-draft",
   "quizPrompt": "Sudut a dan b ini termasuk hubungan apa?",
   "feedback": {
-    "correct": "Benar!",
-    "wrong": "Belum tepat.",
+    "correct": "Yeay, benar!",
+    "wrong": "Ups, belum tepat!",
     "supplementary": "Sudut a dan b membentuk garis lurus, jadi berpelurus (jumlahnya 180°).",
     "complementary": "Ada tanda ∟, jadi sudut a dan b berpenyiku (jumlahnya 90°).",
     "vertical": "Sudut a dan b berhadapan pada dua garis yang berpotongan, jadi bertolak belakang (sama besar)."
@@ -15,7 +15,14 @@
       "title": "Sudut Berpelurus",
       "core": "Dua sudut berpelurus jika keduanya membentuk garis lurus. Jumlahnya selalu 180°.",
       "formula": "∠a + ∠b = 180°",
-      "figure": { "type": "supplementary", "a": 65, "labels": ["65°", "115°"] },
+      "figure": {
+        "type": "supplementary",
+        "a": 65,
+        "labels": [
+          "65°",
+          "115°"
+        ]
+      },
       "why": "Garis lurus membentuk sudut 180°. Sinar di tengah hanya membaginya menjadi dua bagian, jadi jumlah keduanya tetap 180°.",
       "tip": "Cari garis lurusnya!"
     },
@@ -25,7 +32,14 @@
       "title": "Sudut Berpenyiku",
       "core": "Dua sudut berpenyiku jika keduanya membentuk sudut siku-siku. Jumlahnya selalu 90°.",
       "formula": "∠a + ∠b = 90°",
-      "figure": { "type": "complementary", "a": 35, "labels": ["35°", "55°"] },
+      "figure": {
+        "type": "complementary",
+        "a": 35,
+        "labels": [
+          "35°",
+          "55°"
+        ]
+      },
       "why": "Tanda ∟ berarti sudut siku-siku, besarnya 90°. Sinar di dalamnya membagi 90° menjadi dua bagian.",
       "tip": "Cari tanda ∟!"
     },
@@ -35,7 +49,20 @@
       "title": "Sudut Bertolak Belakang",
       "core": "Dua garis yang berpotongan membentuk sudut-sudut yang berhadapan. Sudut bertolak belakang selalu sama besar.",
       "formula": "∠a = ∠b",
-      "figure": { "type": "vertical", "a": 50, "labels": ["50°", "50°", "", ""], "highlight": [0, 1] },
+      "figure": {
+        "type": "vertical",
+        "a": 50,
+        "labels": [
+          "50°",
+          "50°",
+          "",
+          ""
+        ],
+        "highlight": [
+          0,
+          1
+        ]
+      },
       "why": "Kedua sudut sama-sama berpelurus dengan sudut yang terletak di antaranya. Jadi keduanya sama dengan 180° dikurangi sudut itu, sehingga besarnya sama.",
       "tip": "Seperti gunting yang dibuka!"
     },
@@ -44,23 +71,121 @@
       "title": "Berpelurus atau Berpenyiku?",
       "left": {
         "relation": "supplementary",
-        "figure": { "type": "supplementary", "a": 60, "labels": ["60°", "120°"] },
+        "figure": {
+          "type": "supplementary",
+          "a": 60,
+          "labels": [
+            "60°",
+            "120°"
+          ]
+        },
         "cue": "Garis lurus",
         "total": "Jumlah 180°"
       },
       "right": {
         "relation": "complementary",
-        "figure": { "type": "complementary", "a": 30, "labels": ["30°", "60°"] },
+        "figure": {
+          "type": "complementary",
+          "a": 30,
+          "labels": [
+            "30°",
+            "60°"
+          ]
+        },
         "cue": "Ada tanda ∟",
         "total": "Jumlah 90°"
       },
       "tip": "Kuncinya: garis lurus atau tanda ∟?"
     },
-    { "kind": "quiz", "id": "idq-01", "figure": { "type": "supplementary", "a": 40, "labels": ["a", "b"] }, "answer": "supplementary" },
-    { "kind": "quiz", "id": "idq-02", "figure": { "type": "complementary", "a": 60, "labels": ["a", "b"] }, "answer": "complementary" },
-    { "kind": "quiz", "id": "idq-03", "figure": { "type": "vertical", "a": 70, "labels": ["a", "b", "", ""], "highlight": [0, 1] }, "answer": "vertical" },
-    { "kind": "quiz", "id": "idq-04", "figure": { "type": "complementary", "a": 25, "labels": ["a", "b"] }, "answer": "complementary" },
-    { "kind": "quiz", "id": "idq-05", "figure": { "type": "supplementary", "a": 135, "labels": ["a", "b"] }, "answer": "supplementary" },
-    { "kind": "quiz", "id": "idq-06", "figure": { "type": "vertical", "a": 115, "labels": ["a", "b", "", ""], "highlight": [0, 1] }, "answer": "vertical" }
+    {
+      "kind": "quiz",
+      "id": "idq-01",
+      "figure": {
+        "type": "supplementary",
+        "a": 40,
+        "labels": [
+          "a",
+          "b"
+        ]
+      },
+      "answer": "supplementary"
+    },
+    {
+      "kind": "quiz",
+      "id": "idq-02",
+      "figure": {
+        "type": "complementary",
+        "a": 60,
+        "labels": [
+          "a",
+          "b"
+        ]
+      },
+      "answer": "complementary"
+    },
+    {
+      "kind": "quiz",
+      "id": "idq-03",
+      "figure": {
+        "type": "vertical",
+        "a": 70,
+        "labels": [
+          "a",
+          "b",
+          "",
+          ""
+        ],
+        "highlight": [
+          0,
+          1
+        ]
+      },
+      "answer": "vertical"
+    },
+    {
+      "kind": "quiz",
+      "id": "idq-04",
+      "figure": {
+        "type": "complementary",
+        "a": 25,
+        "labels": [
+          "a",
+          "b"
+        ]
+      },
+      "answer": "complementary"
+    },
+    {
+      "kind": "quiz",
+      "id": "idq-05",
+      "figure": {
+        "type": "supplementary",
+        "a": 135,
+        "labels": [
+          "a",
+          "b"
+        ]
+      },
+      "answer": "supplementary"
+    },
+    {
+      "kind": "quiz",
+      "id": "idq-06",
+      "figure": {
+        "type": "vertical",
+        "a": 115,
+        "labels": [
+          "a",
+          "b",
+          "",
+          ""
+        ],
+        "highlight": [
+          0,
+          1
+        ]
+      },
+      "answer": "vertical"
+    }
   ]
 }

@@ -41,6 +41,7 @@ npm run dev -- --host  # buka dari ponsel Android di jaringan Wi-Fi yang sama
 - Maksimal **2 sudut berwarna** dalam satu gambar.
 - Maskot **Busu** hanya dipakai sesuai [desain.md §9.2](desain.md): kecil & diam saat siswa mengerjakan soal, tidak tampil di mode tes/kuesioner.
 - Jangan menambah animasi dekoratif, auto-play, atau toast yang cepat hilang untuk umpan balik.
+- **Backsound hanya di layar santai** (`MUSIC_PATHS` di `MusicController.tsx`). Jangan menambahkan halaman materi/soal/tes ke daftar itu.
 - Gambar tidak boleh tertutup keyboard. Gunakan komponen `NumPad` aplikasi.
 - Uji di 360×640 dan 800×1280, mode terang dan gelap.
 - Daftar periksa lengkap ada di [desain.md §11](desain.md).

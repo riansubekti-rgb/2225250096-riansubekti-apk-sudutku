@@ -5,6 +5,8 @@ import { InAppBrowserNotice } from '../components/InAppBrowserNotice';
 import { TanyaSheet } from '../features/assistant/TanyaSheet';
 import { useTanya } from '../features/assistant/useTanya';
 import { useVoice } from '../components/mascot/voiceStore';
+import { MusicController } from '../components/music/MusicController';
+import { useMusic } from '../components/music/musicStore';
 import { canSpeak } from '../platform/speech';
 
 /** Halaman belajar yang boleh membuka Tanya Busu (bukan tes/angket/peneliti). */
@@ -51,6 +53,7 @@ export function Layout() {
           </button>
         )}
         <h1 className={`flex-1 truncate text-lg font-bold ${showBack ? '' : 'px-2'}`}>{title}</h1>
+        {!pathname.startsWith('/tes') && !pathname.startsWith('/angket') && <MusicToggle />}
         {!pathname.startsWith('/tes') && !pathname.startsWith('/angket') && <VoiceToggle />}
         {profile && ASK_PATHS.includes(pathname) && <AskButton />}
         {profile && pathname !== '/selesai' && (
@@ -66,6 +69,7 @@ export function Layout() {
       </header>
       <InAppBrowserNotice />
       <TanyaSheet />
+      <MusicController />
       <main className="flex flex-1 flex-col px-4 py-4">
         <Outlet />
       </main>
@@ -121,11 +125,27 @@ function VoiceToggle() {
     <button
       type="button"
       onClick={() => setEnabled(!enabled)}
-      className="flex min-h-touch min-w-touch items-center justify-center rounded-full text-xl"
+      className="flex min-h-touch min-w-[40px] items-center justify-center rounded-full text-xl"
       aria-label={enabled ? 'Matikan suara Busu' : 'Nyalakan suara Busu'}
       aria-pressed={enabled}
     >
       {enabled ? '🔊' : '🔇'}
+    </button>
+  );
+}
+
+/** Nyala/mati backsound. Musik hanya berbunyi di layar santai (Masuk, Beranda, Progres). */
+function MusicToggle() {
+  const { enabled, setEnabled } = useMusic();
+  return (
+    <button
+      type="button"
+      onClick={() => setEnabled(!enabled)}
+      className="flex min-h-touch min-w-[40px] items-center justify-center rounded-full text-xl"
+      aria-label={enabled ? 'Matikan musik' : 'Nyalakan musik'}
+      aria-pressed={enabled}
+    >
+      {enabled ? '🎵' : '🔕'}
     </button>
   );
 }

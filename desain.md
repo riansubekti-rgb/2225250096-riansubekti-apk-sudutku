@@ -194,6 +194,11 @@ Busu adalah busur derajat setengah lingkaran (180°) berwarna kuning dengan mata
 - **Busu diketuk** di Beranda → fakta/semangat acak dengan ekspresi berbeda.
 - **Tanya Busu**: Busu besar boleh berganti ekspresi di layar obrolan; jawaban ≤ 3 kalimat + langkah + gambar bila perlu (tetap satu ide per balon).
 
+**Tambahan v0.3 (D18):**
+- Kepribadian: **gadis remaja yang bersemangat** — kalimat seru ("Haiii!", "Yeay!", "Keren, kan?"), melompat saat bicara (`busu-hop`, mati bila *reduce motion*).
+- **Layar pembuka** "Ketuk untuk mulai!" di halaman Masuk (hanya bila layar belum disentuh).
+- **Backsound** ceria 116 BPM (C–G–Am–F), volume rendah (0,11), mengecil (0,035) saat Busu bicara. **Hanya** di Masuk, Beranda, Progres, Selesai, Kode. **Dilarang** di halaman materi, soal, tes, angket (musik latar menambah beban ekstrinsik — prinsip koherensi Mayer).
+
 Aturan: Busu tidak pernah menutupi gambar sudut, tidak bersuara, dan tidak menambah teks di luar balon kata. Ekspresi `oops` dipakai untuk jawaban salah (lembut, tidak mengejek), dan `cheer` untuk jawaban benar.
 
 ### 9.1 Layar Instrumen Penelitian

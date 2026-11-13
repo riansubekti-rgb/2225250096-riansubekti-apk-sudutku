@@ -11,12 +11,12 @@ test('siswa: masuk → pemanasan → kenali → lab → misi 3D → ganti siswa'
   await page.getByRole('link', { name: /Pemanasan/ }).click();
   for (let i = 0; i < 4; i++) await page.getByRole('button', { name: 'Lanjut →' }).click();
   await page.getByRole('button', { name: '90°' }).click();
-  await expect(page.getByText('Benar!')).toBeVisible();
+  await expect(page.getByText(/benar!/i)).toBeVisible();
 
   // Kenali Hubungan: tantangan pertama
   await page.goto('/kenali?langkah=4');
   await page.getByRole('button', { name: /Berpelurus/ }).click();
-  await expect(page.getByRole('status')).toContainText('Benar!');
+  await expect(page.getByRole('status')).toContainText(/benar!/i);
 
   // Lab Sudut: tombol + mengubah persamaan
   await page.goto('/lab');
@@ -38,6 +38,7 @@ test('siswa: masuk → pemanasan → kenali → lab → misi 3D → ganti siswa'
 
 test('kode salah ketik ditolak', async ({ page }) => {
   await page.goto('/masuk');
+  await page.getByRole('button', { name: 'Ketuk untuk mulai' }).click();
   await page.getByLabel('Ketik kode siswamu').fill('A07J');
   await page.getByRole('button', { name: 'Masuk' }).click();
   await expect(page.getByRole('alert')).toContainText('belum tepat');

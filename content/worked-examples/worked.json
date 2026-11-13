@@ -7,14 +7,14 @@
     "vertical": "Kedua sudut berhadapan pada dua garis yang berpotongan, jadi bertolak belakang."
   },
   "feedback": {
-    "correct": "Tepat!",
-    "wrong": "Belum tepat. Coba lagi, atau buka petunjuk.",
+    "correct": "Tepat sekali! Keren!",
+    "wrong": "Ups, belum tepat. Coba lagi, kamu pasti bisa!",
     "reveal": "Tidak apa-apa. Ini jawabannya, perhatikan baik-baik ya.",
     "M_COMP_AS_SUP": "Kamu memakai 180°. Lihat tanda ∟ di gambar: kedua sudut membentuk 90°.",
     "M_SUP_AS_COMP": "Kamu memakai 90°. Lihat lagi: kedua sudut membentuk garis lurus, jadi jumlahnya 180°.",
     "M_VERT_AS_SUP": "Sudut bertolak belakang itu sama besar, bukan berjumlah 180°.",
     "M_X_NOT_ANGLE": "Itu nilai x. Sekarang ganti x ke dalam {expr} untuk mendapat besar sudutnya.",
-    "check": "Cocok dengan sifat hubungannya. Jawabanmu masuk akal!"
+    "check": "Yeay, cocok dengan sifat hubungannya! Jawabanmu masuk akal!"
   },
   "hints": {
     "identify": [
@@ -41,7 +41,10 @@
       "title": "Berpelurus dengan angka",
       "e1": "65",
       "e2": "x",
-      "twin": { "e1": "48", "e2": "x" }
+      "twin": {
+        "e1": "48",
+        "e2": "x"
+      }
     },
     {
       "id": "we-comp-num",
@@ -49,7 +52,10 @@
       "title": "Berpenyiku dengan angka",
       "e1": "40",
       "e2": "x",
-      "twin": { "e1": "62", "e2": "x" }
+      "twin": {
+        "e1": "62",
+        "e2": "x"
+      }
     },
     {
       "id": "we-vert-num",
@@ -57,7 +63,10 @@
       "title": "Bertolak belakang dengan angka",
       "e1": "70",
       "e2": "x",
-      "twin": { "e1": "125", "e2": "x" }
+      "twin": {
+        "e1": "125",
+        "e2": "x"
+      }
     },
     {
       "id": "we-comp-alg",
@@ -65,7 +74,10 @@
       "title": "Berpenyiku dengan variabel",
       "e1": "2x",
       "e2": "4x",
-      "twin": { "e1": "3x", "e2": "7x" }
+      "twin": {
+        "e1": "3x",
+        "e2": "7x"
+      }
     },
     {
       "id": "we-sup-alg",
@@ -73,7 +85,10 @@
       "title": "Berpelurus dengan variabel",
       "e1": "3x+15",
       "e2": "2x-10",
-      "twin": { "e1": "4x+20", "e2": "x+10" }
+      "twin": {
+        "e1": "4x+20",
+        "e2": "x+10"
+      }
     },
     {
       "id": "we-vert-alg",
@@ -81,7 +96,10 @@
       "title": "Bertolak belakang dengan variabel",
       "e1": "4x-25",
       "e2": "2x+35",
-      "twin": { "e1": "5x-30", "e2": "2x+15" }
+      "twin": {
+        "e1": "5x-30",
+        "e2": "2x+15"
+      }
     }
   ]
 }

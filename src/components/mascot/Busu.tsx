@@ -87,7 +87,8 @@ export function Busu({
       height={(size * 100) / 120}
       role="img"
       aria-label="Busu, si busur derajat"
-      className={bob ? 'busu-bob' : undefined}
+      // Busu yang bersemangat: melompat-lompat saat berbicara, bergoyang saat diam.
+      className={talking ? 'busu-hop' : bob ? 'busu-bob' : undefined}
     >
       {armsUp && (
         <g stroke={LINE} strokeWidth={3} strokeLinecap="round">

@@ -218,7 +218,7 @@ function MissionView({ m, no, onNext }: { m: Mission; no: number; onNext: () => 
           {interp !== null && (
             <>
               <MascotBubble mood={interp === m.interpret.answer ? 'cheer' : 'think'} live>
-                <b>{interp === m.interpret.answer ? 'Tepat!' : 'Belum tepat.'}</b> {m.interpret.explain}
+                <b>{interp === m.interpret.answer ? 'Yeay, tepat!' : 'Ups, belum tepat.'}</b> {m.interpret.explain}
               </MascotBubble>
               <button
                 type="button"

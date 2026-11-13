@@ -1,21 +1,60 @@
 {
-  "version": "0.1.0",
+  "version": "0.3.0",
   "note": "Kalimat Busu di halaman Masuk (perkenalan) dan saat Busu diketuk di Beranda. Mood: happy, think, cheer, oops, wink, wow, sad, proud.",
   "intro": [
-    { "mood": "happy", "text": "Hai! Aku Busu, si busur derajat yang suka sudut." },
-    { "mood": "proud", "text": "Aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika." },
-    { "mood": "wink", "text": "Tugasku menemanimu supaya kamu mudah memahami materi garis dan sudut." },
-    { "mood": "cheer", "text": "Yuk mulai! Ketik kode siswamu di bawah, ya." }
+    {
+      "mood": "cheer",
+      "text": "Haiii! Aku Busu, si busur derajat yang supeeer suka sudut!"
+    },
+    {
+      "mood": "proud",
+      "text": "Aku dibuat oleh Kak Rian Subekti, mahasiswa S1 Pendidikan Matematika. Keren, kan?"
+    },
+    {
+      "mood": "wink",
+      "text": "Aku bakal nemenin kamu supaya materi garis dan sudut jadi gampang dan seru banget!"
+    },
+    {
+      "mood": "cheer",
+      "text": "Yuk, kita mulai petualangannya! Ketik kode siswamu di bawah, yaa!"
+    }
   ],
-  "welcomeBack": { "mood": "happy", "text": "Hai lagi! Ketik kode siswamu untuk melanjutkan." },
+  "welcomeBack": {
+    "mood": "cheer",
+    "text": "Yeay, kamu datang lagi! Ketik kode siswamu, yuk lanjut belajar!"
+  },
   "tapLines": [
-    { "mood": "proud", "text": "Tahukah kamu? Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180°!" },
-    { "mood": "think", "text": "Pelurus = lurus = 180°. Penyiku = siku = 90°. Gampang diingat, kan?" },
-    { "mood": "wink", "text": "Sudut bertolak belakang itu seperti anak kembar: besarnya selalu sama." },
-    { "mood": "wow", "text": "Hihi, geli! Ayo lanjut belajar." },
-    { "mood": "cheer", "text": "Ada yang belum paham? Ketuk Tanya Busu, aku siap membantu!" },
-    { "mood": "happy", "text": "Coba lihat sekelilingmu. Pintu, jendela, dan meja penuh dengan sudut!" },
-    { "mood": "think", "text": "Kalau melihat tanda kotak kecil ∟, ingat: itu sudut siku-siku, 90°." },
-    { "mood": "proud", "text": "Setiap kali kamu salah lalu mencoba lagi, otakmu sedang bertambah kuat!" }
+    {
+      "mood": "proud",
+      "text": "Tahukah kamu? Badanku setengah lingkaran, jadi aku bisa mengukur sudut sampai 180 derajat! Hebat, kan?"
+    },
+    {
+      "mood": "wink",
+      "text": "Ingat ya! Pelurus itu lurus, 180 derajat. Penyiku itu siku, 90 derajat. Gampang banget!"
+    },
+    {
+      "mood": "cheer",
+      "text": "Sudut bertolak belakang itu kayak anak kembar! Besarnya selalu sama. Seru, kan?"
+    },
+    {
+      "mood": "wow",
+      "text": "Hihihi, geli! Ayo ayo, lanjut belajar!"
+    },
+    {
+      "mood": "cheer",
+      "text": "Ada yang bikin bingung? Tanya Busu aja! Aku siap banget bantuin kamu!"
+    },
+    {
+      "mood": "wow",
+      "text": "Wah, coba lihat sekelilingmu! Pintu, jendela, meja, semuanya penuh sudut!"
+    },
+    {
+      "mood": "wink",
+      "text": "Kalau lihat kotak kecil di pojok sudut, itu tandanya siku-siku. Sembilan puluh derajat!"
+    },
+    {
+      "mood": "proud",
+      "text": "Salah itu nggak apa-apa! Setiap kali mencoba lagi, otakmu makin kuat. Semangat!"
+    }
   ]
 }

@@ -10,7 +10,7 @@ const RULES: [RegExp, BusuMood][] = [
   [w('belum tepat|salah|keliru|ups|oops|kurang tepat|belum paham'), 'oops'],
   [w('tidak apa|jangan khawatir|jangan sedih|bingung|sulit|susah'), 'sad'],
   [w('wah|wow|hihi|geli|lho|astaga'), 'wow'],
-  [w('hebat|tepat|benar|bagus|keren|pintar|selamat|semangat|berhasil|yuk|ayo'), 'cheer'],
+  [w('hebat|tepat|benar|bagus|keren|pintar|selamat|semangat|berhasil|yuk|ayo|yeay|hore|asyik|haiii|seru'), 'cheer'],
   [w('aku dibuat|bangga|tahukah|aku busu|jadi x'), 'proud'],
   [w('ingat|kuncinya|rahasia|tips|gampang'), 'wink'],
   [/\?\s*$/, 'think'],

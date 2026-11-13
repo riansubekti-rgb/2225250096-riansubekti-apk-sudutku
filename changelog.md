@@ -6,6 +6,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.3.0] — 2026-11-14 — Busu gadis remaja yang heboh + backsound
+
+### Ditambahkan
+- **Layar pembuka "Ketuk untuk mulai!"** — setelah diketuk, Busu langsung memperkenalkan diri dan musik menyala.
+- **Backsound** ceria orisinal (disintesis Web Audio, tanpa file, offline): hanya di layar santai, berhenti di materi/soal/tes, mengecil saat Busu bicara; tombol 🎵/🔕.
+
+### Diubah
+- Busu berkarakter **gadis remaja yang bersemangat**: kalimat lebih seru, melompat saat bicara, suara perempuan Indonesia bila tersedia (nada 1,9; kecepatan 1,25×).
+- Umpan balik lebih ceria ("Yeay, benar!", "Ups, belum tepat!").
+
 ## [0.2.1] — 2026-11-14 — Busu bicara otomatis
 
 ### Diubah

@@ -3,8 +3,8 @@
  * tanpa layanan luar. Diucapkan per kalimat agar ekspresi Busu bisa berganti mengikuti isi kalimat.
  */
 
-/** Suara khas Busu: lebih tinggi (lucu) dan sedikit lebih cepat dari normal. */
-export const VOICE = { rate: 1.2, pitch: 1.75 };
+/** Suara khas Busu: gadis remaja yang bersemangat — nada tinggi & tempo cepat. */
+export const VOICE = { rate: 1.25, pitch: 1.9 };
 
 /** Ubah teks matematika menjadi kalimat yang enak dibacakan. */
 export function toSpeakable(text: string): string {
@@ -45,9 +45,22 @@ export function userHasInteracted(): boolean {
   return ua ? ua.hasBeenActive : true;
 }
 
+/** Nama suara perempuan Bahasa Indonesia yang umum (Windows: Gadis; iOS: Damayanti; Android: Google). */
+const FEMALE = /gadis|damayanti|female|wanita|perempuan|google bahasa indonesia|id-id-x-(idc|idd|ide)/i;
+const MALE = /andika|ardi|male|pria|id-id-x-(idb)/i;
+
+/** Pilih suara Indonesia, utamakan suara perempuan (karakter Busu = gadis remaja). */
+export function pickVoice(voices: Pick<SpeechSynthesisVoice, 'lang' | 'name'>[]) {
+  const id = voices.filter((v) => v.lang.toLowerCase().replace('_', '-').startsWith('id'));
+  return (
+    id.find((v) => FEMALE.test(v.name) && !/^male/i.test(v.name)) ??
+    id.find((v) => !MALE.test(v.name)) ??
+    id[0]
+  );
+}
+
 function indonesianVoice(): SpeechSynthesisVoice | undefined {
-  const voices = window.speechSynthesis.getVoices();
-  return voices.find((v) => v.lang === 'id-ID') ?? voices.find((v) => v.lang.toLowerCase().startsWith('id'));
+  return pickVoice(window.speechSynthesis.getVoices()) as SpeechSynthesisVoice | undefined;
 }
 
 // Daftar suara dimuat asinkron di Chrome — pancing sejak awal.
@@ -57,6 +70,16 @@ if (canSpeak()) {
 }
 
 let current: (() => void) | null = null;
+
+const speakingListeners = new Set<(speaking: boolean) => void>();
+/** Dengarkan perubahan status bicara Busu (mis. untuk mengecilkan backsound). */
+export function onSpeakingChange(fn: (speaking: boolean) => void): () => void {
+  speakingListeners.add(fn);
+  return () => {
+    speakingListeners.delete(fn);
+  };
+}
+const notifySpeaking = (s: boolean) => speakingListeners.forEach((fn) => fn(s));
 
 /** Hentikan suara Busu yang sedang berbicara (hanya satu Busu bicara pada satu waktu). */
 export function stopAll(): void {
@@ -90,6 +113,7 @@ export function speakSentences(sentences: string[], h: SpeakHandlers): () => voi
   const finish = (completed: boolean) => {
     if (ended) return;
     ended = true;
+    notifySpeaking(false);
     if (current === cancel) current = null;
     h.onEnd(completed);
   };
@@ -115,6 +139,7 @@ export function speakSentences(sentences: string[], h: SpeakHandlers): () => voi
     finish(false);
   };
   current = cancel;
+  notifySpeaking(true);
   next();
   return cancel;
 }

@@ -105,7 +105,7 @@ function CheckView({ check, number, result, onResult }: { check: Check; number: 
       )}
       {result !== undefined && (
         <MascotBubble mood={result ? 'cheer' : 'oops'} live>
-          {result ? 'Benar!' : `Belum tepat. Jawabannya ${check.type === 'choice' ? check.options[check.answer] : check.answer}.`}{' '}
+          {result ? 'Yeay, benar!' : `Ups, belum tepat. Jawabannya ${check.type === 'choice' ? check.options[check.answer] : check.answer}.`}{' '}
           {!result && check.type === 'number' && check.hint}
         </MascotBubble>
       )}

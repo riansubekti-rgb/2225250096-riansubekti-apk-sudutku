@@ -23,3 +23,17 @@ describe('teks untuk suara', () => {
     expect(toSpeakable('∠a = 35°')).toBe('sudut a sama dengan 35 derajat');
   });
 });
+
+describe('pilih suara gadis', () => {
+  it('utamakan suara perempuan Indonesia', async () => {
+    const { pickVoice } = await import('../../platform/speech');
+    const voices = [
+      { lang: 'en-US', name: 'Google US English' },
+      { lang: 'id-ID', name: 'Microsoft Andika - Indonesian (Indonesia)' },
+      { lang: 'id-ID', name: 'Microsoft Gadis Online (Natural) - Indonesian' },
+    ];
+    expect(pickVoice(voices)?.name).toContain('Gadis');
+    expect(pickVoice([voices[1]!])?.name).toContain('Andika'); // tidak ada pilihan lain
+    expect(pickVoice([voices[0]!])).toBeUndefined();
+  });
+});

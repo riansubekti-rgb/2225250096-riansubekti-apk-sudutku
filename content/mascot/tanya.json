@@ -1,7 +1,7 @@
 {
   "version": "0.1.0-draft",
   "note": "Bank tanya-jawab Tanya Busu (offline, tanpa AI). Kata kunci ditulis huruf kecil; 'a&b' = semua kata harus ada. Jawaban ≤ 3 kalimat (beban kognitif rendah). DRAF — perlu ditinjau peneliti.",
-  "greeting": "Hai! Aku Busu. Tanyakan apa saja tentang garis dan sudut. Kamu juga bisa mengetik soal, misalnya “2x + 4x = 90” atau “penyiku dari 35”.",
+  "greeting": "Haiii! Aku Busu! Tanya apa aja tentang garis dan sudut, ya! Kamu juga bisa ketik soal, misalnya “2x + 4x = 90” atau “penyiku dari 35”.",
   "suggestions": [
     "Apa itu sudut berpelurus?",
     "Apa bedanya pelurus dan penyiku?",
