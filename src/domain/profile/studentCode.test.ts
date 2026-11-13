@@ -1,6 +1,7 @@
 import {
   CODE_ALPHABET,
   EXAMPLE_CODE,
+  isExampleCode,
   formatCode,
   generateCodes,
   isValidStudentCode,
@@ -24,6 +25,12 @@ describe('kode siswa acak', () => {
   it('acak — tidak berurutan seperti A01, A02, …', () => {
     const second = codes.map((c) => c[1]);
     expect(new Set(second).size).toBeGreaterThan(20);
+  });
+
+  it('contoh/bentuk kode dikenali sebagai contoh', () => {
+    expect(isExampleCode('AK7QM2')).toBe(true);
+    expect(isExampleCode('XXXXXX')).toBe(true);
+    expect(isExampleCode(codes[0]!)).toBe(false);
   });
 
   it('kode lama berformat A07H & contoh di layar tidak sah', () => {

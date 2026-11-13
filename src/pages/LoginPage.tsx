@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { BusuIntro } from '../components/mascot/BusuIntro';
 import { MascotBubble } from '../components/mascot/MascotBubble';
-import { EXAMPLE_CODE, formatCode, isValidStudentCode, normalizeCode } from '../domain/profile/studentCode';
+import { CODE_SHAPE, formatCode, isExampleCode, isValidStudentCode, normalizeCode } from '../domain/profile/studentCode';
 import { createProfile, findProfile } from '../data/profiles';
 import { useSession } from '../data/session';
 import type { Profile } from '../data/db';
@@ -27,6 +27,10 @@ export function LoginPage() {
   const submitCode = async (e: FormEvent) => {
     e.preventDefault();
     const c = normalizeCode(code);
+    if (isExampleCode(c)) {
+      setError('Itu hanya contoh bentuk kode. Ketik kode yang tertulis di kartu dari gurumu, ya.');
+      return;
+    }
     if (!isValidStudentCode(c)) {
       setError(`Kode "${c ? formatCode(c) : '…'}" belum tepat. Cek lagi kartumu, ya.`);
       return;
@@ -67,12 +71,12 @@ export function LoginPage() {
               autoComplete="off"
               autoCapitalize="characters"
               spellCheck={false}
-              placeholder={EXAMPLE_CODE}
+              placeholder={CODE_SHAPE}
               className="min-h-touch rounded-card border-2 border-line bg-bg px-4 text-center text-2xl font-bold tracking-[0.3em] uppercase"
               aria-describedby="kode-help"
             />
             <p id="kode-help" className="text-sm text-ink-muted">
-              Kode ada di kartu dari gurumu (6 huruf/angka), seperti <b>{EXAMPLE_CODE}</b>
+              Ketik 6 huruf/angka yang tertulis di <b>kartu kode dari gurumu</b>. Belum punya kartu? Minta ke guru, ya.
             </p>
             {error && (
               <p role="alert" className="text-sm font-bold" style={{ color: 'var(--ask)' }}>

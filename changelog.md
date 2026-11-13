@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.4.1] — 2026-11-14
+
+### Diperbaiki
+- Contoh kode di halaman Masuk (`AK7-QM2`) mirip kode asli sehingga dicoba dan ditolak. Kini petunjuk memakai bentuk `XXX-XXX`, dan bila contoh tetap diketik muncul pesan "Itu hanya contoh bentuk kode…".
+
 ## [0.4.0] — 2026-11-14 — Kode siswa acak & Profil
 
 ### Ditambahkan

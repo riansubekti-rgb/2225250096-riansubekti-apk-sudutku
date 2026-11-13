@@ -58,5 +58,13 @@ export function classOf(code: string): string {
   return code.charAt(0);
 }
 
-/** Contoh format untuk petunjuk di layar — SENGAJA tidak sah (huruf ceknya salah). */
+/** Bentuk kode untuk petunjuk di layar — jelas bukan kode asli agar tidak dicoba siswa. */
+export const CODE_SHAPE = 'XXX-XXX';
+
+/** Contoh lama (v0.4.0) yang mirip kode asli; bila diketik, beri pesan khusus. */
 export const EXAMPLE_CODE = 'AK7-QM2';
+
+/** Apakah yang diketik hanyalah contoh/bentuk kode, bukan kode dari kartu? */
+export function isExampleCode(normalized: string): boolean {
+  return normalized === normalizeCode(EXAMPLE_CODE) || /^X{6}$/.test(normalized);
+}

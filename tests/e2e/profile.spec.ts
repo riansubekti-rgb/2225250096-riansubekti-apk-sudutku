@@ -24,6 +24,9 @@ test('kode lama A07H ditolak; peneliti membuat kode acak yang sah & tersimpan', 
   await page.getByLabel('Ketik kode siswamu').fill('A07H');
   await page.getByRole('button', { name: 'Masuk' }).click();
   await expect(page.getByRole('alert')).toContainText('belum tepat');
+  await page.getByLabel('Ketik kode siswamu').fill('AK7-QM2');
+  await page.getByRole('button', { name: 'Masuk' }).click();
+  await expect(page.getByRole('alert')).toContainText('hanya contoh');
 
   await researcherOpen(page, '2468', []);
   await page.getByLabel('Jumlah kode').fill('5');
