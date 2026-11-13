@@ -56,14 +56,16 @@ export function Layout() {
         {!pathname.startsWith('/tes') && !pathname.startsWith('/angket') && <MusicToggle />}
         {!pathname.startsWith('/tes') && !pathname.startsWith('/angket') && <VoiceToggle />}
         {profile && ASK_PATHS.includes(pathname) && <AskButton />}
-        {profile && pathname !== '/selesai' && (
+        {profile && pathname !== '/profil' && !pathname.startsWith('/tes') && (
           <Link
-            to="/selesai"
-            className="flex min-h-touch items-center gap-1 rounded-full px-3 text-sm text-ink-muted"
-            aria-label={`Masuk sebagai ${profile.nickname}. Selesai atau ganti siswa`}
+            to="/profil"
+            className="flex min-h-touch items-center gap-1 rounded-full pl-1 pr-2 text-sm"
+            aria-label={`Profil ${profile.nickname}`}
           >
-            <span className="max-w-[7rem] truncate font-bold text-ink">{profile.nickname}</span>
-            <span aria-hidden>⇄</span>
+            <span aria-hidden className="flex h-8 w-8 items-center justify-center rounded-full bg-bg text-lg">
+              {profile.avatar ?? '🦊'}
+            </span>
+            <span className="max-w-[5.5rem] truncate font-bold text-ink">{profile.nickname}</span>
           </Link>
         )}
       </header>

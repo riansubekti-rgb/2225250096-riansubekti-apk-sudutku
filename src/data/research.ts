@@ -112,3 +112,13 @@ export async function checkPin(pin: string): Promise<boolean> {
   const row = await db.settings.get('pinHash');
   return Boolean(row) && row!.value === (await sha256(`sudutku:${pin}`));
 }
+
+/* ---------- daftar kode siswa acak per kelas (D22) ---------- */
+
+export async function getCodeSheet(classLetter: string): Promise<string[]> {
+  return ((await db.settings.get(`codes:${classLetter}`))?.value as string[] | undefined) ?? [];
+}
+
+export async function saveCodeSheet(classLetter: string, codes: string[]): Promise<void> {
+  await db.settings.put({ key: `codes:${classLetter}`, value: codes });
+}

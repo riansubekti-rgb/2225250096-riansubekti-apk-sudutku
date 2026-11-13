@@ -9,6 +9,8 @@ export interface Profile {
   nickname: string;
   classCode: string;
   createdAt: number;
+  /** emoji avatar pilihan siswa (tidak diekspor) */
+  avatar?: string;
 }
 
 export type EndReason = 'switch' | 'idle' | 'close';

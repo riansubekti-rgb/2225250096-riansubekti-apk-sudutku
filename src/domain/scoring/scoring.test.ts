@@ -36,8 +36,8 @@ describe('penilaian', () => {
 
 describe('acak opsi stabil per siswa', () => {
   it('seed sama → urutan sama; isi tetap lengkap', () => {
-    const a = shuffle(makeRng(hashSeed('A07H|literacy-pretest|PRE01')), ['A', 'B', 'C', 'D']);
-    const b = shuffle(makeRng(hashSeed('A07H|literacy-pretest|PRE01')), ['A', 'B', 'C', 'D']);
+    const a = shuffle(makeRng(hashSeed('AK7QM9|literacy-pretest|PRE01')), ['A', 'B', 'C', 'D']);
+    const b = shuffle(makeRng(hashSeed('AK7QM9|literacy-pretest|PRE01')), ['A', 'B', 'C', 'D']);
     expect(a).toEqual(b);
     expect([...a].sort()).toEqual(['A', 'B', 'C', 'D']);
   });

@@ -9,7 +9,7 @@ SudutKu dipakai oleh siswa SMP, yaitu anak di bawah umur. Karena itu aplikasi di
 
 | | Keterangan |
 |---|---|
-| **Yang dicatat** | Kode siswa (mis. `A07H`), nama panggilan, jawaban latihan dan tes, waktu mengerjakan, penggunaan petunjuk, jawaban angket, dan aktivitas di aplikasi (halaman yang dibuka). |
+| **Yang dicatat** | Kode siswa (mis. `AK7-QM2`), nama panggilan, jawaban latihan dan tes, waktu mengerjakan, penggunaan petunjuk, jawaban angket, dan aktivitas di aplikasi (halaman yang dibuka). |
 | **Yang TIDAK dicatat** | Nama lengkap, nomor HP, email, alamat, lokasi, foto, suara, kontak, dan ID perangkat asli. Aplikasi tidak meminta izin kamera, lokasi, atau mikrofon. |
 | **Tempat penyimpanan** | Hanya di HP yang dipakai (penyimpanan browser). **Tidak ada server** dan tidak ada pengiriman otomatis ke internet. |
 | **Keluarnya data** | Hanya saat peneliti menekan *Ekspor data* di Mode Peneliti (dilindungi PIN). |

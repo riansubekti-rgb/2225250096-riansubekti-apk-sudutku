@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { RAKA } from './codes';
 import { loginNew } from './helpers';
 
 test.use({ serviceWorkers: 'allow' });
@@ -12,7 +13,7 @@ test('PWA tetap berjalan tanpa internet (mode pesawat), termasuk 3D', async ({ p
   await page.reload();
   await expect.poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller))).toBe(true);
 
-  await loginNew(page, 'A07H', 'Raka');
+  await loginNew(page, RAKA, 'Raka');
   await context.setOffline(true);
 
   await page.reload();

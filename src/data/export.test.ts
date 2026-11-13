@@ -6,6 +6,7 @@ import { saveAssessmentAnswer, saveQuestionnaireAnswer, checkPin, setPin } from 
 import { buildExportFiles, buildExportZip, csvCell } from './export';
 import { TESTS } from '../features/research/instruments';
 import { makeStudentCode } from '../domain/profile/studentCode';
+import { makeRng } from '../domain/random';
 
 beforeEach(async () => {
   localStorage.clear();
@@ -32,7 +33,7 @@ async function answerTest(kind: 'awal' | 'akhir', correctCount: number) {
 
 describe('ekspor data penelitian', () => {
   it('ringkasan memuat skor pretest/posttest dan N-gain yang benar; tanpa nama panggilan', async () => {
-    const p = await createProfile(makeStudentCode('A', 7), 'RahasiaNama');
+    const p = await createProfile(makeStudentCode('A', makeRng(7)), 'RahasiaNama');
     await useSession.getState().login(p);
     await answerTest('awal', 4);
     await answerTest('awal', 4); // simpan ulang tidak boleh menggandakan baris
@@ -45,7 +46,7 @@ describe('ekspor data penelitian', () => {
     const head = summary[0]!.replace('﻿', '').split(',');
     const row = summary[1]!.split(',');
     const col = (name: string) => row[head.indexOf(name)];
-    expect(col('student_code')).toBe(makeStudentCode('A', 7));
+    expect(col('student_code')).toBe(makeStudentCode('A', makeRng(7)));
     expect(col('pretest_score')).toBe('4');
     expect(col('posttest_score')).toBe('7');
     expect(col('n_gain')).toBe('0.5');

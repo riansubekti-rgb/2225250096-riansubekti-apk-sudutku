@@ -12,7 +12,9 @@ Hal terpenting: **data siswa hanya tersimpan di HP masing-masing.** Tidak ada se
 - [ ] Aplikasi sudah online, mis. `https://sudutku.vercel.app` (lihat readme.md › *Memasang aplikasi online*).
 - [ ] Coba sendiri dari HP Android: buka link di **Chrome**, pasang ke layar utama, lalu nyalakan mode pesawat dan pastikan aplikasi tetap terbuka.
 - [ ] Instrumen (soal tes, angket) sudah divalidasi dan file DRAF sudah diganti. Selama masih draf, Mode Peneliti menampilkan peringatan ⚠️.
-- [ ] **Cetak kartu kode siswa:** Halaman Masuk › *Mode Peneliti* › buat PIN › *Kartu kode siswa* › isi huruf kelas (mis. `A`) dan jumlah siswa › *Tampilkan* › *Cetak*. Gunting kartunya, satu kartu per siswa.
+- [ ] **Buat & cetak kartu kode siswa (acak):** Halaman Masuk › *Mode Peneliti* › buat PIN › *Kartu kode siswa (acak)* › isi huruf kelas (mis. `A`) dan jumlah siswa › **🎲 Buat kode acak** › *Cetak kartu*. Gunting kartunya, satu kartu per siswa. Kode berbentuk 6 karakter acak, mis. `A7C-WAQ`.
+  - ⚠️ **Buat kode di SATU perangkat saja** (HP/laptop peneliti) dan simpan. Daftar kode tersimpan di perangkat itu; membuat ulang di perangkat lain menghasilkan kode berbeda.
+  - Unduh **daftar kode (CSV)** lalu isi kolom nama siswa di Excel milik peneliti — pasangan kode ↔ nama **tidak** dimasukkan ke aplikasi.
 - [ ] Buat **daftar pasangan nama siswa ↔ kode** di kertas atau Excel milik peneliti. Daftar ini **tidak** dimasukkan ke aplikasi dan disimpan terpisah dari data penelitian.
 - [ ] Siapkan surat izin sekolah dan persetujuan orang tua (lihat privasi-dan-persetujuan.md).
 - [ ] Kirim link ke grup kelas sehari sebelumnya, dengan pesan: *"Buka link ini di Chrome, ketuk ⋮ › Tambahkan ke layar utama."* Pemasangan sebelum hari H menghemat kuota dan waktu.
@@ -40,7 +42,7 @@ Hal terpenting: **data siswa hanya tersimpan di HP masing-masing.** Tidak ada se
 
 | Menit | Kegiatan | Yang dilakukan |
 |---|---|---|
-| 0–10 | Pembukaan | Bagikan kartu kode. Siswa membuka SudutKu di Chrome atau dari ikon di layar utama, lalu **mengetik kode siswanya** dan nama panggilan. |
+| 0–10 | Pembukaan | Bagikan kartu kode. Siswa membuka SudutKu di Chrome atau dari ikon di layar utama, lalu **mengetik kode siswanya** dan nama panggilan. Siswa bisa melihat kodenya lagi di **Profil** (ketuk nama di kanan atas). |
 | 10–25 | **Tes Awal** | Tulis `TESAWAL` di papan. Siswa: 🔑 › ketik kode › kerjakan 10 soal › *Kirim*. Selama tes, materi terkunci. |
 | 25–35 | Pemanasan | Bagian 1 |
 | 35–50 | Kenali Hubungan + Lab Sudut | Bagian 2–3 |

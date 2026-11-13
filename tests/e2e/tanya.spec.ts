@@ -1,8 +1,9 @@
 import { expect, test } from '@playwright/test';
+import { RAKA, SINTA } from './codes';
 import { loginNew } from './helpers';
 
 test('Tanya Busu: menjawab konsep, menghitung, dan jujur bila tidak tahu', async ({ page }) => {
-  await loginNew(page, 'A07H', 'Raka');
+  await loginNew(page, RAKA, 'Raka');
   await page.getByRole('link', { name: /Tanya Busu/ }).click();
 
   await page.getByRole('button', { name: 'Apa bedanya pelurus dan penyiku?' }).click();
@@ -18,7 +19,7 @@ test('Tanya Busu: menjawab konsep, menghitung, dan jujur bila tidak tahu', async
 });
 
 test('Tanya Busu melayang di Latihan tanpa menghilangkan soal', async ({ page }) => {
-  await loginNew(page, 'B12W', 'Sinta');
+  await loginNew(page, SINTA, 'Sinta');
   await page.goto('/latihan');
   await expect(page.getByText(/Soal 1\/5/)).toBeVisible();
   await page.getByRole('button', { name: 'Tanya Busu' }).click();

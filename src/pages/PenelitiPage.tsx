@@ -5,7 +5,7 @@ import { deliverFile } from '../platform/share';
 import { getPersistResult } from '../platform/storage';
 import { db } from '../data/db';
 import { ALL_VALIDATED } from '../features/research/instruments';
-import { makeStudentCode } from '../domain/profile/studentCode';
+import { CodeCards } from '../features/research/CodeCards';
 import codesRaw from '../../content/instruments/access-codes.json';
 import { AccessCodesSchema } from '../data/schemas';
 
@@ -94,9 +94,6 @@ function Dashboard() {
   const [lastExport, setLastExport] = useState<number | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState('');
-  const [prefix, setPrefix] = useState('A');
-  const [count, setCount] = useState(30);
-  const [showCards, setShowCards] = useState(false);
 
   const refresh = async () => {
     setR(await getResearch());
@@ -196,49 +193,7 @@ function Dashboard() {
         )}
       </section>
 
-      <section className="card flex flex-col gap-2">
-        <p className="font-bold">Kartu kode siswa</p>
-        <div className="flex gap-2">
-          <label className="flex items-center gap-2 text-sm">
-            Huruf kelas
-            <input
-              value={prefix}
-              maxLength={1}
-              onChange={(e) => setPrefix(e.target.value.toUpperCase().replace(/[^A-Z]/g, '') || 'A')}
-              className="min-h-touch w-14 rounded-card border-2 border-line bg-surface text-center font-bold"
-            />
-          </label>
-          <label className="flex items-center gap-2 text-sm">
-            Jumlah
-            <input
-              type="number"
-              min={1}
-              max={99}
-              value={count}
-              onChange={(e) => setCount(Math.min(99, Math.max(1, Number(e.target.value) || 1)))}
-              className="min-h-touch w-20 rounded-card border-2 border-line bg-surface text-center font-bold"
-            />
-          </label>
-        </div>
-        <button type="button" className="btn-secondary" onClick={() => setShowCards((s) => !s)}>
-          {showCards ? 'Sembunyikan' : 'Tampilkan'} kartu kode
-        </button>
-        {showCards && (
-          <>
-            <div className="grid grid-cols-3 gap-2 print:grid-cols-4">
-              {Array.from({ length: count }, (_, i) => makeStudentCode(prefix, i + 1)).map((c, i) => (
-                <div key={c} className="rounded-card border-2 border-dashed border-line p-2 text-center">
-                  <p className="text-xs text-ink-muted">No. {i + 1}</p>
-                  <p className="text-xl font-bold tracking-widest">{c}</p>
-                </div>
-              ))}
-            </div>
-            <button type="button" className="btn-secondary" onClick={() => window.print()}>
-              🖨️ Cetak
-            </button>
-          </>
-        )}
-      </section>
+      <CodeCards />
     </div>
   );
 }

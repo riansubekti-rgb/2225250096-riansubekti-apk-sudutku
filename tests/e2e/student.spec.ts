@@ -1,11 +1,12 @@
 import { expect, test } from '@playwright/test';
+import { RAKA } from './codes';
 import { loginNew } from './helpers';
 
 test('siswa: masuk → pemanasan → kenali → lab → misi 3D → ganti siswa', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(String(e)));
 
-  await loginNew(page, 'A07H', 'Raka');
+  await loginNew(page, RAKA, 'Raka');
 
   // Pemanasan: lewati kartu, jawab cek prasyarat
   await page.getByRole('link', { name: /Pemanasan/ }).click();
@@ -29,7 +30,7 @@ test('siswa: masuk → pemanasan → kenali → lab → misi 3D → ganti siswa'
   await expect(page.locator('canvas, svg[role="img"]').first()).toBeVisible({ timeout: 15_000 });
 
   // Ganti siswa
-  await page.getByRole('link', { name: /Masuk sebagai Raka/ }).click();
+  await page.getByRole('link', { name: /Profil Raka/ }).click();
   await page.getByRole('button', { name: /Keluar & ganti siswa/ }).click();
   await expect(page.getByLabel('Ketik kode siswamu')).toBeVisible();
 

@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/). Penomoran m
 
 ## [Belum dirilis]
 
+## [0.4.0] — 2026-11-14 — Kode siswa acak & Profil
+
+### Ditambahkan
+- **Profil siswa** (ketuk nama di kanan atas): 12 avatar emoji, ubah nama panggilan, lihat kode siswa, statistik belajar (soal dijawab, % benar, lencana, misi, menit belajar), pengaturan suara & musik, tombol keluar.
+- **Kartu kode acak** di Mode Peneliti: dibuat per kelas, tersimpan (cetak ulang = kode sama), bisa ditambah, dicetak, dan diunduh sebagai CSV.
+
+### Diubah
+- **Kode siswa kini acak** (6 karakter, mis. `A7C-WAQ`) dengan karakter cek; kode berurutan lama seperti `A07H` tidak berlaku lagi. Contoh di halaman Masuk bukan kode asli.
+
 ## [0.3.3] — 2026-11-14 — Busu bicara sendiri & jalan-jalan
 
 ### Diubah

@@ -20,12 +20,12 @@ SudutKu dikembangkan untuk penelitian R&D (ADDIE) S1 Pendidikan Matematika. Ranc
 5. **Latihan adaptif:** bantuan berkurang saat siswa makin mahir; umpan balik menyasar miskonsepsi; skala usaha mental setiap 5 soal.
 6. **Misi Dunia Nyata (3D, Three.js):** 12 misi; rumuskan → terapkan → tafsirkan (literasi matematis PISA).
 8. **Tanya Busu:** tanya apa saja tentang garis & sudut, atau ketik soal — Busu menjawab & menghitung dengan langkah (offline).
-7. **Progres & lencana.**
+7. **Progres & lencana**, serta **Profil** (avatar, nama panggilan, kode, statistik belajar, pengaturan suara/musik).
 
 **Untuk peneliti**
 - Tes Awal/Akhir (10 PG paralel), angket IL/EL/GL, SUS, dan pendapat siswa.
 - **Kode dari guru** untuk membuka tes/angket di banyak HP sekaligus.
-- **Mode Peneliti** (PIN): ekspor ZIP berisi CSV (skor, N-gain, beban kognitif, log belajar) dan cetak kartu kode siswa.
+- **Mode Peneliti** (PIN): ekspor ZIP berisi CSV (skor, N-gain, beban kognitif, log belajar) dan cetak kartu kode siswa **acak** (mis. `A7C-WAQ`).
 - Satu HP bisa dipakai bergantian oleh beberapa siswa tanpa data tercampur.
 
 ## Dokumentasi

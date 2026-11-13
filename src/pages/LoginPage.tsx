@@ -2,14 +2,13 @@ import { useState, type FormEvent } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { BusuIntro } from '../components/mascot/BusuIntro';
 import { MascotBubble } from '../components/mascot/MascotBubble';
-import { isValidStudentCode, makeStudentCode, normalizeCode } from '../domain/profile/studentCode';
+import { EXAMPLE_CODE, formatCode, isValidStudentCode, normalizeCode } from '../domain/profile/studentCode';
 import { createProfile, findProfile } from '../data/profiles';
 import { useSession } from '../data/session';
 import type { Profile } from '../data/db';
 
 type Step = { kind: 'code' } | { kind: 'nickname'; code: string } | { kind: 'confirm'; profile: Profile };
 
-const EXAMPLE = makeStudentCode('A', 7);
 
 /**
  * Masuk dengan MENGETIK kode siswa (bukan memilih dari daftar) agar tidak salah masuk ke profil teman
@@ -29,7 +28,7 @@ export function LoginPage() {
     e.preventDefault();
     const c = normalizeCode(code);
     if (!isValidStudentCode(c)) {
-      setError(`Kode "${c || '…'}" belum tepat. Cek lagi kartumu, ya.`);
+      setError(`Kode "${c ? formatCode(c) : '…'}" belum tepat. Cek lagi kartumu, ya.`);
       return;
     }
     setError('');
@@ -64,16 +63,16 @@ export function LoginPage() {
               id="kode"
               value={code}
               onChange={(e) => setCode(e.target.value.toUpperCase())}
-              maxLength={6}
+              maxLength={8}
               autoComplete="off"
               autoCapitalize="characters"
               spellCheck={false}
-              placeholder={EXAMPLE}
+              placeholder={EXAMPLE_CODE}
               className="min-h-touch rounded-card border-2 border-line bg-bg px-4 text-center text-2xl font-bold tracking-[0.3em] uppercase"
               aria-describedby="kode-help"
             />
             <p id="kode-help" className="text-sm text-ink-muted">
-              Kode ada di kartu dari gurumu, contoh: <b>{EXAMPLE}</b>
+              Kode ada di kartu dari gurumu (6 huruf/angka), seperti <b>{EXAMPLE_CODE}</b>
             </p>
             {error && (
               <p role="alert" className="text-sm font-bold" style={{ color: 'var(--ask)' }}>
@@ -121,7 +120,7 @@ export function LoginPage() {
       {step.kind === 'confirm' && (
         <div className="flex flex-col gap-4">
           <MascotBubble mood="think" size={72}>
-            Apakah kamu <b>{step.profile.nickname}</b> ({step.profile.studentCode})?
+            Apakah kamu <b>{step.profile.nickname}</b> ({formatCode(step.profile.studentCode)})?
           </MascotBubble>
           <button type="button" className="btn-primary" onClick={() => void confirm()}>
             Ya, itu aku

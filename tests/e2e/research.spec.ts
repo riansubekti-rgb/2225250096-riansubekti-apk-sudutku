@@ -1,5 +1,6 @@
 import { strFromU8, unzipSync } from 'fflate';
 import { expect, test } from '@playwright/test';
+import { DIMAS } from './codes';
 import { loginNew, researcherOpen } from './helpers';
 
 test('penelitian: buka pretest → siswa mengerjakan → materi terbuka → ekspor ZIP', async ({ page }) => {
@@ -17,7 +18,7 @@ test('penelitian: buka pretest → siswa mengerjakan → materi terbuka → eksp
     };
   });
 
-  await loginNew(page, 'C05W', 'Dimas');
+  await loginNew(page, DIMAS, 'Dimas');
   // Siswa membuka Tes Awal sendiri dengan kode dari papan tulis
   await page.getByRole('link', { name: /Punya kode dari guru/ }).click();
   await page.getByLabel('Ketik kode dari gurumu').fill('tesawal');
@@ -46,7 +47,7 @@ test('penelitian: buka pretest → siswa mengerjakan → materi terbuka → eksp
   const files = unzipSync(new Uint8Array(bytes));
   expect(Object.keys(files)).toContain('assessment_summary.csv');
   const summary = strFromU8(files['assessment_summary.csv']!);
-  expect(summary).toContain('C05W');
+  expect(summary).toContain(DIMAS);
   expect(summary).not.toContain('Dimas');
   expect(strFromU8(files['assessments.csv']!).trim().split('\r\n')).toHaveLength(11);
 });

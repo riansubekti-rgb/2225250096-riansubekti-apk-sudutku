@@ -29,6 +29,7 @@ export const EXTRA_TITLES: Record<string, string> = {
   '/peneliti': 'Mode Peneliti',
   '/kode': 'Kode dari Guru',
   '/tanya': 'Tanya Busu',
+  '/profil': 'Profil Saya',
 };
 
 /** Halaman yang boleh dibuka tanpa login siswa. */

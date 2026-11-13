@@ -8,7 +8,7 @@ import { useMusic } from './musicStore';
  * Musik hanya di layar santai — TIDAK di materi, soal, tes, atau angket
  * (prinsip koherensi: musik latar menambah beban kognitif saat berpikir).
  */
-const MUSIC_PATHS = ['/masuk', '/', '/progres', '/selesai', '/kode'];
+const MUSIC_PATHS = ['/masuk', '/', '/progres', '/selesai', '/kode', '/profil'];
 
 /** Menyalakan/mematikan backsound sesuai halaman, dan mengecilkannya saat Busu bicara. */
 export function MusicController() {
